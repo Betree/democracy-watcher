@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Promise_id: 
+  title: MyString
+  details: MyString
+  date_change: 2016-03-17
+
+two:
+  Promise_id: 
+  title: MyString
+  details: MyString
+  date_change: 2016-03-17

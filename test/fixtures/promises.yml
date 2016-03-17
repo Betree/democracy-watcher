@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  RulingParty_id: 
+  category: MyString
+  title: MyString
+  description: MyString
+
+two:
+  RulingParty_id: 
+  category: MyString
+  title: MyString
+  description: MyString

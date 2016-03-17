@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  PromiseStatus_id: 
+  title: MyString
+  url: MyString
+
+two:
+  PromiseStatus_id: 
+  title: MyString
+  url: MyString
