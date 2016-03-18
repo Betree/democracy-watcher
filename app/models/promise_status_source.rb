@@ -1,3 +1,3 @@
 class PromiseStatusSource < ActiveRecord::Base
-  belongs_to :PromiseStatus
+  belongs_to :promise_status
 end

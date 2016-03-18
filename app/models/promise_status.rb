@@ -1,3 +1,3 @@
 class PromiseStatus < ActiveRecord::Base
-  belongs_to :Promise
+  belongs_to :promise
 end

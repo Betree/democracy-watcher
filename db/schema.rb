@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317003806) do
+ActiveRecord::Schema.define(version: 20160318164221) do
+
+  create_table "campaigns", force: :cascade do |t|
+    t.date     "vote_date"
+    t.integer  "political_party_id"
+    t.integer  "leader_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "campaigns", ["political_party_id"], name: "index_campaigns_on_political_party_id"
 
   create_table "political_parties", force: :cascade do |t|
     t.string   "name"
@@ -57,25 +67,24 @@ ActiveRecord::Schema.define(version: 20160317003806) do
   add_index "promise_statuses", ["promise_id"], name: "index_promise_statuses_on_promise_id"
 
   create_table "promises", force: :cascade do |t|
-    t.integer  "ruling_party_id"
+    t.integer  "campaign_id"
     t.string   "category"
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "promises", ["ruling_party_id"], name: "index_promises_on_ruling_party_id"
+  add_index "promises", ["campaign_id"], name: "index_promises_on_campaign_id"
 
   create_table "ruling_parties", force: :cascade do |t|
-    t.integer  "political_party_id"
-    t.integer  "leader_id"
+    t.integer  "campaign_id"
     t.date     "mandate_start"
     t.date     "mandate_end"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "ruling_parties", ["political_party_id"], name: "index_ruling_parties_on_political_party_id"
+  add_index "ruling_parties", ["campaign_id"], name: "index_ruling_parties_on_campaign_id"
 
 end

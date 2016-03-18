@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vote_date: 2016-03-18
+  political_party_id: 
+  leader_id: 1
+
+two:
+  vote_date: 2016-03-18
+  political_party_id: 
+  leader_id: 1
