@@ -1,0 +1,7 @@
+%p
+  - if not @ruling_party
+    Seems like there's no government. Anarchy !
+  - else
+    = @ruling_party.political_party.name
+    lead by
+    = @ruling_party.leader.name

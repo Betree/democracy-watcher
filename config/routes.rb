@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  resources :ruling_party
+
+  # Political party
+    # View
+    # Campaigns list
+      #
+
+  # Promise
+    # View
+
+  # Ruling party
+    # View (list promises)
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
