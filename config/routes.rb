@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :ruling_party
+  root 'ruling_parties#show_current'
 
   # Political party
     # View
