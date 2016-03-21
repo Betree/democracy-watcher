@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 20160318164221) do
     t.integer  "promise_id"
     t.string   "title"
     t.string   "details"
-    t.date     "date_change"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.date     "date_start"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "promise_statuses", ["promise_id"], name: "index_promise_statuses_on_promise_id"
