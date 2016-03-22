@@ -1,13 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  Promise_id: 
-  title: MyString
+dropped:
+  title: Dropped
   details: MyString
-  date_change: 2016-03-17
+  date_start: 2016-03-17
 
-two:
-  Promise_id: 
-  title: MyString
+validated:
+  title: Validated
   details: MyString
-  date_change: 2016-03-17
+  date_start: 2016-03-17
+

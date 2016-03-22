@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  political_party_id: 
-  leader_id: 
   mandate_start: 2016-03-17
   mandate_end: 2016-03-17
 
 two:
-  political_party_id: 
-  leader_id: 
   mandate_start: 2016-03-17
   mandate_end: 2016-03-17

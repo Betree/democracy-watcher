@@ -1,11 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  PromiseStatus_id: 
-  title: MyString
-  url: MyString
-
-two:
-  PromiseStatus_id: 
-  title: MyString
-  url: MyString
+#one:
+#  media: The Onion
+#  title: Euro has been replaced by peanuts
+#  url: http://theonion.com/very-cool
+#
+#two:
+#  media: Times
+#  title: No more peanuts, let's go back to Euro
+#  url: http://theonion.com/too-bad

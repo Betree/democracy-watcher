@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160318164221) do
 
   create_table "promise_sources", force: :cascade do |t|
     t.integer  "promise_id"
+    t.string   "media"
     t.string   "title"
     t.string   "url"
     t.datetime "created_at", null: false
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160318164221) do
 
   create_table "promise_status_sources", force: :cascade do |t|
     t.integer  "promise_status_id"
+    t.string   "media"
     t.string   "title"
     t.string   "url"
     t.datetime "created_at",        null: false
@@ -68,7 +70,7 @@ ActiveRecord::Schema.define(version: 20160318164221) do
 
   create_table "promises", force: :cascade do |t|
     t.integer  "campaign_id"
-    t.string   "category"
+    t.integer  "category"
     t.string   "title"
     t.string   "description"
     t.datetime "created_at",  null: false
