@@ -1,6 +1,9 @@
 class RulingParty < ActiveRecord::Base
-  belongs_to :campaign
-  delegate :political_party, :leader, :promises, to: :campaign
+  belongs_to  :political_party
+  belongs_to  :leader, class_name: Politician
+  has_many    :promises
+
+  enum rule_type: [:National, :State, :City]
 
   scope :for_date, -> (date) {
     where('mandate_start <= ?', date)

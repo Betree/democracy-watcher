@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  promise_id: 
-  title: MyString
-  url: MyString
+  promise_id:
+  media: The Onion
+  title: All dogs will get 5$
+  url: theonion.org
 
 two:
-  promise_id: 
-  title: MyString
-  url: MyString
+  promise_id:
+  media: The Onion
+  title: No more country for rabbits
+  url: theonion.org
