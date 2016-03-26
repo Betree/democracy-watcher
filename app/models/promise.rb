@@ -1,3 +1,6 @@
+# Author::    Benjamin Piouffle
+# License::   MIT
+
 class Promise < ActiveRecord::Base
   belongs_to  :ruling_party
   has_many    :promise_statuses

@@ -1,3 +1,8 @@
+# Author::    Benjamin Piouffle
+# License::   MIT
+#
+# Defines a party ruling on a city, a state or an entire country
+
 class RulingParty < ActiveRecord::Base
   belongs_to  :political_party
   belongs_to  :leader, class_name: Politician
@@ -5,8 +10,8 @@ class RulingParty < ActiveRecord::Base
 
   enum rule_type: [:National, :State, :City]
 
-  scope :for_date, -> (date) {
-    where('mandate_start <= ?', date)
-      .where('mandate_end >= ?', date)
-  }
+  # Get the ruling party for a given +date+
+  def self.for_date (date)
+    where('mandate_start <= ?', date).where('mandate_end >= ?', date)
+  end
 end

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  promise_id:
-  media: The Onion
   title: All dogs will get 5$
   url: theonion.org
+  source_type: promise
+  media: The Onion
 
 two:
-  promise_id:
-  media: The Onion
   title: No more country for rabbits
   url: theonion.org
+  source_type: promise
+  media: The Onion

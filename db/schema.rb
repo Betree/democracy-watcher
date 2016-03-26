@@ -25,42 +25,10 @@ ActiveRecord::Schema.define(version: 20160317003806) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "promise_sources", force: :cascade do |t|
-    t.integer  "promise_id"
-    t.string   "media",      null: false
-    t.string   "title",      null: false
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "promise_sources", ["promise_id"], name: "index_promise_sources_on_promise_id"
-
-  create_table "promise_status_sources", force: :cascade do |t|
-    t.integer  "promise_status_id"
-    t.string   "media",             null: false
-    t.string   "title",             null: false
-    t.string   "url"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  add_index "promise_status_sources", ["promise_status_id"], name: "index_promise_status_sources_on_promise_status_id"
-
-  create_table "promise_statuses", force: :cascade do |t|
-    t.integer  "promise_id",  null: false
-    t.string   "title",       null: false
-    t.text     "description"
-    t.date     "date_start"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "promise_statuses", ["promise_id"], name: "index_promise_statuses_on_promise_id"
-
   create_table "promises", force: :cascade do |t|
     t.integer  "ruling_party_id", null: false
     t.integer  "category"
+    t.integer  "status",          null: false
     t.string   "title",           null: false
     t.text     "description"
     t.datetime "created_at",      null: false
@@ -80,5 +48,17 @@ ActiveRecord::Schema.define(version: 20160317003806) do
   end
 
   add_index "ruling_parties", ["political_party_id"], name: "index_ruling_parties_on_political_party_id"
+
+  create_table "sources", force: :cascade do |t|
+    t.integer  "promise_id"
+    t.integer  "source_type", null: false
+    t.string   "media",       null: false
+    t.string   "title",       null: false
+    t.string   "url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "sources", ["promise_id"], name: "index_sources_on_promise_id"
 
 end
