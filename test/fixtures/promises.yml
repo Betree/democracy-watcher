@@ -2,14 +2,14 @@
 
 one:
   ruling_party_id: 1
-  category: Security
+  subject: 1
   title: Control the internetz
   description: Cats are ruling the Internet. Something must be done !
   status: Not yet started
 
 two:
   ruling_party_id: 1
-  category: Economy
+  subject: 2
   title: Replace Euro (€) by peanuts
   description: Peanuts are not only of great value, they can also be eaten if you're hungry
   status: Done

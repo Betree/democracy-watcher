@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: Security
+  title: Internet
+
+two:
+  category: Economy
+  title: Money
+
+

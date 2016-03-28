@@ -8,7 +8,7 @@ class RulingParty < ActiveRecord::Base
   belongs_to  :leader, class_name: Politician
   has_many    :promises
 
-  enum rule_type: [:National, :State, :City]
+  enum rule_type: [:national, :state, :city]
 
   # Get the ruling party for a given +date+
   def self.for_date (date)

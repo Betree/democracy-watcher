@@ -3,9 +3,11 @@
 
 class Promise < ActiveRecord::Base
   belongs_to  :ruling_party
-  has_many    :promise_statuses
+  belongs_to  :subject, class_name: PromiseSubject
+  has_many    :sources
 
-  enum        category: [:Culture, :Economy, :Environment, :Government, :Immigration, :Security, :Education]
+  enum        status:   [:not_yet_started, :in_progress, :done, :broken]
 
-  validates   :category, presence: true
+  validates   :status, presence: true
+  validates   :subject, presence: true
 end

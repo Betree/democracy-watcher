@@ -25,9 +25,16 @@ ActiveRecord::Schema.define(version: 20160317003806) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "promise_subjects", force: :cascade do |t|
+    t.integer  "category",   null: false
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "promises", force: :cascade do |t|
     t.integer  "ruling_party_id", null: false
-    t.integer  "category"
+    t.integer  "subject_id",      null: false
     t.integer  "status",          null: false
     t.string   "title",           null: false
     t.text     "description"
@@ -39,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160317003806) do
 
   create_table "ruling_parties", force: :cascade do |t|
     t.integer  "political_party_id"
-    t.integer  "leader"
+    t.integer  "leader_id"
     t.integer  "rule_type",          null: false
     t.date     "mandate_start",      null: false
     t.date     "mandate_end"
