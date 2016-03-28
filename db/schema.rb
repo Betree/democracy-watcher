@@ -11,82 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318164221) do
-
-  create_table "campaigns", force: :cascade do |t|
-    t.date     "vote_date"
-    t.integer  "political_party_id"
-    t.integer  "leader_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  add_index "campaigns", ["political_party_id"], name: "index_campaigns_on_political_party_id"
+ActiveRecord::Schema.define(version: 20160317003806) do
 
   create_table "political_parties", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "politicians", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "promise_sources", force: :cascade do |t|
-    t.integer  "promise_id"
-    t.string   "media"
+  create_table "promise_subjects", force: :cascade do |t|
+    t.integer  "category",   null: false
     t.string   "title"
-    t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "promise_sources", ["promise_id"], name: "index_promise_sources_on_promise_id"
-
-  create_table "promise_status_sources", force: :cascade do |t|
-    t.integer  "promise_status_id"
-    t.string   "media"
-    t.string   "title"
-    t.string   "url"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  add_index "promise_status_sources", ["promise_status_id"], name: "index_promise_status_sources_on_promise_status_id"
-
-  create_table "promise_statuses", force: :cascade do |t|
-    t.integer  "promise_id"
-    t.string   "title"
-    t.string   "details"
-    t.date     "date_start"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "promise_statuses", ["promise_id"], name: "index_promise_statuses_on_promise_id"
 
   create_table "promises", force: :cascade do |t|
-    t.integer  "campaign_id"
-    t.integer  "category"
-    t.string   "title"
-    t.string   "description"
+    t.integer  "ruling_party_id", null: false
+    t.integer  "subject_id",      null: false
+    t.integer  "status",          null: false
+    t.string   "title",           null: false
+    t.text     "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "promises", ["ruling_party_id"], name: "index_promises_on_ruling_party_id"
+
+  create_table "ruling_parties", force: :cascade do |t|
+    t.integer  "political_party_id"
+    t.integer  "leader_id"
+    t.integer  "rule_type",          null: false
+    t.date     "mandate_start",      null: false
+    t.date     "mandate_end"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "ruling_parties", ["political_party_id"], name: "index_ruling_parties_on_political_party_id"
+
+  create_table "sources", force: :cascade do |t|
+    t.integer  "promise_id"
+    t.integer  "source_type", null: false
+    t.string   "media",       null: false
+    t.string   "title",       null: false
+    t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "promises", ["campaign_id"], name: "index_promises_on_campaign_id"
-
-  create_table "ruling_parties", force: :cascade do |t|
-    t.integer  "campaign_id"
-    t.date     "mandate_start"
-    t.date     "mandate_end"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "ruling_parties", ["campaign_id"], name: "index_ruling_parties_on_campaign_id"
+  add_index "sources", ["promise_id"], name: "index_sources_on_promise_id"
 
 end

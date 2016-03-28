@@ -1,3 +1,6 @@
+# Author::    Benjamin Piouffle
+# License::   MIT
+
 class PoliticalParty < ActiveRecord::Base
-  has_many :campaigns
+  validates :name, presence: true
 end

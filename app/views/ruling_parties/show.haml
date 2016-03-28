@@ -5,5 +5,12 @@
     = @ruling_party.political_party.name
     lead by
     = @ruling_party.leader.name
-%hr
+    %hr
+      -# TODO : We should only show categories for which @ruling_party has set promise
+      - for category, id in PromiseSubject.categories.sort
+        = category
+    %hr
+      - for promise in @ruling_party.promises.all.sort_by { |p| p.subject.category }
+        %div
+          = "[#{promise.status}] (#{promise.subject.category}) #{promise.title}"
 

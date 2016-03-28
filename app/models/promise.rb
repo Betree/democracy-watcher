@@ -1,6 +1,13 @@
+# Author::    Benjamin Piouffle
+# License::   MIT
+
 class Promise < ActiveRecord::Base
-  belongs_to :campaign
-  has_many :promise_statuses
-  enum category: [:Culture, :Economy, :Environment, :Government, :Immigration, :Security]
-  validates :category, presence: true
+  belongs_to  :ruling_party
+  belongs_to  :subject, class_name: PromiseSubject
+  has_many    :sources
+
+  enum        status:   [:not_yet_started, :in_progress, :done, :broken]
+
+  validates   :status, presence: true
+  validates   :subject, presence: true
 end

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  promise_id: 
-  title: MyString
-  url: MyString
+  category: Security
+  title: Internet
 
 two:
-  promise_id: 
-  title: MyString
-  url: MyString
+  category: Economy
+  title: Money
+
+

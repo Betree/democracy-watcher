@@ -1,12 +1,12 @@
 require 'test_helper'
 
 class PromiseTest < ActiveSupport::TestCase
-  test 'Category cannot be something else that what is defined in the enum' do
-    assert_raise(ArgumentError) { Promise.create(category: 'SURELY NOT A VALID CATEGORY !') }
+  test 'Subject cannot be null nor empty' do
+    assert_not Promise.create(subject: nil).valid?
   end
 
-  test 'Category cannot be null nor empty' do
-    assert_not Promise.create(category: nil).valid?
-    assert_not Promise.create(category: '').valid?
+  test 'Status cannot be null nor empty' do
+    assert_not Promise.create(status: nil).valid?
+    assert_not Promise.create(status: '').valid?
   end
 end

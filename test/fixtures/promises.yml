@@ -1,12 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category: Security
+  ruling_party_id: 1
+  subject: 1
   title: Control the internetz
   description: Cats are ruling the Internet. Something must be done !
+  status: Not yet started
 
 two:
-  category: Economy
+  ruling_party_id: 1
+  subject: 2
   title: Replace Euro (€) by peanuts
   description: Peanuts are not only of great value, they can also be eaten if you're hungry
+  status: Done
 

@@ -1,19 +1,9 @@
 Rails.application.routes.draw do
-  root 'ruling_parties#show_current'
+  root 'ruling_parties#show_current_national'
 
-  # Political party
-    # View
-    # Campaigns list
-      #
-
-  # Promise
-    # View
-
-  # Ruling party
-    # View (list promises)
-
-
-
+  get ':rule_type/current/' => 'ruling_parties#show_current'
+  get ':rule_type/:period/' => 'ruling_parties#show'
+  get ':rule_type/:period/:promise' => 'promises#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
