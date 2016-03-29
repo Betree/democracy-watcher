@@ -1,0 +1,21 @@
+fr:
+  # Models
+  promise:
+    status:
+      not_yet_started: Pas encore commencé
+      in_progress: En cours
+      done: Terminé
+      broken: Brisée
+
+    subject:
+      culture: Culture
+      economy: Economie
+      education: Education
+      environment: Environement
+      immigration: Immigration
+
+  # Views
+  ruling_parties:
+    show:
+      no_gov: Aucun gouvernement actuellement. Anarchie !
+      party_description: ! 'Mandat %{start_year}-%{end_year} du %{party} dirigé par %{leader}'
