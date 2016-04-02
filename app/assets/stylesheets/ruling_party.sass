@@ -1,0 +1,18 @@
+.promises-list
+  .promise
+    cursor: pointer
+    .status, .title
+      display: inline-block
+
+    .status
+      margin-right: 10px
+      .status-not_yet_started
+        @extend .fa-clock-o
+      .status-in_progress
+        @extend .fa-cogs
+      .status-done
+        @extend .fa-check-square-o
+      .status-broken
+        @extend .fa-chain-broken
+    .more-infos
+      padding: 10px

@@ -12,6 +12,12 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
 gem 'haml' # Use HAML for templates
 
+gem 'bourbon', '~> 4.2.6' # A simple and lightweight mixin library for Sass
+gem 'neat', '~> 1.7.4' # A lightweight, semantic grid framework built with Bourbon
+gem 'font-awesome-rails'
+
+gem 'jquery-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

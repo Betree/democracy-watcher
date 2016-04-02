@@ -1,15 +1,27 @@
-%p
-  - if not @ruling_party
-    = t('.no_gov')
-  - else
-    = t('.party_description', party: @ruling_party.political_party.name, leader: @ruling_party.leader.name,
-        start_year: @ruling_party.mandate_start.year, end_year: @ruling_party.mandate_end.year)
-    %hr
-      -# TODO : We should only show categories for which @ruling_party has set promise
-      - for category, id in PromiseSubject.categories.sort
-        = t(category)
-    %hr
-      - for promise in @ruling_party.promises.all.sort_by { |p| p.subject.category }
-        %div
-          = "[#{t(promise.status, scope: 'promise.status')}] (#{t(promise.subject.category, scope: 'promise.subject')}) #{promise.title}"
+#main-content
+  %p
+    - if not @ruling_party
+      = t('.no_gov')
+    - else
+      = t('.party_description', party: @ruling_party.political_party.name, leader: @ruling_party.leader.name,
+          start_year: @ruling_party.mandate_start.year, end_year: @ruling_party.mandate_end.year)
+      %hr
+        %ul.promises-list.accordion-tabs-minimal
+          -# TODO : We should only show categories for which @ruling_party has set promise
+          - for category, promises in @ruling_party.promises.categorized
+            %li.tab-header-and-content
+              %a.tab-link{href: '#', class: ('is-active' if category == 0)}
+                = t(category)
+              .tab-content
+                %ul.accordion
+                  - for promise in promises
+                    %li.promise
+                      %a.js-accordion-trigger
+                        .status
+                          %i.fa{class: "status-#{promise.status}", title: t(promise.status, scope: 'promise.status')}
+                        .title
+                          = promise.title
+                      .more-infos
+                        = promise.description
+
 

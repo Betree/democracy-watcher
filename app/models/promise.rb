@@ -10,4 +10,8 @@ class Promise < ActiveRecord::Base
 
   validates   :status, presence: true
   validates   :subject, presence: true
+
+  def self.categorized
+    categorized = eager_load(:subject).all.group_by { |p| p.subject.category }
+  end
 end
