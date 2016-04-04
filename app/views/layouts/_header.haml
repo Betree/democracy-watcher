@@ -1,0 +1,22 @@
+%header.navigation{:role => 'banner'}
+  .navigation-wrapper
+    %a.logo{:href => root_url}
+      %img{:alt => 'Logo Image', :src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png'}
+    %a#js-mobile-menu.navigation-menu-button{:href => 'javascript:void(0)'} MENU
+    %nav{:role => 'navigation'}
+      %ul#js-navigation-menu.navigation-menu.show
+        %li.nav-link
+          %a{:href => 'javascript:void(0)'}
+            = t('current_government', scope: 'header')
+        %li.nav-link
+          %a{:href => 'javascript:void(0)'}
+            = t('past_governments', scope: 'header')
+        %li.nav-link
+          %a{:href => 'javascript:void(0)'}
+            = t('FAQ', scope: 'header')
+    .navigation-tools
+      .search-bar
+        %form{:role => 'search'}
+          %input{:placeholder => t('search', scope: 'header'), :type => 'search'}/
+          %button{:type => 'submit'}
+            %img{:alt => 'Search Icon', :src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png'}

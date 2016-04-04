@@ -15,7 +15,13 @@ fr:
       immigration: Immigration
 
   # Views
+  header:
+    current_government: Gouvernement actuel
+    past_governments: Gouvernement passés
+    FAQ: FAQ
+    search: Rechercher
+
   ruling_parties:
     show:
       no_gov: Aucun gouvernement actuellement. Anarchie !
-      party_description: ! 'Mandat %{start_year}-%{end_year} du %{party} dirigé par %{leader}'
+      party_description: ! '%{party} dirigé par %{leader}'

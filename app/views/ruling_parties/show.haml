@@ -1,27 +1,43 @@
-#main-content
-  %p
+-# Sub header with party name, politician and mandate period
+#party_description.side-image
+  .side-image-content
     - if not @ruling_party
       = t('.no_gov')
     - else
-      = t('.party_description', party: @ruling_party.political_party.name, leader: @ruling_party.leader.name,
-          start_year: @ruling_party.mandate_start.year, end_year: @ruling_party.mandate_end.year)
-      %hr
-        %ul.promises-list.accordion-tabs-minimal
-          -# TODO : We should only show categories for which @ruling_party has set promise
-          - for category, promises in @ruling_party.promises.categorized
-            %li.tab-header-and-content
-              %a.tab-link{href: '#', class: ('is-active' if category == 0)}
-                = t(category)
-              .tab-content
-                %ul.accordion
-                  - for promise in promises
-                    %li.promise
-                      %a.js-accordion-trigger
-                        .status
-                          %i.fa{class: "status-#{promise.status}", title: t(promise.status, scope: 'promise.status')}
-                        .title
-                          = promise.title
-                      .more-infos
-                        = promise.description
+      %h1
+        = t('.party_description', party: @ruling_party.political_party.name, leader: @ruling_party.leader.name)
+      %p
+        = t((@ruling_party.is_current ? '.mandate_period_current' : '.mandate_period_past'),
+        mandate_start: @ruling_party.mandate_start.year, mandate_end: @ruling_party.mandate_end.year)
+  .images-wrapper
+
+#main-content
+  -# Tabs view
+  %ul.promises-list.accordion-tabs-minimal
+    - for category, promises in @ruling_party.promises.categorized
+      %li.tab-header-and-content
+        %a.tab-link{href: '#', class: ('is-active' if category == 0)}
+          = t(category)
+        .tab-content
+          %ul.accordion
+            - for promise in promises
+              %li.promise
+                %a.js-accordion-trigger
+                  .status
+                    %i.fa{class: "status-#{promise.status}", title: t(promise.status, scope: 'promise.status')}
+                  .title
+                    = promise.title
+                .more-infos
+                  = promise.description
+
+  -# Global mandate statistics
+  #mandate-statistics
+    = "Days in office : #{(DateTime.now - @ruling_party.mandate_start).to_i}"
+    - for promise_groups_counts in @ruling_party.promises.group(:status).count
+      .status
+        - status_name = Promise.statuses.index(promise_groups_counts[0])
+        %i.fa{class: "status-#{status_name}", title: t(status_name, scope: 'promise.status')}
+        = "#{t(status_name, scope: 'promise.status')}: #{promise_groups_counts[1]}"
+
 
 

@@ -14,4 +14,8 @@ class RulingParty < ActiveRecord::Base
   def self.for_date (date)
     where('mandate_start <= ?', date).where('mandate_end >= ?', date)
   end
+
+  def is_current
+    Date.current.between? mandate_start, mandate_end
+  end
 end

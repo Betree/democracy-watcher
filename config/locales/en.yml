@@ -15,7 +15,16 @@ en:
       immigration: Immigration
 
   # Views
+  header:
+    current_government: Current government
+    past_governments: Past governments
+    FAQ: FAQ
+    search: Search
+
   ruling_parties:
     show:
       no_gov: Seems like there's no government. Anarchy !
-      party_description: ! 'Mandate %{start_year}-%{end_year} of the %{party} lead by %{leader}'
+      party_description: ! '%{party} lead by %{leader}'
+      mandate_period_past: ! 'From %{mandate_start} to %{mandate_end}'
+      mandate_period_current: ! 'Since %{mandate_start}, until %{mandate_end}'
+

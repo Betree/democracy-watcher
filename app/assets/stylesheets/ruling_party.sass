@@ -1,18 +1,34 @@
-.promises-list
-  .promise
-    cursor: pointer
-    .status, .title
-      display: inline-block
+@import "neat-helpers"
 
-    .status
-      margin-right: 10px
-      .status-not_yet_started
-        @extend .fa-clock-o
-      .status-in_progress
-        @extend .fa-cogs
-      .status-done
-        @extend .fa-check-square-o
-      .status-broken
-        @extend .fa-chain-broken
-    .more-infos
-      padding: 10px
+#main-content
+  @include row()
+
+  .promises-list
+    @include span-columns(12)
+    @include media($large-screen)
+      @include span-columns(9)
+      margin-top: -50px
+    .promise
+      cursor: pointer
+      .status, .title
+        display: inline-block
+
+      .status
+        margin-right: 10px
+      .more-infos
+        padding: 10px
+
+  #mandate-statistics
+    @include span-columns(12)
+    @include media($large-screen)
+      @include span-columns(3)
+    margin-top: 1.5em
+
+  .status-not_yet_started
+    @extend .fa-clock-o
+  .status-in_progress
+    @extend .fa-cogs
+  .status-done
+    @extend .fa-check-square-o
+  .status-broken
+    @extend .fa-chain-broken
