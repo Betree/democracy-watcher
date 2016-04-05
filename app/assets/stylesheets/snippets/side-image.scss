@@ -15,7 +15,7 @@
   @include row(table);
 
   .images-wrapper {
-    @include background(url('http://i.f1g.fr/media/ext/805x453_crop/www.lefigaro.fr/medias/2012/06/04/0ecce36c-ae52-11e1-af80-b5c35bfe013e-493x500.jpg'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
+    @include background(url('http://i.f1g.fr/media/ext/805x453_crop/www.lefigaro.fr/medias/2012/06/04/0ecce36c-ae52-11e1-af80-b5c35bfe013e-493x500.jpg'), no-repeat scroll);
     display: block;
     min-height: 12em;
     padding: 3em;

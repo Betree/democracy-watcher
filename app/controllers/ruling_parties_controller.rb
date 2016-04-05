@@ -14,9 +14,15 @@ class RulingPartiesController < ApplicationController
 
   def show
     @ruling_party = RulingParty.eager_load(:political_party, :leader)
-                      .where(rule_type: params[:rule_type])
-                      .for_date(params[:period]).first
+                          .where(rule_type: params[:rule_type])
+                          .for_date(params[:period]).first
     render 'show'
+  end
+
+  def list_previous
+    @ruling_parties = RulingParty.eager_load(:political_party, :leader)
+                          .where(rule_type: params[:rule_type])
+    render 'list'
   end
 
   def ruling_party_params

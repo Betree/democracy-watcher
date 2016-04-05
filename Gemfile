@@ -18,6 +18,8 @@ gem 'font-awesome-rails'
 
 gem 'jquery-rails'
 
+gem 'active_link_to'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

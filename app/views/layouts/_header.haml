@@ -1,19 +1,20 @@
 %header.navigation{:role => 'banner'}
   .navigation-wrapper
     %a.logo{:href => root_url}
-      %img{:alt => 'Logo Image', :src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png'}
+      %h1 DemocracyWatcher
     %a#js-mobile-menu.navigation-menu-button{:href => 'javascript:void(0)'} MENU
     %nav{:role => 'navigation'}
       %ul#js-navigation-menu.navigation-menu.show
         %li.nav-link
           %a{:href => 'javascript:void(0)'}
-            = t('current_government', scope: 'header')
+            = active_link_to t('current_government', scope: 'header'), :root, :active => :exclusive
         %li.nav-link
           %a{:href => 'javascript:void(0)'}
-            = t('past_governments', scope: 'header')
+            = active_link_to t('past_governments', scope: 'header'), '/national/history'
         %li.nav-link
           %a{:href => 'javascript:void(0)'}
-            = t('FAQ', scope: 'header')
+            = active_link_to t('FAQ', scope: 'header'), faq_path
+
     .navigation-tools
       .search-bar
         %form{:role => 'search'}

@@ -1,17 +1,7 @@
--# Sub header with party name, politician and mandate period
-#party_description.side-image
-  .side-image-content
-    - if not @ruling_party
-      = t('.no_gov')
-    - else
-      %h1
-        = t('.party_description', party: @ruling_party.political_party.name, leader: @ruling_party.leader.name)
-      %p
-        = t((@ruling_party.is_current ? '.mandate_period_current' : '.mandate_period_past'),
-        mandate_start: @ruling_party.mandate_start.year, mandate_end: @ruling_party.mandate_end.year)
-  .images-wrapper
-
 #main-content
+  -# Sub header with party name, politician and mandate period
+  = render 'ruling_party_description', ruling_party: @ruling_party
+
   -# Tabs view
   %ul.promises-list.accordion-tabs-minimal
     - for category, promises in @ruling_party.promises.categorized
@@ -32,10 +22,10 @@
 
   -# Global mandate statistics
   #mandate-statistics
-    = "Days in office : #{(DateTime.now - @ruling_party.mandate_start).to_i}"
+    = t('days_in_office', nb_days: (DateTime.now - @ruling_party.mandate_start).to_i)
     - for promise_groups_counts in @ruling_party.promises.group(:status).count
       .status
-        - status_name = Promise.statuses.index(promise_groups_counts[0])
+        - status_name = Promise.statuses.key(promise_groups_counts[0])
         %i.fa{class: "status-#{status_name}", title: t(status_name, scope: 'promise.status')}
         = "#{t(status_name, scope: 'promise.status')}: #{promise_groups_counts[1]}"
 
