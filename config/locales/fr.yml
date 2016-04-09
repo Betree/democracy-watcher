@@ -21,10 +21,8 @@ fr:
     FAQ: FAQ
     search: Rechercher
 
-  ruling_parties:
-    show:
-      no_gov: Aucun gouvernement actuellement. Anarchie !
-      party_description: ! '%{party} dirigé par %{leader}'
-      mandate_period_past: ! 'De %{mandate_start} à %{mandate_end}'
-      mandate_period_current: ! "Depuis %{mandate_start}, jusqu'au %{mandate_end}"
-      days_in_office: ! 'Days in office : %{nb_days}'
+  no_gov: Aucun gouvernement actuellement. Anarchie !
+  party_description: ! '%{party} dirigé par %{leader}'
+  mandate_period_past: ! 'De %{mandate_start} à %{mandate_end}'
+  mandate_period_current: ! "Depuis %{mandate_start}, jusqu'au %{mandate_end}"
+  days_in_office: ! 'En mandat depuis %{nb_days} jours'

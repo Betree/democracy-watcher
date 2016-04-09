@@ -1,6 +1,7 @@
 @import "neat-helpers"
 
 #main-content
+  @include outer-container
   @include row()
 
   .promises-list
@@ -23,6 +24,8 @@
     @include media($large-screen)
       @include span-columns(3)
     margin-top: 1.5em
+    .progress-bar-indication
+      margin-bottom: 1em
 
   .status-not_yet_started
     @extend .fa-clock-o

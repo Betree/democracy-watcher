@@ -6,6 +6,9 @@ gem 'rails', '4.2.5.2'
 # Internationalization
 gem 'rails-i18n', '~> 4.0.0'
 
+# For easy config via config/settings.yml file
+gem 'config'
+
 # Assets
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets

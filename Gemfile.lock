@@ -54,7 +54,11 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
+    config (1.1.0)
+      activesupport (>= 3.0)
+      deep_merge (~> 1.0.1)
     debug_inspector (0.0.2)
+    deep_merge (1.0.1)
     erubis (2.7.0)
     execjs (2.6.0)
     font-awesome-rails (4.5.0.1)
@@ -157,6 +161,7 @@ DEPENDENCIES
   bourbon (~> 4.2.6)
   byebug
   coffee-rails (~> 4.1.0)
+  config
   font-awesome-rails
   haml
   jquery-rails

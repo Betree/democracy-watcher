@@ -14,6 +14,10 @@
 
   @include row(table);
 
+  @include media($max-width + 400) {
+    padding: 0 12rem;
+  }
+
   .images-wrapper {
     @include background(url('http://i.f1g.fr/media/ext/805x453_crop/www.lefigaro.fr/medias/2012/06/04/0ecce36c-ae52-11e1-af80-b5c35bfe013e-493x500.jpg'), no-repeat scroll);
     display: block;
