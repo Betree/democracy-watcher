@@ -17,7 +17,7 @@ fr:
   # Views
   header:
     current_government: Gouvernement actuel
-    past_governments: Gouvernement passés
+    past_governments: Gouvernements passés
     FAQ: FAQ
     search: Rechercher
 
