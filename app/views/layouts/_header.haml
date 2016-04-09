@@ -1,0 +1,24 @@
+%header.navigation{:role => 'banner'}
+  .navigation-wrapper
+    %a.logo{:href => root_url}
+      %h1
+        = Settings.site_title ? Settings.site_title : 'DemocracyWatcher'
+    %a#js-mobile-menu.navigation-menu-button{:href => 'javascript:void(0)'} MENU
+    %nav{:role => 'navigation'}
+      %ul#js-navigation-menu.navigation-menu.show
+        %li.nav-link
+          %a{:href => 'javascript:void(0)'}
+            = active_link_to t('current_government', scope: 'header'), :root, :active => :exclusive
+        %li.nav-link
+          %a{:href => 'javascript:void(0)'}
+            = active_link_to t('past_governments', scope: 'header'), '/national/history'
+        %li.nav-link
+          %a{:href => 'javascript:void(0)'}
+            = active_link_to t('FAQ', scope: 'header'), faq_path
+
+    .navigation-tools
+      .search-bar
+        %form{:role => 'search'}
+          %input{:placeholder => t('search', scope: 'header'), :type => 'search'}/
+          %button{:type => 'submit'}
+            %img{:alt => 'Search Icon', :src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png'}

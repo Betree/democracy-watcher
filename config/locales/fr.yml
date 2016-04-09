@@ -15,7 +15,14 @@ fr:
       immigration: Immigration
 
   # Views
-  ruling_parties:
-    show:
-      no_gov: Aucun gouvernement actuellement. Anarchie !
-      party_description: ! 'Mandat %{start_year}-%{end_year} du %{party} dirigé par %{leader}'
+  header:
+    current_government: Gouvernement actuel
+    past_governments: Gouvernements passés
+    FAQ: FAQ
+    search: Rechercher
+
+  no_gov: Aucun gouvernement actuellement. Anarchie !
+  party_description: ! '%{party} dirigé par %{leader}'
+  mandate_period_past: ! 'De %{mandate_start} à %{mandate_end}'
+  mandate_period_current: ! "Depuis %{mandate_start}, jusqu'au %{mandate_end}"
+  days_in_office: ! 'En mandat depuis %{nb_days} jours'
