@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160317003806) do
     t.integer  "rule_type",          null: false
     t.date     "mandate_start",      null: false
     t.date     "mandate_end"
+    t.string   "banner"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

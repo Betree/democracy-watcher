@@ -9,6 +9,9 @@ gem 'rails-i18n', '~> 4.0.0'
 # For easy config via config/settings.yml file
 gem 'config'
 
+gem 'rails_admin'
+gem 'carrierwave'
+
 # Assets
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets

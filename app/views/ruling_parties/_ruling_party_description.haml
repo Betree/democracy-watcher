@@ -6,3 +6,4 @@
       = t((ruling_party.is_current ? 'mandate_period_current' : 'mandate_period_past'),
           mandate_start: ruling_party.mandate_start.year, mandate_end: ruling_party.mandate_end.year)
   .images-wrapper
+    %img{src: ruling_party.banner}
