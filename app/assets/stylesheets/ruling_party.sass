@@ -20,7 +20,8 @@
         padding: 10px
 
   #mandate-statistics
-    @include span-columns(12)
+    @include outer-container
+    max-width: 80%
     @include media($large-screen)
       @include span-columns(3)
     margin-top: 1.5em

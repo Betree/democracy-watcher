@@ -6,7 +6,7 @@
     - for category, promises in @ruling_party.promises.categorized
       %li.tab-header-and-content
         %a.tab-link{href: '#', class: ('is-active' if category == 0)}
-          = t(category)
+          = t(category, scope: 'promise.subject')
         .tab-content
           %ul.accordion
             - for promise in promises
@@ -29,9 +29,9 @@
 
     - for promise_groups_counts in @ruling_party.promises.group(:status).count
       .status
-        - status_name = Promise.statuses.key(promise_groups_counts[0])
-        %i.fa{class: "status-#{status_name}", title: t(status_name, scope: 'promise.status')}
-        = "#{t(status_name, scope: 'promise.status')}: #{promise_groups_counts[1]}"
+        - status_name = t(Promise.statuses.key(promise_groups_counts[0]), scope: 'promise.status')
+        %i.fa{class: "status-#{status_name}", title: status_name}
+        = "#{status_name}: #{promise_groups_counts[1]}"
 
 
 
