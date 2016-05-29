@@ -1,18 +1,41 @@
 fr:
   # Models
+  activerecord:
+      models:
+        politician:
+          one: Politicien
+          other: Politiciens
+        promise:
+          one: Promesse
+          other: Promesses
+        political_party:
+          one: Parti politique
+          other: Partis politiques
+        promise_subject:
+          one: Domaine
+          other: Domaines
+        political_party:
+          one: Parti politique
+          other: Partis politiques
+        ruling_party:
+          one: Parti au pouvoir
+          other: Partis au pouvoir
+
+
+  # Models detailsls
   promise:
     status:
       not_yet_started: Pas encore commencé
       in_progress: En cours
       done: Terminé
-      broken: Brisée
+      broken: Brisé
 
     subject:
-      culture: Culture
-      economy: Economie
-      education: Education
-      environment: Environement
-      immigration: Immigration
+      cultur : Culture
+      econom : Economie
+      educatio : Education
+      environmen : Environement
+      immigratio : Immigration
 
   # Views
   header:

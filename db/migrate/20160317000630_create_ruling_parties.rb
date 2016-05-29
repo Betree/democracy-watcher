@@ -8,6 +8,8 @@ class CreateRulingParties < ActiveRecord::Migration
       t.date        :mandate_start, null: false # We always know when a mandate starts
       t.date        :mandate_end, null: true # ...but not necessarily when it ends (which is not always a good sign :O)
 
+      t.string      :banner, null: true
+
       t.timestamps null: false
 
       add_foreign_key :ruling_parties, :politicians, column: :leader_id

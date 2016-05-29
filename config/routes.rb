@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'ruling_parties#show_current_national'
 
   get '/faq' => 'static_pages#faq', as: 'faq'

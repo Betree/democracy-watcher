@@ -12,33 +12,36 @@
   background: $side-image-content-background;
   border-bottom: 1px solid $base-border-color;
 
-  @include row(table);
+  @include row();
 
   @include media($max-width + 400) {
     padding: 0 12rem;
   }
 
   .images-wrapper {
-    @include background(url('http://i.f1g.fr/media/ext/805x453_crop/www.lefigaro.fr/medias/2012/06/04/0ecce36c-ae52-11e1-af80-b5c35bfe013e-493x500.jpg'), no-repeat scroll);
     display: block;
     min-height: 12em;
-    padding: 3em;
-    background-position: top;
-    background-size: cover;
-    border-right: $side-image-border;
-    @include span-columns(2);
-
+    padding: 1em;
     @include media($large-screen) {
-      @include span-columns(3);
+      padding: 3em;
     }
+    background-position: top;
+    background-size: 100% 100%;
+    border-right: none;
+    text-align: right;
+    img {
+      max-height: 130px;
+    }
+    @include media($medium-screen) {
+      @include span-columns(4);
+    }
+
   }
 
   .side-image-content {
-    @include span-columns(10);
+    @include span-columns(8);
     padding: 2em 4em;
-
     @include media($large-screen) {
-      @include span-columns(9);
       padding: 4em;
     }
 

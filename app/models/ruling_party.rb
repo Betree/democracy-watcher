@@ -10,6 +10,8 @@ class RulingParty < ActiveRecord::Base
 
   enum rule_type: [:national, :state, :city]
 
+  mount_uploader :banner, RulingPartyBannerUploader
+
   # Get the ruling party for a given +date+
   def self.for_date (date)
     where('mandate_start <= ?', date).where('mandate_end >= ?', date)

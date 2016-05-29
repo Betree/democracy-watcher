@@ -8,4 +8,10 @@
     = csrf_meta_tags
   %body
     = render 'layouts/header'
+    - if notice
+      %p.notice
+        = notice
+    - if alert
+      %p.alert
+        = alert
     = yield
