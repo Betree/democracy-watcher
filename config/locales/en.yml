@@ -16,22 +16,22 @@ en:
           other: Subjects
         ruling_party:
           one: Ruling party
-          other: Rulin parties
+          other: Ruling parties
 
   # Models details
   promise:
     status:
-      not_yet_started: Pas encore commencé
-      in_progress: En cours
-      done: Terminé
-      broken: Brisé
+      not_yet_started: Not yet started
+      in_progress: In progress
+      done: Done
+      broken: Broken
 
     subject:
-      culture : Culture
-      economie : Economie
-      education : Education
-      environment : Environement
-      immigration : Immigration
+      culture: Culture
+      economy: Economy
+      education: Education
+      environment: Environment
+      immigration: Immigration
 
   # Views
   header:
