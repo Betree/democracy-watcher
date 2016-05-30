@@ -14,11 +14,11 @@
             = active_link_to t('past_governments', scope: 'header'), '/national/history'
         %li.nav-link
           %a{:href => 'javascript:void(0)'}
-            = active_link_to t('FAQ', scope: 'header'), faq_path
+            = active_link_to t('About', scope: 'header'), faq_path
 
     .navigation-tools
       .search-bar
         %form{:role => 'search'}
-          %input{:placeholder => t('search', scope: 'header'), :type => 'search'}/
+          %input.disabled{:placeholder => t('search', scope: 'header'), :type => 'search', disabled: 'disabled', title: 'Coming soon !'}/
           %button{:type => 'submit'}
             %img{:alt => 'Search Icon', :src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png'}
