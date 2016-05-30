@@ -16,7 +16,13 @@ class RulingPartiesController < ApplicationController
     @ruling_party = RulingParty.eager_load(:political_party, :leader)
                           .where(rule_type: params[:rule_type])
                           .for_date(params[:period]).first
-    render 'show'
+
+    if @ruling_party
+      render('show')
+    else
+      flash[:notice] = I18n.t('no_gov')
+      render('no_party')
+    end
   end
 
   def list_previous

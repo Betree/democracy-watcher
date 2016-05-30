@@ -16,7 +16,6 @@ $flashes: (
     text-align: center;
     &:before {
       @extend .fa;
-      @extend .fa-exclamation-triangle;
     }
 
     a {
@@ -29,4 +28,12 @@ $flashes: (
       }
     }
   }
+}
+
+.alert:before, .error:before {
+  @extend .fa-exclamation-triangle;
+}
+
+.notice:before {
+  @extend .fa-info-circle;
 }

@@ -14,15 +14,12 @@ fr:
         promise_subject:
           one: Domaine
           other: Domaines
-        political_party:
-          one: Parti politique
-          other: Partis politiques
         ruling_party:
           one: Parti au pouvoir
           other: Partis au pouvoir
 
 
-  # Models detailsls
+  # Models details
   promise:
     status:
       not_yet_started: Pas encore commencé
@@ -31,11 +28,11 @@ fr:
       broken: Brisé
 
     subject:
-      cultur : Culture
-      econom : Economie
-      educatio : Education
-      environmen : Environement
-      immigratio : Immigration
+      culture : Culture
+      economie : Economie
+      education : Education
+      environment : Environement
+      immigration : Immigration
 
   # Views
   header:
@@ -44,7 +41,7 @@ fr:
     FAQ: FAQ
     search: Rechercher
 
-  no_gov: Aucun gouvernement actuellement. Anarchie !
+  no_gov: Aucun gouvernement ne dirige actuellement. Anarchie !
   party_description: ! '%{party} dirigé par %{leader}'
   mandate_period_past: ! 'De %{mandate_start} à %{mandate_end}'
   mandate_period_current: ! "Depuis %{mandate_start}, jusqu'au %{mandate_end}"
