@@ -2,7 +2,7 @@
 
 # Add fake data for development database (useful to work on the views)
 if Rails.env == 'development'
-  Admin.create!(email: 'zeboss@democracywatcher.com', password: 'password', password_confirmation: 'password')
+  Admin.create!(email: 'admin@democracywatcher.com', password: 'password', password_confirmation: 'password')
 
   party = PoliticalParty.create(name: 'Silly party')
   politician = Politician.create(name: 'Jethro Q. Walrustitty')
