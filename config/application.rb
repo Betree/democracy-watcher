@@ -4,7 +4,11 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups)
+if ENV['RACK_ENV'] == 'heroku'
+  Bundler.require(:default, :development, :heroku)
+else
+  Bundler.require(*Rails.groups)
+end
 
 module DemocracyWatcher
   class Application < Rails::Application

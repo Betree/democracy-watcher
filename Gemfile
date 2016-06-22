@@ -45,8 +45,11 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'sqlite3'  # Use sqlite3 as the database for Active Record in development only
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
+
+# Database - Use sqlite3 in dev, postgres in test
+gem 'sqlite3', :group => :development
+gem 'pg', :group => :heroku
