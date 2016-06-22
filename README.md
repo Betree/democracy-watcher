@@ -1,13 +1,6 @@
 This project aims to provide an easy way to setup a platform to track and follow organisations promesses. Any contributions and ideas are welcome !
 
-Some screenshots of the current version :
-* Front
-
-![Front view](https://github.com/Betree/democracy-watcher/blob/master/screenshots/front.jpg)
-
-* Back admin
-
-![Back admin view](https://github.com/Betree/democracy-watcher/blob/master/screenshots/back.jpg)
+You can get a basic preview of what it looks like here : https://democracy-watcher.herokuapp.com/
 
 **This project is not ready for production use yet and will probably see a lot of changes in the next versions.**
 
