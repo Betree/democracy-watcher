@@ -21,6 +21,6 @@ production:
 
 heroku:
   adapter: postgresql
-  database: democracy_watcher_db
-  pool: 5
-  timeout: 5000
+  host: localhost
+  username: user
+  database: app-dev
