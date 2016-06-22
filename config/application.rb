@@ -5,7 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 if ENV['RACK_ENV'] == 'heroku'
-  Bundler.require(:default, :development, :heroku)
+  Bundler.require(:default, :test, :heroku)
 else
   Bundler.require(*Rails.groups)
 end

@@ -52,4 +52,9 @@ end
 
 # Database - Use sqlite3 in dev, postgres in test
 gem 'sqlite3', :group => :development
-gem 'pg', :group => :heroku
+
+group :heroku do
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
