@@ -11,8 +11,8 @@ class CreateRulingParties < ActiveRecord::Migration
       t.string      :banner, null: true
 
       t.timestamps null: false
-
-      add_foreign_key :ruling_parties, :politicians, column: :leader_id
     end
+
+    add_foreign_key :ruling_parties, :politicians, column: :leader_id
   end
 end

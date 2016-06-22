@@ -8,8 +8,7 @@ class CreatePromises < ActiveRecord::Migration
       t.text        :description, null: true
 
       t.timestamps null: false
-
-      add_foreign_key :promises, :promise_subjects, column: :subject_id, index: true
     end
+    add_foreign_key :promises, :promise_subjects, column: :subject_id, index: true
   end
 end
