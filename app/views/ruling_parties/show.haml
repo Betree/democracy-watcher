@@ -42,7 +42,7 @@
 
     - for promise_groups_counts in @ruling_party.promises.group(:status).count
       .status
-        - status_name = Promise.statuses.key(promise_groups_counts[0])
+        - status_name = promise_groups_counts[0]
         - status_name_local = t(status_name, scope: 'promise.status')
         %i.fa{class: "status-#{status_name}", title: status_name_local}
         = "#{status_name_local}: #{promise_groups_counts[1]}"

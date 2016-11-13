@@ -66,5 +66,5 @@
     }
   }
 
-  @include reset-display();
+  @include display(block);
 }
