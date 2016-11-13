@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'ruling_parties#show_current_national'
 
   get '/faq' => 'static_pages#faq', as: 'faq'
-  get ':rule_type/history/' => 'ruling_parties#list_previous', as: 'ruling_parties'
+  get ':rule_type/all/' => 'ruling_parties#list_previous', as: 'ruling_parties'
   get ':rule_type/current/' => 'ruling_parties#show_current'
   get ':rule_type/:period/' => 'ruling_parties#show'
   get ':rule_type/:period/:promise' => 'promises#show'

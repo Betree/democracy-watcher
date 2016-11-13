@@ -11,6 +11,16 @@
       margin-top: -50px
     .promise
       cursor: pointer
+      // TODO
+      //&.not_yet_started
+      //  background: orange
+      //&.broken
+      //  background: darkred
+      //&.done
+      //  background: green
+      //&.status-in_progress
+      //  background: dodgerblue
+
       .status, .title
         display: inline-block
 
@@ -18,6 +28,15 @@
         margin-right: 10px
       .more-infos
         padding: 10px
+        .description
+          border-bottom: 1px solid #BBBBBB
+          margin-bottom: 7px
+          padding-bottom: 10px
+          white-space: pre-wrap
+        .sources
+          font-size: 14px
+          font-style: italic
+          color: #6F6F6F
 
   #mandate-statistics
     @include outer-container

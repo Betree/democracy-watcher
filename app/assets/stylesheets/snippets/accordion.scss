@@ -20,7 +20,7 @@
   $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2%);
   $accordion-menu-list-padding: ($base-spacing / 2) $gutter;
 
-  background-color: $accordion-menu-background;
+  background-color: white;
   border: $accordion-menu-border;
   margin: 0 0 $base-spacing 0;
   padding: 0;
@@ -53,7 +53,7 @@
 
   .more-infos {
     display: none;
-    background-color: $accordion-menu-sub-background;
+    background-color: #F9F9F9;
     border-top: $accordion-menu-border;
     box-shadow: inset 0 1px 1px $accordion-menu-sub-inset;
     cursor: default;

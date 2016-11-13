@@ -34,15 +34,16 @@ fr:
       environment : Environement
       immigration : Immigration
 
-  # Views
-  header:
-    current_government: Gouvernement actuel
-    past_governments: Gouvernements passés
-    FAQ: FAQ
-    search: Rechercher
+  current_government: Gouvernement actuel
+  all_governments: Tous les gouvernements
+  statistics: "Statistiques"
+  FAQ: FAQ
+  search: Rechercher
 
   no_gov: Aucun gouvernement ne dirige actuellement. Anarchie !
   party_description: ! '%{party} dirigé par %{leader}'
   mandate_period_past: ! 'De %{mandate_start} à %{mandate_end}'
   mandate_period_current: ! "Depuis %{mandate_start}, jusqu'au %{mandate_end}"
   days_in_office: ! 'En mandat depuis %{nb_days} jours'
+  no_source: "Aucune source n'a été donnée pour cette promesse"
+  About: "A propos"

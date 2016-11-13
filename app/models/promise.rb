@@ -4,7 +4,7 @@
 class Promise < ActiveRecord::Base
   belongs_to  :ruling_party
   belongs_to  :subject, class_name: PromiseSubject
-  has_many    :sources, :dependent => :delete_all
+  has_many    :sources, class_name: PromiseSource
 
   enum        status:   [:not_yet_started, :in_progress, :done, :broken]
 
@@ -12,6 +12,6 @@ class Promise < ActiveRecord::Base
   validates   :subject, presence: true
 
   def self.categorized
-    eager_load(:subject).all.group_by { |p| p.subject.category }
+    eager_load(:subject, :sources).all.group_by { |p| p.subject.category }
   end
 end

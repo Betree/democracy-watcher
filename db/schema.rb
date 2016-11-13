@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414203010) do
+ActiveRecord::Schema.define(version: 20160729182342) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 20160414203010) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "promise_sources", force: :cascade do |t|
+    t.integer  "promise_id", null: false
+    t.integer  "source_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "promise_sources", ["promise_id"], name: "index_promise_sources_on_promise_id"
+  add_index "promise_sources", ["source_id"], name: "index_promise_sources_on_source_id"
 
   create_table "promise_subjects", force: :cascade do |t|
     t.integer  "category",   null: false
@@ -76,15 +86,11 @@ ActiveRecord::Schema.define(version: 20160414203010) do
   add_index "ruling_parties", ["political_party_id"], name: "index_ruling_parties_on_political_party_id"
 
   create_table "sources", force: :cascade do |t|
-    t.integer  "promise_id"
-    t.integer  "source_type", null: false
-    t.string   "media",       null: false
-    t.string   "title",       null: false
+    t.string   "media",      null: false
+    t.string   "title",      null: false
     t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "sources", ["promise_id"], name: "index_sources_on_promise_id"
 
 end

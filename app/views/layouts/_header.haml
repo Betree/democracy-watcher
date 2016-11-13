@@ -8,17 +8,19 @@
       %ul#js-navigation-menu.navigation-menu.show
         %li.nav-link
           %a{:href => 'javascript:void(0)'}
-            = active_link_to t('current_government', scope: 'header'), :root, :active => :exclusive
+            = active_link_to t('current_government'), :root, :active => :exclusive
         %li.nav-link
           %a{:href => 'javascript:void(0)'}
-            = active_link_to t('past_governments', scope: 'header'), '/national/history'
+            = active_link_to t('all_governments'), '/national/all'
+        -#TODO: %li.nav-link
+        -#  %a{:href => 'javascript:void(0)'}
+        -#    = active_link_to t('statistics'), '/national/history'
         %li.nav-link
           %a{:href => 'javascript:void(0)'}
-            = active_link_to t('About', scope: 'header'), faq_path
+            = active_link_to t('About'), faq_path
 
     .navigation-tools
       .search-bar
         %form{:role => 'search'}
-          %input.disabled{:placeholder => t('search', scope: 'header'), :type => 'search', disabled: 'disabled', title: 'Coming soon !'}/
-          %button{:type => 'submit'}
-            %img{:alt => 'Search Icon', :src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png'}
+          %input.disabled{:placeholder => t('search'), :type => 'search', disabled: 'disabled', title: 'Coming soon !'}/
+          %button{:type => 'submit', :class => 'fa fa-search'}

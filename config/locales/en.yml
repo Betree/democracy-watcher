@@ -33,12 +33,11 @@ en:
       environment: Environment
       immigration: Immigration
 
-  # Views
-  header:
-    current_government: Current government
-    past_governments: Previous governments
-    FAQ: FAQ
-    search: Search
+  current_government: Current government
+  all_governments: All goverments
+  statistics: Statistics
+  FAQ: FAQ
+  search: Search
 
   no_gov: Seems like there's no government. Anarchy !
   party_description: ! '%{party} lead by %{leader}'
@@ -46,3 +45,5 @@ en:
   mandate_period_current: ! 'Since %{mandate_start}, until %{mandate_end}'
   days_in_office: ! 'Days in office : %{nb_days}'
 
+  no_source: "No source have been given for this promise"
+  About: "About"
