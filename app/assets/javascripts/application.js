@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery2.js
+//= require i18n/translations
 //= require react
 //= require react_ujs
 //= require components

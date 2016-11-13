@@ -1,0 +1,13 @@
+.fullPageMessage
+  max-width: 600px
+  padding: 45px 35px
+  margin: 55px auto 0
+  &.error
+    box-shadow: 0 0 30px 0 #f3b4b4 inset
+  &.alert
+    box-shadow: 0 0 30px 0 #ecdf8d inset
+  &.notice
+    box-shadow: 0 0 30px 0 #c5d6ef inset
+
+  .message-title
+    @include display(inline)

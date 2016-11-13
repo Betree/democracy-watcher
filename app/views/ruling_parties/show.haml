@@ -1,5 +1,5 @@
 -# Sub header with party name, politician and mandate period
-= render 'ruling_party_description', ruling_party: @ruling_party
+= react_component('RulingEntityDescription', ruling_entity: @ruling_party)
 #main-content
   -# Tabs view
   %ul.promises-list.accordion-tabs-minimal
@@ -11,26 +11,28 @@
           %ul.accordion
             - for promise in promises
               %li.promise{class: "#{promise.status}"}
-                %a.js-accordion-trigger
-                  .status
-                    %i.fa{class: "status-#{promise.status}", title: t(promise.status, scope: 'promise.status')}
-                  .title
-                    = promise.title
-                .more-infos
-                  - if promise.description?
-                    .description<
-                      = promise.description
-                  .sources
-                    - if promise.sources.empty?
-                      = t('no_source')
-                    - else
-                      -# Todo : Pluralize / translate
-                      Source :
-                      - for source in promise.sources
-                        = source.media
-                        \-
-                        %a{href: source.url}
-                          = source.title
+                = react_component('Promise', promise: promise)
+              -#
+              -#  %a.js-accordion-trigger
+              -#    .status
+              -#      %i.fa{class: "status-#{promise.status}", title: t(promise.status, scope: 'promise.status')}
+              -#    .title
+              -#      = promise.title
+              -#  .more-infos
+              -#    - if promise.description?
+              -#      .description<
+              -#        = promise.description
+              -#    .sources
+              -#      - if promise.sources.empty?
+              -#        = t('no_source')
+              -#      - else
+              -#        -# Todo : Pluralize / translate
+              -#        Source :
+              -#        - for source in promise.sources
+              -#          = source.media
+              -#          \-
+              -#          %a{href: source.url}
+              -#            = source.title
 
   -# Global mandate statistics
   #mandate-statistics
@@ -46,6 +48,3 @@
         - status_name_local = t(status_name, scope: 'promise.status')
         %i.fa{class: "status-#{status_name}", title: status_name_local}
         = "#{status_name_local}: #{promise_groups_counts[1]}"
-
-
-

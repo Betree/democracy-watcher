@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -26,10 +25,9 @@ ActiveRecord::Schema.define(version: 20160729182342) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "political_parties", force: :cascade do |t|
     t.string   "name",       null: false
@@ -48,10 +46,9 @@ ActiveRecord::Schema.define(version: 20160729182342) do
     t.integer  "source_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["promise_id"], name: "index_promise_sources_on_promise_id"
+    t.index ["source_id"], name: "index_promise_sources_on_source_id"
   end
-
-  add_index "promise_sources", ["promise_id"], name: "index_promise_sources_on_promise_id"
-  add_index "promise_sources", ["source_id"], name: "index_promise_sources_on_source_id"
 
   create_table "promise_subjects", force: :cascade do |t|
     t.integer  "category",   null: false
@@ -68,9 +65,8 @@ ActiveRecord::Schema.define(version: 20160729182342) do
     t.text     "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["ruling_party_id"], name: "index_promises_on_ruling_party_id"
   end
-
-  add_index "promises", ["ruling_party_id"], name: "index_promises_on_ruling_party_id"
 
   create_table "ruling_parties", force: :cascade do |t|
     t.integer  "political_party_id"
@@ -81,9 +77,8 @@ ActiveRecord::Schema.define(version: 20160729182342) do
     t.string   "banner"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.index ["political_party_id"], name: "index_ruling_parties_on_political_party_id"
   end
-
-  add_index "ruling_parties", ["political_party_id"], name: "index_ruling_parties_on_political_party_id"
 
   create_table "sources", force: :cascade do |t|
     t.string   "media",      null: false

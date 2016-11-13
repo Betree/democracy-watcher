@@ -5,6 +5,7 @@ gem 'rails', '5.0.0.1'
 
 # Internationalization
 gem 'rails-i18n', '~> 4.0.0'
+gem 'i18n-js', '>= 3.0.0.rc11'
 
 # For easy config via config/settings.yml file
 gem 'config'
