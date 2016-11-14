@@ -19,6 +19,7 @@ class Promise < ActiveRecord::Base
   def as_json(options)
     json = super(include: :sources)
     json[:sources] = self.sources
+    json[:subject] = self.subject
     json
   end
 end

@@ -29,10 +29,11 @@ fr:
 
     subject:
       culture : Culture
-      economie : Economie
+      economy : Economie
       education : Education
       environment : Environement
       immigration : Immigration
+      security: Sécurité
 
   current_government: Gouvernement actuel
   all_governments: Tous les gouvernements

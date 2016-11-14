@@ -1,7 +1,7 @@
 class @Promise extends React.Component
   constructor: (props) ->
     super(props)
-    this.state = {isExpended: false}
+    this.state = {is_expended: false}
 
   render: ->
     # Build sources list
@@ -17,7 +17,7 @@ class @Promise extends React.Component
           </div>
           <div className="title">{this.props.promise.title}</div>
         </div>
-        <div className={"more-infos " + (this.state.isExpended ? 'is-expanded' : '')}>
+        <div className={"more-infos " + (this.state.is_expended ? 'is-expanded' : '')}>
           { this.props.promise.description &&
               <div className="description">{this.props.promise.description}</div>
           }
@@ -29,6 +29,6 @@ class @Promise extends React.Component
 
   click_show_more_info: (e) =>
     e.preventDefault()
-    this.setState (prevState) ->
-      {isExpended: !prevState.isExpended}
+    this.setState (prev_state) ->
+      {is_expended: !prev_state.is_expended}
 
