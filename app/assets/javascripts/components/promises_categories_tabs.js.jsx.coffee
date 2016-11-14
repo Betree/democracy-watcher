@@ -8,8 +8,6 @@ class @PromisesCategoriesTabs extends React.Component
 
     promises_tabs = for category, promises of categorized_promises
       local_category = I18n.t("promise.subject.#{category}")
-      ` <Tab key={category} title={local_category} content={
-          <PromisesList promises={promises}/>
-        }/>`
+      TabsView.create_tab(category, local_category, `<PromisesList promises={promises}/>`)
 
-    `<TabsView className="promises-list">{promises_tabs}</TabsView>`
+    `<TabsView className="promises-list" tabs={promises_tabs}/>`
