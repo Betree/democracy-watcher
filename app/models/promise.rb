@@ -12,14 +12,17 @@ class Promise < ActiveRecord::Base
   validates   :status, presence: true
   validates   :subject, presence: true
 
-  def self.categorized
-    eager_load(:subject, :sources).all.group_by { |p| p.subject.category }
-  end
-
   def as_json(options)
-    json = super(include: :sources)
-    json[:sources] = self.sources
-    json[:subject] = self.subject
+    json = super()
+
+    if self.association_cached?(:sources)
+      json[:sources] = self.sources
+    end
+
+    if self.association_cached?(:subject)
+      json[:subject] = self.subject
+    end
+
     json
   end
 end

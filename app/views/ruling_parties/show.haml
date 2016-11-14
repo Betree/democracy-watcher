@@ -2,9 +2,12 @@
 = react_component('RulingEntityDescription', ruling_entity: @ruling_party)
 
 #main-content
+  -# Let's cache promises as they can be used for both viewing them and generating statistics
+  - promises = @ruling_party.promises.eager_load(:subject, :sources)
+
   -# Tabs view
-  = react_component('PromisesCategoriesTabs', {promises: @ruling_party.promises})
+  = react_component('PromisesCategoriesTabs', {promises: promises})
 
   -# Global mandate statistics
-  = react_component('MandateStatistics', ruling_party: @ruling_party, promises: @ruling_party.promises)
+  = react_component('MandateStatistics', ruling_party: @ruling_party, promises: promises)
 
