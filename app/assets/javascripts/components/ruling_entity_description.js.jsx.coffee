@@ -9,7 +9,7 @@
       mandate_end: new Date(this.props.ruling_entity.mandate_end).getFullYear()
     )
 
-    `<div id='party_description' className="side-image">
+    `<div className="side-image">
         <div className='side-image-content'>
           <h1>{ this.props.ruling_entity.name }</h1>
             <p>{ mandate_period_str }</p>
