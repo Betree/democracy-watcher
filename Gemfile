@@ -24,8 +24,6 @@ gem 'bourbon', '~> 4.2.7' # A simple and lightweight mixin library for Sass
 gem 'neat', '~> 1.8.0' # A lightweight, semantic grid framework built with Bourbon
 gem 'font-awesome-rails'
 
-gem 'jquery-rails'
-
 gem 'active_link_to'
 
 gem 'devise'

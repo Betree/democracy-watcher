@@ -237,7 +237,6 @@ DEPENDENCIES
   font-awesome-rails
   haml
   i18n-js (>= 3.0.0.rc11)
-  jquery-rails
   neat (~> 1.8.0)
   pg
   rails (= 5.0.0.1)
