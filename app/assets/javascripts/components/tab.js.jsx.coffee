@@ -9,13 +9,22 @@ class @Tab extends React.Component
 
   render: ->
     ` <li className="tab-header-and-content">
-          <a className={"tab-link " + (this.state.is_active ? 'is-active' : '')}>
+          <a className={"tab-link " + (this.state.is_active ? 'is-active' : '')}
+              onClick={this.on_click}
+          >
             { this.props.title }
           </a>
-          <div className="tab-content">{ this.props.content }</div>
+          <div className={"tab-content " + (this.state.is_active ? 'is-open' : '')}>
+              { this.props.content }
+          </div>
       </li>`
 
-#TODO  click_on_tab: (e) =>
-#    e.preventDefault()
-#    this.setState (prev_state) ->
-#      {is_expended: !prev_state.is_expended}
+  componentDidMount: () ->
+    if @props.initial_active_state
+      @props.select_tab(this)
+
+  on_click: (e) =>
+    @props.select_tab(this)
+
+  set_active: (is_active) ->
+    this.setState({is_active: is_active})
