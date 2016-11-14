@@ -51,6 +51,7 @@ header.navigation
     padding-right: 1em
     text-decoration: none
     text-transform: uppercase
+    cursor: pointer
 
     @include media ($horizontal-bar-mode) 
       display: none
@@ -70,15 +71,11 @@ header.navigation
 
   ul.navigation-menu 
     clear: both
-    display: none
     margin: 0 auto
     overflow: visible
     padding: 0
     width: 100%
     z-index: 9999
-
-    &.show 
-      display: block
 
     @include media ($horizontal-bar-mode) 
       display: inline

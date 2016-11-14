@@ -32,6 +32,7 @@ en:
       education: Education
       environment: Environment
       immigration: Immigration
+      security: Security
 
   current_government: Current government
   all_governments: All goverments
@@ -39,11 +40,14 @@ en:
   FAQ: FAQ
   search: Search
 
-  no_gov: Seems like there's no government. Anarchy !
+  no_gov: No governments found
   party_description: ! '%{party} lead by %{leader}'
-  mandate_period_past: ! 'From %{mandate_start} to %{mandate_end}'
-  mandate_period_current: ! 'Since %{mandate_start}, until %{mandate_end}'
+
+  period_past: ! 'From %{mandate_start} to %{mandate_end}'
+  period_current: ! 'Since %{mandate_start}, until %{mandate_end}'
+  period_years_past: 'From %{mandate_start} to %{mandate_end}'
+  period_years_current: ! 'Since %{mandate_start}, until %{mandate_end}'
   days_in_office: ! 'Days in office : %{nb_days}'
 
   no_source: "No source have been given for this promise"
-  About: "About"
+  About: About

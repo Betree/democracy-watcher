@@ -2,7 +2,9 @@
 # License::   MIT
 
 class PromiseSource < ActiveRecord::Base
-  has_one :promise
-  has_one :source
-  eager_load :source
+  belongs_to :promise
+  belongs_to :source
+
+  validates   :promise, presence: true
+  validates   :source, presence: true
 end

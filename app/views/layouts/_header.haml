@@ -3,24 +3,16 @@
     %a.logo{:href => root_url}
       %h1
         = Settings.site_title ? Settings.site_title : 'DemocracyWatcher'
-    %a#js-mobile-menu.navigation-menu-button{:href => 'javascript:void(0)'} MENU
-    %nav{:role => 'navigation'}
-      %ul#js-navigation-menu.navigation-menu.show
-        %li.nav-link
-          %a{:href => 'javascript:void(0)'}
-            = active_link_to t('current_government'), :root, :active => :exclusive
-        %li.nav-link
-          %a{:href => 'javascript:void(0)'}
-            = active_link_to t('all_governments'), '/national/all'
-        -#TODO: %li.nav-link
-        -#  %a{:href => 'javascript:void(0)'}
-        -#    = active_link_to t('statistics'), '/national/history'
-        %li.nav-link
-          %a{:href => 'javascript:void(0)'}
-            = active_link_to t('About'), faq_path
 
-    .navigation-tools
-      .search-bar
-        %form{:role => 'search'}
-          %input.disabled{:placeholder => t('search'), :type => 'search', disabled: 'disabled', title: 'Coming soon !'}/
-          %button{:type => 'submit', :class => 'fa fa-search'}
+    - links = []
+    - links.append(active_link_to t('current_government'), :root, :active => :exclusive)
+    - links.append(active_link_to t('all_governments'), '/national/all')
+    - links.append(active_link_to t('About'), faq_path)
+    = react_component 'ResponsiveNavigationMenu', links: links
+
+    -# TODO: Search bar
+    -#.navigation-tools
+    -#  .search-bar
+    -#    %form{:role => 'search'}
+    -#      %input.disabled{:placeholder => t('search'), :type => 'search', disabled: 'disabled', title: 'Coming soon !'}/
+    -#      %button{:type => 'submit', :class => 'fa fa-search'}

@@ -34,7 +34,7 @@
     border-bottom: $accordion-menu-border;
     list-style: none;
 
-    > a {
+    .promise-header {
       color: $accordion-menu-color;
       display: block;
       padding: $accordion-menu-list-padding;
@@ -52,7 +52,6 @@
   }
 
   .more-infos {
-    display: none;
     background-color: #F9F9F9;
     border-top: $accordion-menu-border;
     box-shadow: inset 0 1px 1px $accordion-menu-sub-inset;

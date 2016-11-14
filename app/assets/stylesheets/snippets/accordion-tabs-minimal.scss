@@ -61,9 +61,11 @@
       }
     }
   }
+  .tab-content:not(.is-open) {
+    display: none;
+  }
 
   .tab-content {
-    display: none;
     padding: $base-spacing $gutter;
     width: 100%;
 

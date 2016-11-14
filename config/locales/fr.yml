@@ -29,10 +29,11 @@ fr:
 
     subject:
       culture : Culture
-      economie : Economie
+      economy : Economie
       education : Education
       environment : Environement
       immigration : Immigration
+      security: Sécurité
 
   current_government: Gouvernement actuel
   all_governments: Tous les gouvernements
@@ -40,10 +41,12 @@ fr:
   FAQ: FAQ
   search: Rechercher
 
-  no_gov: Aucun gouvernement ne dirige actuellement. Anarchie !
+  no_gov: Aucun gouvernement
   party_description: ! '%{party} dirigé par %{leader}'
-  mandate_period_past: ! 'De %{mandate_start} à %{mandate_end}'
-  mandate_period_current: ! "Depuis %{mandate_start}, jusqu'au %{mandate_end}"
+  period_past: ! 'Du %{mandate_start} au %{mandate_end}'
+  period_current: ! "Depuis %{mandate_start}, jusqu'au %{mandate_end}"
+  period_years_past: 'De %{mandate_start} à %{mandate_end}'
+  period_years_current: ! "Depuis %{mandate_start}, jusqu'à %{mandate_end}"
   days_in_office: ! 'En mandat depuis %{nb_days} jours'
   no_source: "Aucune source n'a été donnée pour cette promesse"
   About: "A propos"

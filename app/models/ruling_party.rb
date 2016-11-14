@@ -8,6 +8,8 @@ class RulingParty < ActiveRecord::Base
   belongs_to  :leader, class_name: Politician
   has_many    :promises, :dependent => :delete_all
 
+  eager_load [:leader, :political_party]
+
   enum rule_type: [:national, :state, :city]
 
   mount_uploader :banner, RulingPartyBannerUploader
@@ -27,10 +29,24 @@ class RulingParty < ActiveRecord::Base
     mandate_end - mandate_start > 0 ? (mandate_end - mandate_start).to_i : 1
   end
 
+  # Generate the best name we can using leader and party names
   def name
-    return I18n.t('party_description', party=political_party, leader=leader) if political_party and leader
-    return political_party.name if political_party
-    return leader.name if leader
-    id.to_s
+    if self.political_party and self.leader
+      I18n.t('party_description', party: self.political_party.name, leader: self.leader.name)
+    elsif self.political_party
+      self.political_party.name
+    elsif self.leader
+      self.leader.name
+    else
+      self.id.to_s
+    end
+  end
+
+  # Overrides default as_json to always includes political_party, leader and generated name in details
+  def as_json(options)
+    json = super(:include => [:political_party, :leader])
+    json[:name] = self.name
+    json[:is_current] = self.is_current
+    json
   end
 end
