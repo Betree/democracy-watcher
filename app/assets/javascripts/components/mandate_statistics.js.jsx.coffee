@@ -3,9 +3,10 @@ class @MandateStatistics extends React.Component
     # Mandate duration
     date_start = new Date(@props.ruling_party.mandate_start)
     date_end = new Date(@props.ruling_party.mandate_end)
+    total_mandate_duration = Math.ceil(((date_end - date_start) ? 1) / 86400000)
     time_in_office = Math.min(Date.now(), date_end.getTime()) - date_start.getTime()
     days_in_office = Math.floor(time_in_office / 86400000) # Convert milliseconds to days
-    progress_percent = Math.floor(days_in_office / @props.ruling_party.total_mandate_duration * 100)
+    mandate_progress = Math.floor(days_in_office / total_mandate_duration * 100)
 
     # Promises statistics
     promises_status_count = {}
@@ -23,8 +24,6 @@ class @MandateStatistics extends React.Component
     # Main block
     `<div id='mandate-statistics'>
         { I18n.t('days_in_office', {nb_days: days_in_office}) }
-        <div className="progress-bar-indication">
-            <span className="meter" style={{width: progress_percent + '%'}}><p></p></span>
-        </div>
+        <ProgressBar progress={mandate_progress}/>
         <ul>{ react_promises_status }</ul>
     </div>`

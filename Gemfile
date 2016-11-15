@@ -14,15 +14,18 @@ gem 'rails_admin'
 gem 'carrierwave'
 
 # Assets
-gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
+gem 'sassc-rails' # Use SASS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
-gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and others
 gem 'haml' # Use HAML for templates
-gem 'react-rails' # Use react to generate views
+gem 'react-rails' # Use react to generate others
 
 gem 'bourbon', '~> 4.2.7' # A simple and lightweight mixin library for Sass
 gem 'neat', '~> 1.8.0' # A lightweight, semantic grid framework built with Bourbon
-gem 'font-awesome-rails'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-font-awesome'
+end
 
 gem 'active_link_to'
 
@@ -43,7 +46,7 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
+  # Access an IRB console on exception pages or by using <%= console %> in others
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

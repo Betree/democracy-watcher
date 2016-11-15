@@ -1,11 +1,40 @@
+/* ------ Vendor ------ */
+// Provides us with useful mixins
 @import "bourbon"
+
+// Grid system
 @import "neat"
+
+// Icons
 @import "font-awesome"
+
+/* ------ Bitters - Scaffold styles, variable and structure for bourbon projects ------ */
+// See https://github.com/thoughtbot/bitters
 @import "./base/base"
-@import "./snippets/*"
+
+/* ------ Custom ------ */
+// Contains all theme variables, overriding base variables.
+// Replace this line with your own theme if you want to.
+@import "./themes/light"
+
+// For auth pages
 @import "./devise/*"
+
+// Legacy others styles
+@import "./others/*"
+
+// Contains stylesheets for each component
 @import "./components/*"
 
-/* Import all files from stylesheets folder */
-@import "./*"
+/* ------ Globals ------ */
 
+// Icons
+i.fa
+  &.status-not_yet_started
+    @extend .fa-clock-o
+  &.status-in_progress
+    @extend .fa-cogs
+  &.status-done
+    @extend .fa-check-square-o
+  &.status-broken
+    @extend .fa-chain-broken
