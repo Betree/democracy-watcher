@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actioncable (5.0.0.1)
       actionpack (= 5.0.0.1)
@@ -81,6 +82,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    ffi (1.9.14)
     font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
@@ -138,6 +140,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.0.1)
       sprockets-rails (>= 2.0.0)
+    rails-assets-font-awesome (4.7.0)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
@@ -189,6 +192,17 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (1.10.1)
+      bundler
+      ffi (~> 1.9.6)
+      sass (>= 3.3.0)
+    sassc-rails (1.3.0)
+      railties (>= 4.0.0)
+      sass
+      sassc (~> 1.9)
+      sprockets (> 2.11)
+      sprockets-rails
+      tilt
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -234,17 +248,17 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   config
   devise
-  font-awesome-rails
   haml
   i18n-js (>= 3.0.0.rc11)
   neat (~> 1.8.0)
   pg
   rails (= 5.0.0.1)
+  rails-assets-font-awesome!
   rails-i18n (~> 4.0.0)
   rails_12factor
   rails_admin
   react-rails
-  sass-rails (~> 5.0)
+  sassc-rails
   sdoc (~> 0.4.0)
   spring
   sqlite3

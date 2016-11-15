@@ -23,12 +23,6 @@ class RulingParty < ActiveRecord::Base
     Date.current.between? mandate_start, mandate_end
   end
 
-  # Returns the total number of days mandate is set up for / lasted
-  def total_mandate_duration
-    # The condition allows us to say rule stayed for 1 day even if mandate_start and mandate_end are the same
-    mandate_end - mandate_start > 0 ? (mandate_end - mandate_start).to_i : 1
-  end
-
   # Generate the best name we can using leader and party names
   def name
     if self.political_party and self.leader

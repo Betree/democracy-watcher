@@ -1,9 +1,0 @@
-@mixin repeating-radial-gradient($direction, $color-stop1, $color-stop2...)
-  background-image: -webkit-repeating-radial-gradient($direction, $color-stop1, $color-stop2)
-
-.dotted
-  @include repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%)
-  -webkit-background-size: 3px 3px
-  -moz-background-size: 3px 3px
-  background-size: 3px 3px
-  

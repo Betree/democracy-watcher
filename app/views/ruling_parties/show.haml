@@ -1,7 +1,7 @@
 -# Sub header with party name, politician and mandate period
 = react_component('RulingEntityDescription', ruling_entity: @ruling_party)
 
-#main-content
+#ruling-entity-data
   -# Let's cache promises as they can be used for both viewing them and generating statistics
   - promises = @ruling_party.promises.eager_load(:subject, :sources)
 

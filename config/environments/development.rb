@@ -39,5 +39,10 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  # React development version
   config.react.variant = :development
+
+  # Configure SASS
+  config.sass.preferred_syntax = :sass
+  config.sass.inline_source_maps = true
 end
