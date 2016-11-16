@@ -9,6 +9,12 @@ $font-family-logo: 'Righteous-Regular'
 
 // Main logo
 .main-logo
+  &:hover
+    @extend .animated
+    @extend .infinite
+    @extend .pulse
+    @include animation-duration(1.5s)
+
   h1
     font-family: $font-family-logo, $heading-font-family
     text-shadow: 1px 1px 1px #6D6D6D

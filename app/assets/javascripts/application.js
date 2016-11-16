@@ -1,6 +1,6 @@
+// Vendor
 //= require turbolinks
-//= require i18n/translations
 //= require react
 //= require react_ujs
+// Local
 //= require components
-//= require_tree .

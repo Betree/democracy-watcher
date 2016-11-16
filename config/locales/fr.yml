@@ -43,10 +43,13 @@ fr:
 
   no_gov: Aucun gouvernement
   party_description: ! '%{party} dirigé par %{leader}'
+
   period_past: ! 'Du %{mandate_start} au %{mandate_end}'
   period_current: ! "Depuis %{mandate_start}, jusqu'au %{mandate_end}"
   period_years_past: 'De %{mandate_start} à %{mandate_end}'
   period_years_current: ! "Depuis %{mandate_start}, jusqu'à %{mandate_end}"
   days_in_office: ! 'En mandat depuis %{nb_days} jours'
+  terminated: Terminé
+
   no_source: "Aucune source n'a été donnée pour cette promesse"
   About: "A propos"

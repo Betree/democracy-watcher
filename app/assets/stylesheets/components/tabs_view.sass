@@ -53,6 +53,9 @@
     display: none
 
   .tab-content
+    @extend .animated
+    @extend .fadeIn
+    @include animation-duration(0.5s)
     padding: $base-spacing $gutter
     width: 100%
 

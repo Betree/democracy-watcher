@@ -1,17 +1,22 @@
+/* ------ Header ------ */
+$ruling-entity-header-background: #F9F9F9
+
 .ruling-entity-header
   $base-line-height: 1.5em !default
   $action-color: #477DCA !default
   $dark-gray: #333 !default
   $min-height: 215px
+  $max-height: $min-height
   $base-font-color: $dark-gray !default
   $side-image-background-top: #B5EBEB
   $side-image-background-bottom: #5DAC5D
-  $side-image-content-background: #F9F9F9
   $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, 0.8), 30%)
 
-  background: $side-image-content-background
+  background: $ruling-entity-header-background
   border-bottom: 1px solid $base-border-color
   min-height: $min-height
+  max-height: $max-height
+  overflow: hidden
 
   @include row()
 
@@ -43,6 +48,7 @@
 
     h1
       margin-bottom: 0.9em
+      color: $base-font-color
 
     h4
       background: #BBB
@@ -57,13 +63,23 @@
       margin-bottom: 3em
 
 
+/* ------ Data ------ */
+html[data-turbolinks-preview]
+  #ruling-entity-data
+    @extend .animated
+    @extend .fadeIn
+
 #ruling-entity-data
   @include outer-container
   @include row()
+  border-top: 1px solid $base-border-color
+  margin-top: -1px
 
   .tabs-view
+    margin-top: -50px
     @include span-columns(12)
     @include media($large-screen)
       @include span-columns(9)
-      margin-top: -50px
 
+  .tab-content
+    border-top: none

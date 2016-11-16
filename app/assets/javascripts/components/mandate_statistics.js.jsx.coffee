@@ -1,12 +1,17 @@
 class @MandateStatistics extends React.Component
   render: ->
     # Mandate duration
-    date_start = new Date(@props.ruling_party.mandate_start)
-    date_end = new Date(@props.ruling_party.mandate_end)
+    date_start = new Date(@props.ruling_entity.mandate_start)
+    date_end = new Date(@props.ruling_entity.mandate_end)
     total_mandate_duration = Math.ceil(((date_end - date_start) ? 1) / 86400000)
     time_in_office = Math.min(Date.now(), date_end.getTime()) - date_start.getTime()
     days_in_office = Math.floor(time_in_office / 86400000) # Convert milliseconds to days
     mandate_progress = Math.floor(days_in_office / total_mandate_duration * 100)
+    # Use a different description for past / present mandated
+    if Date.now() > date_end.getTime()
+      mandate_duration_description = I18n.t('terminated')
+    else
+      mandate_duration_description = I18n.t('days_in_office', {nb_days: days_in_office})
 
     # Promises statistics
     promises_status_count = {}
@@ -23,7 +28,7 @@ class @MandateStatistics extends React.Component
 
     # Main block
     `<div id='mandate-statistics'>
-        { I18n.t('days_in_office', {nb_days: days_in_office}) }
+        { mandate_duration_description }
         <ProgressBar progress={mandate_progress}/>
         <ul>{ react_promises_status }</ul>
     </div>`
