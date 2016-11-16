@@ -2,24 +2,64 @@
 
 # Add fake data for development database (useful to work on the views)
 if Rails.env == 'development'
+  number_of_promises = (5..50)
+  date_start = Date.current - 3.months
+  mandate_duration = 3.years
+
   Admin.create!(email: 'admin@democracywatcher.com', password: 'password', password_confirmation: 'password')
 
-  party = PoliticalParty.create(name: 'Silly party')
-  politician = Politician.create(name: 'Jethro Q. Walrustitty')
-  ruling_party = RulingParty.create(leader: politician, political_party: party, rule_type: 'national', mandate_start: Date.current - 3.months, mandate_end: Date.current + 3.years)
-  promise_group_edu_1 = PromiseSubject.create(category: 'education', title: 'A nice subject')
-  promise_group_edu_2 = PromiseSubject.create(category: 'education', title: 'Another subject')
-  promise_group_culture = PromiseSubject.create(category: 'culture')
-  promise_group_economy = PromiseSubject.create(category: 'economy')
-  promise_group_security = PromiseSubject.create(category: 'security')
-  promise_group_environment = PromiseSubject.create(category: 'environment')
-  promise_group_immigration = PromiseSubject.create(category: 'immigration')
+  # Defines entities / leaders
+  entities = {
+    'Silly Party': 'Jethro Q. Walrustitty',
+    'Chickens Party': 'Chicko',
+    "Bird's league": 'Birdy',
+    'Medieval Backpack': 'Mike Chocolate',
+    'Risky  Toothbrush  Inequality': 'John John',
+    'Next  Proton  Sanction': 'Alt John',
+    'Empty  Soybean  Five': 'Long John',
+    'Sinister  Revival': 'Other John',
+    'Flagpole  Burial': 'John Again'
+  }
 
-  Promise.create(ruling_party: ruling_party, subject: promise_group_edu_1, status: 'not_yet_started', title: 'Educate dat godamn chicken !', description: 'A pretty nice description')
-  Promise.create(ruling_party: ruling_party, subject: promise_group_economy, status: 'not_yet_started', title: 'Do the stuff', description: 'A pretty nice description')
-  Promise.create(ruling_party: ruling_party, subject: promise_group_culture, status: 'done', title: 'Free books for the poor', description: 'A pretty nice description')
-  Promise.create(ruling_party: ruling_party, subject: promise_group_security, status: 'in_progress', title: 'Legalize blue doors', description: 'A pretty nice description')
-  Promise.create(ruling_party: ruling_party, subject: promise_group_edu_2, status: 'done', title: 'Teach all students about happiness', description: 'A pretty nice description')
-  Promise.create(ruling_party: ruling_party, subject: promise_group_environment, status: 'broken', title: 'Go to mars', description: 'A pretty nice description')
-  Promise.create(ruling_party: ruling_party, subject: promise_group_immigration, status: 'broken', title: 'What is love ? To to dodo to dodo dodo to dodo to do do', description: 'What is love ? A pretty nice description')
+  # Some promises and their descriptions
+  promises = [
+      {title: 'Educate dat godamn chicken !', description: 'A pretty nice description'},
+      {title: 'Do the stuff', description: 'A pretty nice description'},
+      {title: 'Free books for the poor', description: 'A pretty nice description'},
+      {title: 'Legalize blue doors', description: 'A pretty nice description'},
+      {title: 'Teach all students about happiness', description: 'A pretty nice description'},
+      {title: 'Go to mars', description: 'A pretty nice description'},
+      {title: 'What is love ? To to dodo to dodo dodo to dodo to do do', description: 'What is love ? A pretty nice description'}
+  ]
+
+  # Promises subjects
+  promise_subjects = [
+    PromiseSubject.create(category: 'education', title: 'A nice subject'),
+    PromiseSubject.create(category: 'education', title: 'Another subject'),
+    PromiseSubject.create(category: 'culture'),
+    PromiseSubject.create(category: 'economy'),
+    PromiseSubject.create(category: 'security'),
+    PromiseSubject.create(category: 'environment'),
+    PromiseSubject.create(category: 'immigration')
+  ]
+
+  # Promises status
+  promise_status = [:not_yet_started, :in_progress, :done, :broken]
+
+  # Create entities and their promises
+  entities.each do |entity, leader|
+    party = PoliticalParty.create(name: entity)
+    politician = Politician.create(name: leader)
+    ruling_party = RulingParty.create(leader: politician, political_party: party, rule_type: 'national',
+                                      mandate_start: date_start, mandate_end: date_start + mandate_duration)
+
+    for i in (0..rand(number_of_promises))
+      promise_data = promises.sample
+      Promise.create(ruling_party: ruling_party, subject: promise_subjects.sample, status: promise_status.sample,
+                     title: promise_data[:title], description: promise_data[:description])
+    end
+
+    date_start -= mandate_duration
+  end
+
 end
