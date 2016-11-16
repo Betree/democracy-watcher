@@ -6,6 +6,9 @@
   .status
     margin-right: 10px
   .more-infos
+    @extend .animated
+    @extend .fadeIn
+    @include animation-duration(0.2s)
     padding: 10px
     .description
       border-bottom: 1px solid #BBBBBB

@@ -16,15 +16,17 @@ gem 'carrierwave'
 # Assets
 gem 'sassc-rails' # Use SASS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
-gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and others
+gem 'coffee-rails', '~> 4.2.1' # Use CoffeeScript for .coffee assets and others
 gem 'haml' # Use HAML for templates
 gem 'react-rails' # Use react to generate others
+gem 'js-routes' # Make rails routes available in JS
 
 gem 'bourbon', '~> 4.2.7' # A simple and lightweight mixin library for Sass
 gem 'neat', '~> 1.8.0' # A lightweight, semantic grid framework built with Bourbon
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-font-awesome'
+  gem 'rails-assets-animate.css'
 end
 
 gem 'active_link_to'

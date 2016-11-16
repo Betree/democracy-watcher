@@ -48,6 +48,7 @@ en:
   period_years_past: 'From %{mandate_start} to %{mandate_end}'
   period_years_current: ! 'Since %{mandate_start}, until %{mandate_end}'
   days_in_office: ! 'Days in office : %{nb_days}'
+  terminated: Terminated
 
   no_source: "No source have been given for this promise"
   About: About

@@ -1,0 +1,23 @@
+@import show_ruling_entity
+
+.ruling-entities-list
+  $number_of_entries_before_full_delay: 3
+  $max_animation_delay: 0.30s
+  $min_animation_delay: 0s
+
+  .ruling-entity-header
+    @extend .animated
+    @extend .flipInX
+    @include animation-duration(0.6s)
+    @include animation-delay($max_animation_delay)
+
+    &:hover
+      background: darken($ruling-entity-header-background, 2)
+
+  // Progressive delay animation (elems appears one after another)
+  $cur_animation_delay: $min_animation_delay
+  $animation_step: ($max_animation_delay - $min_animation_delay) / $number_of_entries_before_full_delay
+  @for $i from 1 through $number_of_entries_before_full_delay
+    > a:nth-child(#{$i}) > .ruling-entity-header
+      @include animation-delay($cur_animation_delay)
+    $cur_animation_delay: $cur_animation_delay + $animation_step

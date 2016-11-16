@@ -16,10 +16,11 @@ class @TabsView extends React.Component
       )}</ul>`
 
   select_tab: (tab) =>
-    tab.set_active(true)
-    if @current_active_tab
-      @current_active_tab.set_active(false)
-    @current_active_tab = tab
+    unless tab is @current_active_tab
+      tab.set_active(true)
+      if @current_active_tab
+        @current_active_tab.set_active(false)
+      @current_active_tab = tab
 
   @create_tab: (key, title, content) ->
     new Tab(key, title, content)
