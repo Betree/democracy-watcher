@@ -1,13 +1,14 @@
-@RulingEntityDescription = React.createClass
-  getDefaultProps: ->
-    ruling_entity: {} # Todo
+class @RulingEntityDescription extends React.Component
+  constructor: (props) ->
+    super(props)
+    @state = {logo_average_color: '#F9F9F9'}
 
   render: ->
-    mandate_start = new Date(this.props.ruling_entity.mandate_start).getFullYear()
-    mandate_end = new Date(this.props.ruling_entity.mandate_end).getFullYear()
+    mandate_start = new Date(@props.ruling_entity.mandate_start).getFullYear()
+    mandate_end = new Date(@props.ruling_entity.mandate_end).getFullYear()
     mandate_period_str = "#{mandate_start} - #{mandate_end}"
 
-    `<div className="ruling-entity-header">
+    `<div className="ruling-entity-header" style={{backgroundColor: this.state.logo_average_color}}>
         <div className='side-image-content'>
           <h1>{ this.props.ruling_entity.name }</h1>
           <h4>{ mandate_period_str }</h4>

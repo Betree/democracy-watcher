@@ -31,7 +31,9 @@
     display: block
     padding: ($base-spacing / 2) $gutter
     text-decoration: none
-    box-shadow: 1px -2px 2px 0 #EFEFEF
+    box-shadow: 1px 0px 2px 0 #ffffff
+    border-radius: 5px 5px 0px 0px
+
     @include media($tab-mode)
       border-top: 0
       display: inline-block
@@ -42,8 +44,13 @@
     &:focus
       outline: none
 
+    @include media($tab-mode)
+      border: $tab-border
+
     &.is-active
       border-bottom: 0
+      color: $logo-color
+      font-weight: bold
       @include media($tab-mode)
         border: $tab-border
         border-bottom-color: $tab-active-background
@@ -53,27 +60,12 @@
     display: none
 
   .tab-content
-    @extend .animated
-    @extend .fadeIn-pulse
-    @include animation-duration(0.3s)
     padding: $base-spacing $gutter
+    padding-top: 2em
     width: 100%
 
     @include media($tab-mode)
       border-top: $tab-border
       float: left
 
-@keyframes fadeIn-pulse
-  from
-    opacity: 0.2
-    transform: scale3d(1, 1, 1)
-  50%
-    opacity: 1
-    transform: scale3d(1.01, 1.01, 1.01)
-  to
-    opacity: 1
-    transform: scale3d(1, 1, 1)
-
-.fadeIn-pulse
-  animation-name: fadeIn-pulse
 

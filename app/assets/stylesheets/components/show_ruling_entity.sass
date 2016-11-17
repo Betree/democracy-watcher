@@ -1,6 +1,4 @@
 /* ------ Header ------ */
-$ruling-entity-header-background: #F9F9F9
-
 .ruling-entity-header
   $base-line-height: 1.5em !default
   $action-color: #477DCA !default
@@ -12,10 +10,12 @@ $ruling-entity-header-background: #F9F9F9
   $side-image-background-bottom: #5DAC5D
   $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, 0.8), 30%)
 
-  background: $ruling-entity-header-background
+  background: $ruling-entity-header-default-background
   border-bottom: 1px solid $base-border-color
   min-height: $min-height
   max-height: $max-height
+  max-width: $max-outer-width
+  margin: 0 auto
   overflow: hidden
 
   @include row()
@@ -24,21 +24,23 @@ $ruling-entity-header-background: #F9F9F9
     padding: 0 12rem
 
   .images-wrapper
-    display: block
+    display: none
     min-height: 12em
     padding: 1em
-    @include media($large-screen)
-      padding: 3em
-  
     background-position: top
     background-size: 100% 100%
     border-right: none
     text-align: right
+
+    @include media($medium-screen)
+      display: block
+      @include span-columns(4)
+
+    @include media($large-screen)
+      padding: 3em
+
     img
       max-height: 130px
-  
-    @include media($medium-screen)
-      @include span-columns(4)
 
   .side-image-content
     @include span-columns(8)
@@ -69,17 +71,22 @@ html
     @extend .animated
     @extend .fadeIn
 
-#ruling-entity-data
-  @include outer-container
-  @include row()
+#ruling-entity-data-container
+  background: $base-background-color
   border-top: 1px solid $base-border-color
   margin-top: -1px
 
-  .tabs-view
-    margin-top: -50px
-    @include span-columns(12)
-    @include media($large-screen)
-      @include span-columns(9)
+  #ruling-entity-data
+    @include outer-container
+    @include row()
+    border-top: 1px solid $base-border-color
+    margin-top: -1px
 
-  .tab-content
-    border-top: none
+    .tabs-view
+      margin-top: -50px
+      @include span-columns(12)
+      @include media($large-screen)
+        @include span-columns(9)
+
+    .tab-content
+      border-top: none
