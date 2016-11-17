@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RulingPartyTest < ActiveSupport::TestCase
+class RulingEntityTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

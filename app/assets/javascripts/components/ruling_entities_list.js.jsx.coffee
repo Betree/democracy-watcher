@@ -5,7 +5,7 @@ class @RulingEntitiesList extends React.Component
   render: ->
     React.DOM.div {className: 'ruling-entities-list'},
       for entity in this.props.ruling_entities
-        link = unless entity.is_current then Routes.ruling_party_path(entity.id) else Routes.root_path
+        link = unless entity.is_current then Routes.ruling_entity_path(entity.id) else Routes.root_path
         ` <a key={entity.id} href={link}>
               <RulingEntityDescription ruling_entity={entity}/>
           </a>`

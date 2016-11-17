@@ -1,12 +1,12 @@
-class RulingPartiesController < ApplicationController
+class RulingEntitiesController < ApplicationController
 
-  # Show current ruling party
+  # Show currently ruling group
   def show_current
-    show_ruling_entity(RulingParty.for_date(Date.current).eager_load(:political_party, :leader).first)
+    show_ruling_entity(RulingEntity.for_date(Date.current).eager_load(:group, :leader).first)
   end
 
   def show
-    entity = RulingParty.where(id: params[:id]).eager_load(:political_party, :leader).first
+    entity = RulingEntity.where(id: params[:id]).eager_load(:group, :leader).first
     if entity.is_current
       redirect_to :root
     else
@@ -25,15 +25,15 @@ class RulingPartiesController < ApplicationController
   end
 
   def index
-    @ruling_parties = RulingParty.eager_load(:political_party, :leader)
-    if @ruling_parties.length > 0
-      render component: 'RulingEntitiesList', props: { ruling_entities: @ruling_parties }
+    ruling_entities = RulingEntity.eager_load(:group, :leader)
+    if ruling_entities.length > 0
+      render component: 'RulingEntitiesList', props: { ruling_entities: ruling_entities }
     else
       render component: 'FullPageMessage', props: {title: I18n.t('no_gov'), type: 'notice'}
     end
   end
 
-  def ruling_party_params
-    params.require(:ruling_parties).permit(:leader, :promises)
+  def ruling_entity_params
+    params.require(:ruling_entities).permit(:leader, :promises)
   end
 end

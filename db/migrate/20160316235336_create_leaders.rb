@@ -1,6 +1,6 @@
-class CreatePoliticians < ActiveRecord::Migration
+class CreateLeaders < ActiveRecord::Migration
   def change
-    create_table :politicians do |t|
+    create_table :leaders do |t|
       t.string :name, null: false
 
       t.timestamps null: false

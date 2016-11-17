@@ -2,19 +2,21 @@ en:
   # Models
   activerecord:
       models:
-        politician:
-          one: Politician
-          other: Politicians
+        leader:
+          one: leader
+          other: leaders
         promise:
           one: promise
           other: promises
-        political_party:
+        # Most of the time group is a political party. If you're implementing the tool for
+        # something else (a company for example) you can rename it here to suit your needs
+        group:
           one: Political party
           other: Political parties
         promise_subject:
           one: Subject
           other: Subjects
-        ruling_party:
+        ruling_entity:
           one: Ruling party
           other: Ruling parties
 
@@ -41,7 +43,7 @@ en:
   search: Search
 
   no_gov: No governments found
-  party_description: ! '%{party} lead by %{leader}'
+  group_description: ! '%{group} lead by %{leader}'
 
   period_past: ! 'From %{mandate_start} to %{mandate_end}'
   period_current: ! 'Since %{mandate_start}, until %{mandate_end}'

@@ -1,7 +1,7 @@
 class CreatePromises < ActiveRecord::Migration
   def change
     create_table :promises do |t|
-      t.belongs_to  :ruling_party, index: true, foreign_key: true, null: false
+      t.belongs_to  :ruling_entity, index: true, foreign_key: true, null: false
       t.belongs_to  :subject, references: :promise_subject, null: false
       t.integer     :status, null: false
       t.string      :title, null: false

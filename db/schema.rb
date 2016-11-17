@@ -29,13 +29,13 @@ ActiveRecord::Schema.define(version: 20160729182342) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "political_parties", force: :cascade do |t|
+  create_table "groups", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "politicians", force: :cascade do |t|
+  create_table "leaders", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,26 +58,25 @@ ActiveRecord::Schema.define(version: 20160729182342) do
   end
 
   create_table "promises", force: :cascade do |t|
-    t.integer  "ruling_party_id", null: false
-    t.integer  "subject_id",      null: false
-    t.integer  "status",          null: false
-    t.string   "title",           null: false
+    t.integer  "ruling_entity_id", null: false
+    t.integer  "subject_id",       null: false
+    t.integer  "status",           null: false
+    t.string   "title",            null: false
     t.text     "description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["ruling_party_id"], name: "index_promises_on_ruling_party_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["ruling_entity_id"], name: "index_promises_on_ruling_entity_id"
   end
 
-  create_table "ruling_parties", force: :cascade do |t|
-    t.integer  "political_party_id"
+  create_table "ruling_entities", force: :cascade do |t|
+    t.integer  "group_id"
     t.integer  "leader_id"
-    t.integer  "rule_type",          null: false
-    t.date     "mandate_start",      null: false
+    t.date     "mandate_start", null: false
     t.date     "mandate_end"
     t.string   "banner"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["political_party_id"], name: "index_ruling_parties_on_political_party_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["group_id"], name: "index_ruling_entities_on_group_id"
   end
 
   create_table "sources", force: :cascade do |t|
