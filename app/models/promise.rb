@@ -2,7 +2,7 @@
 # License::   MIT
 
 class Promise < ActiveRecord::Base
-  belongs_to  :ruling_party
+  belongs_to  :ruling_entity
   belongs_to  :subject, class_name: PromiseSubject
   has_many    :promise_sources
   has_many    :sources, through: :promise_sources

@@ -48,14 +48,14 @@ if Rails.env == 'development'
 
   # Create entities and their promises
   entities.each do |entity, leader|
-    party = PoliticalParty.create(name: entity)
-    politician = Politician.create(name: leader)
-    ruling_party = RulingParty.create(leader: politician, political_party: party, rule_type: 'national',
-                                      mandate_start: date_start, mandate_end: date_start + mandate_duration)
+    group = Group.create(name: entity)
+    leader = Leader.create(name: leader)
+    ruling_entity = RulingEntity.create(leader: leader, group: group, mandate_start: date_start,
+                                        mandate_end: date_start + mandate_duration)
 
     for i in (0..rand(number_of_promises))
       promise_data = promises.sample
-      Promise.create(ruling_party: ruling_party, subject: promise_subjects.sample, status: promise_status.sample,
+      Promise.create(ruling_entity: ruling_entity, subject: promise_subjects.sample, status: promise_status.sample,
                      title: promise_data[:title], description: promise_data[:description])
     end
 

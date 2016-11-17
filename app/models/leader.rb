@@ -1,6 +1,6 @@
 # Author::    Benjamin Piouffle
 # License::   MIT
 
-class PoliticalParty < ActiveRecord::Base
+class Leader < ActiveRecord::Base
   validates :name, presence: true
 end

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class RulingPartyBannerUploader < CarrierWave::Uploader::Base
+class RulingEntityBannerUploader < CarrierWave::Uploader::Base
   storage :file
 
   def store_dir

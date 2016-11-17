@@ -6,7 +6,7 @@
 
     - links = []
     - links.append(active_link_to t('current_government'), :root, :active => :exclusive)
-    - links.append(active_link_to t('all_governments'), ruling_parties_path, :active => :exclusive)
+    - links.append(active_link_to t('all_governments'), ruling_entities_path, :active => :exclusive)
     - links.append(active_link_to t('About'), faq_path)
     = react_component 'ResponsiveNavigationMenu', links: links
 
