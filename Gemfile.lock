@@ -114,6 +114,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
+    mini_magick (4.2.7)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
     neat (1.8.0)
@@ -255,6 +256,7 @@ DEPENDENCIES
   haml
   i18n-js (>= 3.0.0.rc11)
   js-routes
+  mini_magick
   neat (~> 1.8.0)
   pg
   rails (= 5.0.0.1)

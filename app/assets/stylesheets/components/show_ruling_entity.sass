@@ -1,21 +1,24 @@
 /* ------ Header ------ */
-$ruling-entity-header-background: #F9F9F9
-
 .ruling-entity-header
   $base-line-height: 1.5em !default
   $action-color: #477DCA !default
   $dark-gray: #333 !default
-  $min-height: 215px
+  $min-height: 250px
   $max-height: $min-height
   $base-font-color: $dark-gray !default
   $side-image-background-top: #B5EBEB
   $side-image-background-bottom: #5DAC5D
   $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, 0.8), 30%)
+  $entity-description-color: whitesmoke
 
-  background: $ruling-entity-header-background
+  background: $ruling-entity-header-default-background
+  background-size: cover
+
   border-bottom: 1px solid $base-border-color
   min-height: $min-height
   max-height: $max-height
+  max-width: $max-outer-width
+  margin: 0 auto
   overflow: hidden
 
   @include row()
@@ -23,44 +26,58 @@ $ruling-entity-header-background: #F9F9F9
   @include media($max-width + 200)
     padding: 0 12rem
 
+  .react-blur
+    @extend .animated
+    @extend .fadeIn
+    @include animation-duration(1s)
+    position: absolute
+    left: 0
+    min-height: $min-height
+    width: 100%
+    z-index: -1
+
   .images-wrapper
-    display: block
-    min-height: 12em
+    display: none
+    min-height: $min-height
     padding: 1em
-    @include media($large-screen)
-      padding: 3em
-  
     background-position: top
     background-size: 100% 100%
     border-right: none
     text-align: right
-    img
-      max-height: 130px
-  
+
     @include media($medium-screen)
+      display: block
       @include span-columns(4)
+
+    @include media($large-screen)
+      padding: 35px
+
+    img
+      max-height: 180px
+      box-shadow: 5px 7px 20px -5px $dark-gray
 
   .side-image-content
     @include span-columns(8)
     padding: 2em 4em
+    min-height: $min-height
+
     @include media($large-screen)
       padding: 4em
 
-    h1
-      margin-bottom: 0.9em
-      color: $base-font-color
+    .entity-description
+      background: whitesmoke
+      width: inherit
+      box-shadow: 0px 0px 0px 27px whitesmoke
+      border-radius: 1px
+      text-align: center
 
-    h4
-      background: #BBB
-      color: white
-      display: inline-block
-      font-size: 0.75em
-      margin-bottom: 1.3em
-      padding: 3px 8px
-      text-transform: uppercase
-
-    p
-      margin-bottom: 3em
+      h4
+        background: #b7b7b7
+        color: white
+        display: inline-block
+        font-size: 0.8em
+        margin-bottom: 0
+        padding: 3px 8px
 
 
 /* ------ Data ------ */
@@ -69,17 +86,22 @@ html
     @extend .animated
     @extend .fadeIn
 
-#ruling-entity-data
-  @include outer-container
-  @include row()
+#ruling-entity-data-container
+  background: $base-background-color
   border-top: 1px solid $base-border-color
   margin-top: -1px
 
-  .tabs-view
-    margin-top: -50px
-    @include span-columns(12)
-    @include media($large-screen)
-      @include span-columns(9)
+  #ruling-entity-data
+    @include outer-container
+    @include row()
+    border-top: 1px solid $base-border-color
+    margin-top: -1px
 
-  .tab-content
-    border-top: none
+    .tabs-view
+      margin-top: -50px
+      @include span-columns(12)
+      @include media($large-screen)
+        @include span-columns(9)
+
+    .tab-content
+      border-top: none

@@ -12,6 +12,7 @@ gem 'config'
 
 gem 'rails_admin'
 gem 'carrierwave'
+gem 'mini_magick' # To resize image. imagemagick mus be installed
 
 # Assets
 gem 'sassc-rails' # Use SASS for stylesheets

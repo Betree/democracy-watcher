@@ -1,4 +1,4 @@
-class @ResponsiveNavigationMenu extends React.Component
+class @ResponsiveNavigationMenu extends React.PureComponent
   @propTypes =
     title: React.PropTypes.string
 

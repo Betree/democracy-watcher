@@ -15,44 +15,53 @@
   $accordion-menu-list-padding: ($base-spacing / 2) $gutter
 
   background-color: white
-  border: $accordion-menu-border
-  margin: 0 0 $base-spacing 0
   padding: 0
 
   ul
     margin: 0
     padding: 0
 
-
-  li
-    border-bottom: $accordion-menu-border
+  li.promise
+    @extend .animated
+    @extend .fadeIn
+    @include animation-duration(0.4s)
+    border: 1px solid darken($accordion-menu-border-color, 10)
+    border-radius: 5px
+    margin-bottom: 15px
     list-style: none
+
+    &:focus,
+    &:hover
+      background-color: $accordion-menu-hover
 
     .promise-header
       color: $accordion-menu-color
       display: block
       padding: $accordion-menu-list-padding
       text-decoration: none
-  
+      cursor: pointer
 
-    &:last-child
-      border: none
-  
+      .status, .title
+        display: inline-block
 
-    &:focus,
-    &:hover
-      background-color: $accordion-menu-hover
-  
+      .status
+        margin-right: 25px
 
+    .more-infos
+      padding: 10px
+      background-color: #F9F9F9
+      border: $accordion-menu-border
+      box-shadow: inset 0 1px 1px $accordion-menu-sub-inset
+      .description
+        border-bottom: 1px solid #BBBBBB
+        margin-bottom: 7px
+        padding-bottom: 10px
+        white-space: pre-wrap
+      .sources
+        font-size: 14px
+        font-style: italic
+        color: #6F6F6F
 
-  .more-infos
-    background-color: #F9F9F9
-    border-top: $accordion-menu-border
-    box-shadow: inset 0 1px 1px $accordion-menu-sub-inset
-    cursor: default
-
-
-  .is-expanded
-    display: block
-    padding-bottom: 0
-
+    .is-expanded
+      display: block
+      padding-bottom: 0

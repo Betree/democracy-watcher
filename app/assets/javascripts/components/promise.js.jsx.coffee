@@ -1,4 +1,4 @@
-class @Promise extends React.Component
+class @Promise extends React.PureComponent
   render: ->
     # Build sources list
     sources = []
