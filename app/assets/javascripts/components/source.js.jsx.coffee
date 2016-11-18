@@ -1,4 +1,4 @@
-class @Source extends React.Component
+class @Source extends React.PureComponent
   render: ->
     `<div>
         <span>{this.props.source.media} - </span>

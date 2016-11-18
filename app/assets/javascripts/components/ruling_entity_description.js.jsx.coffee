@@ -7,13 +7,16 @@ class @RulingEntityDescription extends React.Component
     mandate_start = new Date(@props.ruling_entity.mandate_start).getFullYear()
     mandate_end = new Date(@props.ruling_entity.mandate_end).getFullYear()
     mandate_period_str = "#{mandate_start} - #{mandate_end}"
+    style = {backgroundImage: "url(#{@props.ruling_entity.banner.blur_seed.url})"}
 
-    `<div className="ruling-entity-header" style={{backgroundColor: this.state.logo_average_color}}>
+    `<div className="ruling-entity-header" style={style}>
         <div className='side-image-content'>
-          <h1>{ this.props.ruling_entity.name }</h1>
-          <h4>{ mandate_period_str }</h4>
+          <div className="entity-description">
+            <h1>{ this.props.ruling_entity.name }</h1>
+            <h4>{ mandate_period_str }</h4>
+          </div>
         </div>
         <div className="images-wrapper">
-          <img src={ this.props.ruling_entity.banner.url }/>
+          <img src={ this.props.ruling_entity.banner.thumb.url }/>
         </div>
     </div>`

@@ -25,9 +25,9 @@ class RulingEntitiesController < ApplicationController
   end
 
   def index
-    ruling_entities = RulingEntity.eager_load(:group, :leader)
-    if ruling_entities.length > 0
-      render component: 'RulingEntitiesList', props: { ruling_entities: ruling_entities }
+    @ruling_entities = RulingEntity.eager_load(:group, :leader)
+    if @ruling_entities.length > 0
+      render 'index'
     else
       render component: 'FullPageMessage', props: {title: I18n.t('no_gov'), type: 'notice'}
     end
