@@ -107,6 +107,7 @@ GEM
       activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
+    lorem_ipsum_amet (0.6.2)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
@@ -145,7 +146,9 @@ GEM
       railties (= 5.0.0.1)
       sprockets-rails (>= 2.0.0)
     rails-assets-animate.css (3.5.2)
+    rails-assets-chartjs (2.4.0)
     rails-assets-font-awesome (4.7.0)
+    rails-assets-underscore (1.8.3)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
@@ -256,12 +259,15 @@ DEPENDENCIES
   haml
   i18n-js (>= 3.0.0.rc11)
   js-routes
+  lorem_ipsum_amet
   mini_magick
   neat (~> 1.8.0)
   pg
   rails (= 5.0.0.1)
   rails-assets-animate.css!
+  rails-assets-chartjs!
   rails-assets-font-awesome!
+  rails-assets-underscore!
   rails-i18n (~> 4.0.0)
   rails_12factor
   rails_admin

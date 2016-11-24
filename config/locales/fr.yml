@@ -21,7 +21,7 @@ fr:
   # Models details
   promise:
     status:
-      not_yet_started: Pas encore commencé
+      not_yet_started: Pas commencé
       in_progress: En cours
       done: Terminé
       broken: Brisé
@@ -48,7 +48,8 @@ fr:
   period_years_past: 'De %{mandate_start} à %{mandate_end}'
   period_years_current: ! "Depuis %{mandate_start}, jusqu'à %{mandate_end}"
   days_in_office: ! 'En mandat depuis %{nb_days} jours'
-  terminated: Terminé
+  mandate_terminated: Mandat terminé
 
   no_source: "Aucune source n'a été donnée pour cette promesse"
   About: "A propos"
+  others: Autres

@@ -28,6 +28,8 @@ gem 'neat', '~> 1.8.0' # A lightweight, semantic grid framework built with Bourb
 source 'https://rails-assets.org' do
   gem 'rails-assets-font-awesome'
   gem 'rails-assets-animate.css'
+  gem 'rails-assets-underscore'
+  gem 'rails-assets-chartjs'
 end
 
 gem 'active_link_to'
@@ -55,6 +57,8 @@ group :development do
   gem 'spring'
   # Database - Use sqlite3 in dev, postgres in test
   gem 'sqlite3'
+  # To generate test text and images
+  gem 'lorem_ipsum_amet'
 end
 
 group :heroku do
