@@ -33,10 +33,24 @@ class RulingEntity < ActiveRecord::Base
     end
   end
 
+  # Similar to name but in a more compact way "Leader (Group)". Doesn't require translation
+  def short_name
+    if self.group and self.leader
+      "#{self.leader.name} (#{self.group.name})"
+    elsif self.group
+      self.group.name
+    elsif self.leader
+      self.leader.name
+    else
+      self.id.to_s
+    end
+  end
+
   # Overrides default as_json to always includes group, leader and generated name in details
   def as_json(options)
     json = super(:include => [:group, :leader])
     json[:name] = self.name
+    json[:short_name] = self.short_name
     json[:is_current] = self.is_current
     json
   end

@@ -51,5 +51,6 @@ fr:
   mandate_terminated: Mandat terminé
 
   no_source: "Aucune source n'a été donnée pour cette promesse"
-  About: "A propos"
+  about: "A propos"
   others: Autres
+  see_all: Voir tout

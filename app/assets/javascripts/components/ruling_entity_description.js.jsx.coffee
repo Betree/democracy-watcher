@@ -13,7 +13,7 @@ class @RulingEntityDescription extends React.Component
         <div className='side-image-content'>
           <div className="entity-description">
             <h1>{ this.props.ruling_entity.name }</h1>
-            <h4>{ mandate_period_str }</h4>
+            <h4 className='date-interval'>{ mandate_period_str }</h4>
           </div>
         </div>
         <div className="images-wrapper">
