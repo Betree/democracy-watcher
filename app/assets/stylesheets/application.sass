@@ -41,12 +41,16 @@ body
 i.fa
   &.status-not_yet_started
     @extend .fa-clock-o
+    color: $orange
   &.status-in_progress
     @extend .fa-cogs
+    color: $yellow
   &.status-done
     @extend .fa-check-square-o
+    color: $green
   &.status-broken
-    @extend .fa-chain-broken
+    @extend .fa-times
+    color: $red
 
 // Turbolinks progress bar
 .turbolinks-progress-bar

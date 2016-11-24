@@ -17,6 +17,8 @@ class @RulingEntityDescription extends React.Component
           </div>
         </div>
         <div className="images-wrapper">
-          <img src={ this.props.ruling_entity.banner.thumb.url }/>
+          {this.props.ruling_entity.banner.thumb.url &&
+            <img src={ this.props.ruling_entity.banner.thumb.url }/>
+          }
         </div>
     </div>`

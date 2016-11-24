@@ -21,15 +21,15 @@ if Rails.env == 'development'
     'Flagpole  Burial': 'John Again'
   }
 
-  # Some promises and their descriptions
+  # Some promises
   promises = [
-      {title: 'Educate dat godamn chicken !', description: 'A pretty nice description'},
-      {title: 'Do the stuff', description: 'A pretty nice description'},
-      {title: 'Free books for the poor', description: 'A pretty nice description'},
-      {title: 'Legalize blue doors', description: 'A pretty nice description'},
-      {title: 'Teach all students about happiness', description: 'A pretty nice description'},
-      {title: 'Go to mars', description: 'A pretty nice description'},
-      {title: 'What is love ? To to dodo to dodo dodo to dodo to do do', description: 'What is love ? A pretty nice description'}
+      'Educate dat godamn chicken !',
+      'Do the stuff',
+      'Free books for the poor',
+      'Legalize blue doors',
+      'Teach all students about happiness',
+      'Go to mars',
+      'What is love ? To to dodo to dodo dodo to dodo to do do'
   ]
 
   # Promises subjects
@@ -51,12 +51,11 @@ if Rails.env == 'development'
     group = Group.create(name: entity)
     leader = Leader.create(name: leader)
     ruling_entity = RulingEntity.create(leader: leader, group: group, mandate_start: date_start,
-                                        mandate_end: date_start + mandate_duration)
+                                     mandate_end: date_start + mandate_duration)
 
     for i in (0..rand(number_of_promises))
-      promise_data = promises.sample
       Promise.create(ruling_entity: ruling_entity, subject: promise_subjects.sample, status: promise_status.sample,
-                     title: promise_data[:title], description: promise_data[:description])
+                     title: promises.sample, description: LoremIpsum.random(paragraphs: rand(1..8)))
     end
 
     date_start -= mandate_duration

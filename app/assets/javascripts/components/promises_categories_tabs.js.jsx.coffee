@@ -1,10 +1,7 @@
 class @PromisesCategoriesTabs extends React.Component
   render: ->
     # Categorize promises in an object
-    categorized_promises = {}
-    for promise in @props.promises
-      categorized_promises[promise.subject.category] ?= []
-      categorized_promises[promise.subject.category].push(promise)
+    categorized_promises = _.groupBy(@props.promises, (promise) -> promise.subject.category)
 
     promises_tabs = for category, promises of categorized_promises
       local_category = I18n.t("promise.subject.#{category}")
