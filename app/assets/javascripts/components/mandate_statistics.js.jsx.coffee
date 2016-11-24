@@ -2,11 +2,6 @@ class @MandateStatistics extends React.Component
   chart_options =
     tooltips:
       displayColors: false
-#    tooltipEvents: [],
-#    showTooltips: true,
-#    onAnimationComplete: ->
-#      this.showTooltip(this.segments, true)
-#    tooltipTemplate: "<%= label %> - <%= value %>"
 
   chart_promises_status_colors =
     done: '#5dac5d'
