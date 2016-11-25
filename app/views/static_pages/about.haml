@@ -1,0 +1,11 @@
+.welcome-message-container
+  .welcome-message
+    = raw @welcome_message
+
+    .quick-actions-buttons
+      %button
+        = link_to t('see_current_entity'), current_ruling_entity_path
+      %button
+        = link_to t('see_past_entities'), ruling_entities_path
+    .welcome-message-footer
+      = raw t('project_description')

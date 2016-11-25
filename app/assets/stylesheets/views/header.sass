@@ -1,7 +1,6 @@
 header.navigation
   $base-border-radius: 3px !default
   $navigation-height: 60px
-  $action-color: #477DCA !default
   $navigation-padding: 1em
   $navigation-background: #f5f5f5
   $navigation-color: #333
@@ -59,6 +58,60 @@ header.navigation
             color: $navigation-color
             &:focus, &:hover
               color: $navigation-color-hover
+
+          // Special rules for ruling entity list
+          &.ruling-entity-selected
+            padding-right: 0
+            margin-right: 2em
+            > .ruling-entity-selected-title
+              background: $logo-color
+              color: $navigation-background
+              font-weight: bold
+              box-shadow: 0px 0px 25px -3px $base-font-color inset
+              @include media ($large-screen)
+                display: inline
+                padding: 22.5px
+
+            > ul
+              display: none
+
+            &.has-children
+              > .ruling-entity-selected-title
+                &:after
+                  content: " ▼"
+                &:hover
+                  background: lighten($logo-color, 5)
+                  color: $navigation-background
+
+              &:hover
+                > ul
+                  display: block
+                  background: $navigation-background
+                  box-shadow: -1px 5px 8px 2px transparentize($base-font-color, 0.5)
+                  @include media ($large-screen)
+                    position: absolute
+
+                  .ruling-entity-see-all
+                    text-align: center
+                    font-weight: bold
+
+                  > li
+                    border-bottom: $base-border
+                    padding: 5px 15px
+                    text-align: left
+                    img
+                      margin-left: 25px
+                      vertical-align: middle
+                      max-height: 60px
+                      max-width: 80px
+                      float: right
+
+                    a:hover
+                      color: $navigation-color-hover
+
+                    .date-interval
+                      margin-right: 10px
+
 
     // Menu button (small/medium screens only)
     .navigation-menu-button

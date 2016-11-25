@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729182342) do
+ActiveRecord::Schema.define(version: 20161124235704) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 20160729182342) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "general_settings", force: :cascade do |t|
+    t.text     "welcome_message"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -74,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160729182342) do
     t.date     "mandate_start", null: false
     t.date     "mandate_end"
     t.string   "banner"
+    t.text     "description"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["group_id"], name: "index_ruling_entities_on_group_id"

@@ -122,6 +122,8 @@ GEM
       sass (>= 3.3)
       thor (~> 0.19)
     nested_form (0.3.2)
+    nestive (0.6.0)
+      rails (>= 3.0.0)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -262,6 +264,7 @@ DEPENDENCIES
   lorem_ipsum_amet
   mini_magick
   neat (~> 1.8.0)
+  nestive
   pg
   rails (= 5.0.0.1)
   rails-assets-animate.css!

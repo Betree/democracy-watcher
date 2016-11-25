@@ -10,9 +10,14 @@ gem 'i18n-js', '>= 3.0.0.rc11'
 # For easy config via config/settings.yml file
 gem 'config'
 
+# Admin
 gem 'rails_admin'
+
+# File uploads
 gem 'carrierwave'
 gem 'mini_magick' # To resize image. imagemagick mus be installed
+
+gem 'nestive'
 
 # Assets
 gem 'sassc-rails' # Use SASS for stylesheets

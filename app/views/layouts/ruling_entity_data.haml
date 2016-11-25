@@ -1,0 +1,6 @@
+= extends :application do
+  = react_component 'RulingEntityDescription', ruling_entity: @ruling_entity
+  #ruling-entity-data-container
+    #ruling-entity-data
+      = yield
+

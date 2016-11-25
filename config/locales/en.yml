@@ -1,4 +1,9 @@
 en:
+  # You may change this line but please keep a link to the original project somewhere on your site
+  project_description: "This project is under MIT license, you can use it, clone it and modify it freely.
+  See <a href='https://github.com/Betree/democracy-watcher'>https://github.com/Betree/democracy-watcher</a>
+  for more infos."
+
   # Models
   activerecord:
       models:
@@ -22,6 +27,8 @@ en:
 
   # Models details
   promise:
+    one: Promise
+    other: Promises
     status:
       not_yet_started: Not yet started
       in_progress: In progress
@@ -35,6 +42,7 @@ en:
       environment: Environment
       immigration: Immigration
       security: Security
+  promises: Promises
 
   current_government: Current government
   all_governments: All goverments
@@ -53,5 +61,11 @@ en:
   mandate_terminated: Mandate ended
 
   no_source: "No source have been given for this promise"
-  About: About
+  about: About
   others: Others
+  see_all: See all
+  presentation: Presentation
+  see_promises: See promises
+  select_entity: Select an entity
+  see_current_entity: "See presently ruling entity"
+  see_past_entities: "See past ruling entities"

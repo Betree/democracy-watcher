@@ -9,6 +9,10 @@ class RulingEntityBannerUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [400, 180]
   end
 
+  version :mini, from_version: :thumb do
+    process resize_to_fit: [80, 60]
+  end
+
   version :blur_seed, from_version: :thumb do
     process resize_to_fill: [200, 90]
     process :blur
