@@ -8,8 +8,9 @@ class CreateRulingEntities < ActiveRecord::Migration
       t.date        :mandate_end, null: true # ...but not necessarily when it ends (which is not always a good sign :O)
 
       t.string      :banner, null: true
+      t.text        :description, null: true
 
-      t.timestamps null: false
+      t.timestamps  null: false
     end
 
     add_foreign_key :ruling_entities, :leaders, column: :leader_id

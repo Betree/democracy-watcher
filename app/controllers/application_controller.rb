@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :get_last_ruling_entities
 
   def get_last_ruling_entities(nb_entities)
-    # TODO: Cache that
+    # TODO: Cache data, move it to before in controller ?
     RulingEntity.order(:mandate_start => :desc).limit(nb_entities).eager_load(:leader, :group)
   end
 end

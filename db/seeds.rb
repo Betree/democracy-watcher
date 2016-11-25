@@ -1,5 +1,9 @@
 # Populate basic data into the database
 
+# Create default parameters
+GeneralSettings.create(welcome_message:  "<h2>Welcome to DemocracyWatcher !</h2><br>
+You should customize this message in the <a href='/admin'>the admin section</a>.")
+
 # Add fake data for development database (useful to work on the views)
 if Rails.env == 'development'
   number_of_promises = (5..50)
@@ -51,7 +55,8 @@ if Rails.env == 'development'
     group = Group.create(name: entity)
     leader = Leader.create(name: leader)
     ruling_entity = RulingEntity.create(leader: leader, group: group, mandate_start: date_start,
-                                     mandate_end: date_start + mandate_duration)
+                                        mandate_end: date_start + mandate_duration,
+                                        description: LoremIpsum.random(paragraphs: rand(1..8)))
 
     for i in (0..rand(number_of_promises))
       Promise.create(ruling_entity: ruling_entity, subject: promise_subjects.sample, status: promise_status.sample,

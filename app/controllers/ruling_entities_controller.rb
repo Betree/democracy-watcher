@@ -2,25 +2,21 @@ class RulingEntitiesController < ApplicationController
 
   # Show currently ruling group
   def show_current
-    show_ruling_entity(RulingEntity.for_date(Date.current).eager_load(:group, :leader).first)
+    current_entity = RulingEntity.select(:id).for_date(Date.current).first
+    redirect_to ruling_entity_path(current_entity.id)
   end
 
   def show
-    entity = RulingEntity.where(id: params[:id]).eager_load(:group, :leader).first
-    if entity.is_current
-      redirect_to :root
-    else
-      show_ruling_entity(entity)
-    end
+    entity = RulingEntity.eager_load(:group, :leader).find(params[:id])
+    show_ruling_entity(entity)
   end
 
   def show_ruling_entity(ruling_entity)
     if ruling_entity
       @ruling_entity = ruling_entity
-      @promises = ruling_entity.promises.eager_load(:subject, :sources)
-      render 'show'
+      render 'show', layout: 'ruling_entity_data'
     else
-      render component: 'FullPageMessage', props: {title: I18n.t('no_gov'), type: 'alert'}
+      render component: 'FullPageMessage', props: {title: I18n.t('no_gov'), type: 'alert'}, status: :not_found
     end
   end
 

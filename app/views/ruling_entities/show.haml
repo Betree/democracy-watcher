@@ -1,1 +1,5 @@
-= react_component 'ShowRulingEntity', {ruling_entity: @ruling_entity, promises: @promises}, {prerender: false}
+.ruling-entity-description-container
+  = raw @ruling_entity.description
+  .quick-actions-buttons
+    %button
+      = link_to t('see_promises'), ruling_entity_promises_path(@ruling_entity.id)

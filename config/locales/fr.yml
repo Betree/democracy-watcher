@@ -1,4 +1,9 @@
 fr:
+  # You may change this line but please keep a link to the original project somewhere on your site
+  project_description: "Ce projet est sous license MIT, vous pouvez l'utiliser et le modifier gratuitement.
+  Rendez vous sur <a href='https://github.com/Betree/democracy-watcher'>https://github.com/Betree/democracy-watcher</a>
+  pour plus d'infos."
+
   # Models
   activerecord:
       models:
@@ -20,6 +25,8 @@ fr:
 
   # Models details
   promise:
+    one: Promesse
+    other: Promesses
     status:
       not_yet_started: Pas commencé
       in_progress: En cours
@@ -33,6 +40,7 @@ fr:
       environment : Environement
       immigration : Immigration
       security: Sécurité
+  promises: Promesses
 
   current_government: Gouvernement actuel
   all_governments: Tous les gouvernements
@@ -54,3 +62,8 @@ fr:
   about: "A propos"
   others: Autres
   see_all: Voir tout
+  presentation: Presentation
+  see_promises: Voir les promesses
+  select_entity: Selectionnez une entité
+  see_current_entity: "Voir l'entité actuellement au pouvoir"
+  see_past_entities: "Voir les entitées précedemment au pouvoir"
