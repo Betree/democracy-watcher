@@ -2,7 +2,7 @@
 
 # Create default parameters
 GeneralSettings.create(welcome_message:  "<h2>Welcome to DemocracyWatcher !</h2><br>
-You should customize this message in the <a href='/admin'>the admin section</a>.")
+You should customize this message in the <a href='/admin/sign_in'>the admin section</a>.")
 
 # Add fake data for development database (useful to work on the views)
 if Rails.env == 'development'

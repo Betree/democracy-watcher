@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :ruling_entities, only: [:index, :show] do
     resources :promises, only: [:index]
+    resources :statistics, only: [:index]  #TODO Show
   end
 
 end

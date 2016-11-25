@@ -43,6 +43,7 @@ en:
       immigration: Immigration
       security: Security
   promises: Promises
+  statistics: Statistics
 
   current_government: Current government
   all_governments: All goverments
@@ -69,3 +70,4 @@ en:
   select_entity: Select an entity
   see_current_entity: "See presently ruling entity"
   see_past_entities: "See past ruling entities"
+  see_statistics: "See statistics"

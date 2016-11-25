@@ -149,7 +149,9 @@ GEM
       sprockets-rails (>= 2.0.0)
     rails-assets-animate.css (3.5.2)
     rails-assets-chartjs (2.4.0)
+    rails-assets-chartkick (2.1.0)
     rails-assets-font-awesome (4.7.0)
+    rails-assets-momentjs (2.17.0)
     rails-assets-underscore (1.8.3)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
@@ -269,7 +271,9 @@ DEPENDENCIES
   rails (= 5.0.0.1)
   rails-assets-animate.css!
   rails-assets-chartjs!
+  rails-assets-chartkick!
   rails-assets-font-awesome!
+  rails-assets-momentjs!
   rails-assets-underscore!
   rails-i18n (~> 4.0.0)
   rails_12factor

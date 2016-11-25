@@ -6,6 +6,7 @@ class RulingEntity < ActiveRecord::Base
   belongs_to  :group
   belongs_to  :leader, class_name: Leader
   has_many    :promises, :dependent => :delete_all
+  has_many    :statistics, :dependent => :delete_all
 
   eager_load [:leader, :group]
 

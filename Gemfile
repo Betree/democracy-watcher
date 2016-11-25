@@ -34,7 +34,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-font-awesome'
   gem 'rails-assets-animate.css'
   gem 'rails-assets-underscore'
+  gem 'rails-assets-momentjs'
   gem 'rails-assets-chartjs'
+  gem 'rails-assets-chartkick'
 end
 
 gem 'active_link_to'

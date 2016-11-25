@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124235704) do
+ActiveRecord::Schema.define(version: 20161125025007) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -92,6 +92,26 @@ ActiveRecord::Schema.define(version: 20161124235704) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "statistic_sources", force: :cascade do |t|
+    t.integer  "statistic_id", null: false
+    t.integer  "source_id",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["source_id"], name: "index_statistic_sources_on_source_id"
+    t.index ["statistic_id"], name: "index_statistic_sources_on_statistic_id"
+  end
+
+  create_table "statistics", force: :cascade do |t|
+    t.integer  "ruling_entity_id", null: false
+    t.integer  "graph_type"
+    t.text     "description"
+    t.text     "json_options"
+    t.text     "json_data"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["ruling_entity_id"], name: "index_statistics_on_ruling_entity_id"
   end
 
 end

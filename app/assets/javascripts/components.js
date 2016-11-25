@@ -2,5 +2,8 @@
 //= require js-routes
 //= require i18n
 //= require i18n/translations
+//= require momentjs
 //= require chartjs
+//= require chartkick
+//= require react-chartkick
 //= require_tree ./components
