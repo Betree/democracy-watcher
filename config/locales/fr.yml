@@ -6,50 +6,51 @@ fr:
 
   # Models
   activerecord:
-      models:
-        leader:
-          one: Dirigeant
-          other: Dirigeants
-        promise:
-          one: Promesse
-          other: Promesses
-        group: # In our case groups are always political parties
-          one: Parti politique
-          other: Partis politiques
-        promise_subject:
-          one: Domaine
-          other: Domaines
-        ruling_entity:
-          one: Parti au pouvoir
-          other: Partis au pouvoir
+    models: &models
+      leader:
+        one: Dirigeant
+        other: Dirigeants
+      promise:
+        one: Promesse
+        other: Promesses
+        status:
+          not_yet_started: Pas commencé
+          in_progress: En cours
+          done: Terminé
+          broken: Brisé
+      # Most of the time group is a political party. If you're implementing the tool for
+      # something else (a company for example) you can rename it here to suit your needs
+      group:
+        one: Parti politique
+        other: Partis politiques
+      promise_subject:
+        one: Sujet de promesse
+        other: Sujets de promesse
+        category:
+          culture: Culture
+          economy: Economie
+          environment: Environement
+          government: Gouvernement
+          immigration: Immigration
+          security: Sécurité
+          education: Education
+          others: Autres
+      ruling_entity:
+        one: Parti au pouvoir
+        other: Partis au pouvoir
+      source:
+        one: Source
+        other: Sources
+      statistic:
+        one: Statistique
+        other: Statistiques
+      general_settings: Configuration générale
 
-  # Models details
-  promise:
-    one: Promesse
-    other: Promesses
-    status:
-      not_yet_started: Pas commencé
-      in_progress: En cours
-      done: Terminé
-      broken: Brisé
-
-    subject:
-      culture : Culture
-      economy : Economie
-      education : Education
-      environment : Environement
-      immigration : Immigration
-      security: Sécurité
-  promises: Promesses
-
-  statistics: Statistiques
+  # Shortcuts for models
+  models: *models
 
   current_government: Gouvernement actuel
   all_governments: Tous les gouvernements
-  statistics: "Statistiques"
-  FAQ: FAQ
-  search: Rechercher
-
   no_gov: Aucun gouvernement
   group_description: ! '%{group} dirigé par %{leader}'
 
@@ -60,7 +61,7 @@ fr:
   days_in_office: ! 'En mandat depuis %{nb_days} jours'
   mandate_terminated: Mandat terminé
 
-  no_source: "Aucune source n'a été donnée pour cette promesse"
+  no_source: "Aucune source n'a été donnée"
   about: "A propos"
   others: Autres
   see_all: Voir tout

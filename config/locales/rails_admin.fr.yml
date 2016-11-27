@@ -1,0 +1,159 @@
+# Rails admin translation from https://gist.github.com/simonc/3a21074223d2f36a7232
+# For translations specifics to this implementation, please use admin.xx.yml
+
+fr:
+  admin:
+    js:
+      between_and_: Entre ... et ...
+      contains: Contient
+      date: Date ...
+      ends_with: Se termine avec
+      'false': false
+      is_blank: Est vide
+      is_exactly: Est exactement
+      is_present: Est présent
+      last_week: Semaine dernière
+      number: Nombre
+      starts_with: Commence par
+      this_week: Cette semaine
+      today: Aujourd'hui
+      'true': true
+      yesterday: Hier
+    actions:
+      bulk_delete:
+        breadcrumb: Suppression multiple
+        bulk_link: Supprimer les %{model_label_plural} sélectionné(e)s
+        menu: Suppression multiple
+        title: Supprimer %{model_label_plural}
+      dashboard:
+        breadcrumb: Tableau de bord
+        menu: Tableau de bord
+        title: Administration du site
+      delete:
+        breadcrumb: Supprimer
+        done: supprimé(e)
+        link: Supprimer '%{object_label}'
+        menu: Supprimer
+        title: Supprimer %{model_label} '%{object_label}'
+      edit:
+        breadcrumb: Modifier
+        done: modifié(e)
+        link: Modifier ce(tte) %{model_label}
+        menu: Modifier
+        title: Modifier %{model_label} '%{object_label}'
+      export:
+        breadcrumb: Exporter
+        bulk_link: Exportez les %{model_label_plural} trouvé(e)s
+        done: exporté(e)
+        link: Exporter les %{model_label_plural} trouvés
+        menu: Exporter
+        title: Exporter %{model_label_plural}
+      history_index:
+        breadcrumb: Historique
+        menu: Historique
+        title: Historique pour %{model_label_plural}
+      history_show:
+        breadcrumb: Historique
+        menu: Historique
+        title: Historique pour %{model_label} '%{object_label}'
+      index:
+        breadcrumb: "%{model_label_plural}"
+        menu: Liste
+        title: Liste de %{model_label_plural}
+      new:
+        breadcrumb: Nouveau
+        done: créer
+        link: Ajouter un nouveau %{model_label}
+        menu: Ajouter
+        title: Nouveau %{model_label}
+      show:
+        breadcrumb: "%{object_label}"
+        menu: Afficher
+        title: Détails pour %{model_label} '%{object_label}'
+      show_in_app:
+        menu: Afficher dans l’application
+    export:
+      click_to_reverse_selection: Cliquer pour inverser la sélection
+      confirmation: Exporter vers %{name}
+      csv:
+        col_sep: Séparateur de colonne
+        col_sep_help: Laisser vide pour valeur par défault ('%{value}')
+        default_col_sep: ","
+        encoding_to: Encoder vers
+        encoding_to_help: 'Choisir l’encodage. Laisser vide pour ne pas modifier: (%{name})'
+        header_for_association_methods: "%{name} [%{association}]"
+        header_for_root_methods: "%{name}"
+        skip_header: Aucune entête
+        skip_header_help: Ne pas afficher d’entête (aucune description de champs)
+      display: 'Afficher %{name}: %{type}'
+      empty_value_for_associated_objects: "<vide>"
+      fields_from: Champs de %{name}
+      fields_from_associated: Champs associées de %{name}
+      options_for: Options pour %{name}
+      select: Choisir les champs à exporter
+      select_all_fields: Sélectionner tous les champs
+    flash:
+      error: "%{name} n’a pas réussi à %{action}"
+      model_not_found: Le modèle '%{model}' n'a pas été trouvé
+      noaction: Aucune action n'a été effectuée
+      object_not_found: Aucun %{model} avec l'identifiant '%{id}' n'a pu être trouvée
+      successful: "%{name}  %{action} avec succès"
+    form:
+      all_of_the_following_related_items_will_be_deleted: "? Les éléments suivants seront supprimés ou orphelins :"
+      are_you_sure_you_want_to_delete_the_object: "Êtes-vous sûr de vouloir supprimer ce %{model_name}"
+      basic_info: Informations de base
+      bulk_delete: 'Les objets suivants seront supprimés, certaines de leurs dépendances seront supprimées ou orphelines :'
+      cancel: Annuler
+      char_length_of: longueur de
+      char_length_up_to: longueur jusqu'à
+      confirmation: Oui, je suis sûr
+      new_model: "%{name} (nouveau)"
+      one_char: caractère
+      optional: Facultatif
+      required: Obligatoire
+      save: Enregistrer
+      save_and_add_another: Enregistrer et ajouter un autre
+      save_and_edit: Enregistrer et modifier
+    home:
+      name: Accueil
+    loading: Chargement en cours...
+    misc:
+      add_filter: Ajouter un filtre
+      add_new: Ajouter un nouveau
+      ago: depuis
+      bulk_menu_title: Elements sélectionnés
+      chose_all: Choisir tous
+      chosen: Choisi %{name}
+      clear_all: Tout Effacer
+      down: Bas
+      filter: Filtre
+      filter_date_format: dd/mm/yy
+      log_out: Se déconnecter
+      navigation: Navigation
+      navigation_static_label: Liens
+      refresh: Actualiser
+      remove: Supprimer
+      search: Chercher
+      show_all: Afficher tout
+      up: Haut
+    pagination:
+      next: Suivant &raquo;
+      previous: "&laquo; Précédent"
+      truncate:
+    table_headers:
+      changes: Changements
+      created_at: Date/Heure
+      item: Element
+      last_used: Dernière utilisation
+      message: Message
+      model_name: Nom de modèle
+      records: Enregistrements
+      username: Utilisateur
+
+  home:
+    name: Accueil
+  views:
+    pagination:
+      next: Suivant &raquo;
+      previous: "&laquo; Précédent"
+      truncate: "..."

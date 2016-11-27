@@ -5,7 +5,7 @@ class @Promise extends React.PureComponent
             <div className="promise-header">
               <div className='status'>
                 <i className={'fa status-' + this.props.promise.status}
-                   title={I18n.t('promise.status.' + this.props.promise.status)}/>
+                   title={I18n.t('models.promise.status.' + this.props.promise.status)}/>
               </div>
               <div className="title">{this.props.promise.title}</div>
             </div>
