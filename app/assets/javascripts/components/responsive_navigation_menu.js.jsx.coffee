@@ -74,8 +74,8 @@ class @ResponsiveNavigationMenu extends React.PureComponent
 
     [
       @nav_link(Routes.ruling_entity_path(entity.id), I18n.t('presentation'), active_module == null)
-      @nav_link(Routes.ruling_entity_promises_path(entity.id), I18n.t('promises'), active_module == PROMISES_MODULE)
-      @nav_link(Routes.ruling_entity_statistics_path(entity.id), I18n.t('statistics'), active_module == STATISTICS_MODULE)
+      @nav_link(Routes.ruling_entity_promises_path(entity.id), I18n.t('models.promise.other'), active_module == PROMISES_MODULE)
+      @nav_link(Routes.ruling_entity_statistics_path(entity.id), I18n.t('models.statistic.other'), active_module == STATISTICS_MODULE)
     ]
 
   nav_link: (url, title, is_active=false) ->

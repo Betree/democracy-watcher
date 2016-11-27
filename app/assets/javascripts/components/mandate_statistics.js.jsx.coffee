@@ -27,7 +27,7 @@ class @MandateStatistics extends React.Component
     promises_status_count = _.countBy(@props.promises, (promise) -> promise.status)
     promises_status_keys = _.keys(chart_promises_status_colors)
     chart_data =
-      labels: (String(I18n.t("promise.status.#{key}")) for key in promises_status_keys)
+      labels: (String(I18n.t("models.promise.status.#{key}")) for key in promises_status_keys)
       datasets: [
         data: (promises_status_count[key] for key in promises_status_keys),
         backgroundColor: _.values(chart_promises_status_colors)
@@ -38,6 +38,5 @@ class @MandateStatistics extends React.Component
     `<div id='mandate-statistics'>
         { mandate_duration_description }
         <ProgressBar progress={mandate_progress}/>
-        { /* <ul>{ react_promises_status }</ul> */ }
         <ReactChart className='promises-status-count-chart' data-type='doughnut' id={chart_id} data-options={chart_options} data-chart-data={chart_data}/>
     </div>`

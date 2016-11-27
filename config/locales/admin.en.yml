@@ -1,0 +1,19 @@
+en:
+  admin:
+    help:
+      statistic:
+        chart_type: Let empty or select "no_chart" to deactivate chart
+        chart_data: "Data must be valid YAML or JSON. Go to http://chartkick.com/ to see accepted formats.<br>
+        Examples :<br><ul>
+          <li>For a pie chart (pie):<br>paper: 42<br>wood: 56<br>leather: 3</li>
+          <li>For two overlapping lines (line):<br>
+              paper:<br>&nbsp;&nbsp;&nbsp;&nbsp;11/05/2012: 12<br>&nbsp;&nbsp;&nbsp;&nbsp;12/06/2016: 15</li>
+              wood:<br>&nbsp;&nbsp;&nbsp;&nbsp;11/05/2012: 18<br>&nbsp;&nbsp;&nbsp;&nbsp;12/06/2016: 11</li>
+        </ul>"
+        chart_options: "Data must be valid YAML or JSON. Go to http://chartkick.com/ to see accepted formats.
+        'library' field allows to pass options directly to the charting library (ChartJs)
+        Example :<br>
+        colors:<br>&nbsp;&nbsp;- red<br>&nbsp;&nbsp;- blue<br>
+        label: 'Super label'<br>
+        library:<br>&nbsp;&nbsp;backgroundColor: '#eee'
+        "

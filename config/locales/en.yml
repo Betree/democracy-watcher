@@ -6,51 +6,51 @@ en:
 
   # Models
   activerecord:
-      models:
-        leader:
-          one: leader
-          other: leaders
-        promise:
-          one: promise
-          other: promises
-        # Most of the time group is a political party. If you're implementing the tool for
-        # something else (a company for example) you can rename it here to suit your needs
-        group:
-          one: Political party
-          other: Political parties
-        promise_subject:
-          one: Subject
-          other: Subjects
-        ruling_entity:
-          one: Ruling party
-          other: Ruling parties
+    models: &models
+      leader:
+        one: leader
+        other: leaders
+      promise:
+        one: Promise
+        other: Promises
+        status:
+          not_yet_started: Not yet started
+          in_progress: In progress
+          done: Done
+          broken: Broken
+      # Most of the time group is a political party. If you're implementing the tool for
+      # something else (a company for example) you can rename it here to suit your needs
+      group:
+        one: Political party
+        other: Political parties
+      promise_subject:
+        one: Subject
+        other: Subjects
+        category:
+          culture: Culture
+          economy: Economy
+          environment: Environment
+          government: Government
+          immigration: Immigration
+          security: Security
+          education: Education
+          others: Others
+      ruling_entity:
+        one: Ruling party
+        other: Ruling parties
+      source:
+        one: Source
+        other: Sources
+      statistic:
+        one: Statistic
+        other: Statistics
+      general_settings: General Settings
 
-  # Models details
-  promise:
-    one: Promise
-    other: Promises
-    status:
-      not_yet_started: Not yet started
-      in_progress: In progress
-      done: Done
-      broken: Broken
-
-    subject:
-      culture: Culture
-      economy: Economy
-      education: Education
-      environment: Environment
-      immigration: Immigration
-      security: Security
-  promises: Promises
-  statistics: Statistics
+  # Shortcuts for models
+  models: *models
 
   current_government: Current government
   all_governments: All goverments
-  statistics: Statistics
-  FAQ: FAQ
-  search: Search
-
   no_gov: No governments found
   group_description: ! '%{group} lead by %{leader}'
 
@@ -61,7 +61,7 @@ en:
   days_in_office: ! 'Days in office : %{nb_days}'
   mandate_terminated: Mandate ended
 
-  no_source: "No source have been given for this promise"
+  no_source: "No source have been given"
   about: About
   others: Others
   see_all: See all
