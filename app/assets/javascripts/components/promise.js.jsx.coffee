@@ -1,10 +1,5 @@
 class @Promise extends React.PureComponent
   render: ->
-    # Build sources list
-    sources = []
-    for source in this.props.promise.sources
-      sources.push(`<li key={source.id}><Source source={source}/></li>`)
-
     `<Collapsable
         trigger={
             <div className="promise-header">
@@ -16,13 +11,11 @@ class @Promise extends React.PureComponent
             </div>
           }
         children={
-            <div className={"more-infos"}>
+            <div className="more-infos">
               { this.props.promise.description &&
                   <div className="description">{this.props.promise.description}</div>
               }
-              <div className="sources">
-                { sources.length ? <ul>Sources :{ sources }</ul> : sources = I18n.t('no_source') }
-              </div>
+              <Sources sources={this.props.promise.sources}/>
             </div>
           }
       />`

@@ -3,3 +3,5 @@
   .quick-actions-buttons
     %button
       = link_to t('see_promises'), ruling_entity_promises_path(@ruling_entity.id)
+    %button
+      = link_to t('see_statistics'), ruling_entity_statistics_path(@ruling_entity.id)

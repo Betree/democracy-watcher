@@ -1,5 +1,6 @@
 class @ResponsiveNavigationMenu extends React.PureComponent
   PROMISES_MODULE = 'promises'
+  STATISTICS_MODULE = 'statistics'
 
   @propTypes =
     title: React.PropTypes.string
@@ -25,6 +26,7 @@ class @ResponsiveNavigationMenu extends React.PureComponent
 
     switch window.location.pathname
       when Routes.ruling_entity_promises_path(selected_entity) then PROMISES_MODULE
+      when Routes.ruling_entity_statistics_path(selected_entity) then STATISTICS_MODULE
       else null
 
   ruling_entities_nav_links: (selected_entity, all_entities, active_module) ->
@@ -73,6 +75,7 @@ class @ResponsiveNavigationMenu extends React.PureComponent
     [
       @nav_link(Routes.ruling_entity_path(entity.id), I18n.t('presentation'), active_module == null)
       @nav_link(Routes.ruling_entity_promises_path(entity.id), I18n.t('promises'), active_module == PROMISES_MODULE)
+      @nav_link(Routes.ruling_entity_statistics_path(entity.id), I18n.t('statistics'), active_module == STATISTICS_MODULE)
     ]
 
   nav_link: (url, title, is_active=false) ->
