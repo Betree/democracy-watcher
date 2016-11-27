@@ -25,8 +25,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active_link_to (1.0.3)
-      actionpack
     activejob (5.0.0.1)
       activesupport (= 5.0.0.1)
       globalid (>= 0.3.6)
@@ -60,6 +58,15 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    ckeditor (4.2.0)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
+    codemirror-rails (5.16.0)
+      railties (>= 3.0, < 6.0)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -150,7 +157,6 @@ GEM
     rails-assets-animate.css (3.5.2)
     rails-assets-chartjs (2.4.0)
     rails-assets-chartkick (2.1.0)
-    rails-assets-font-awesome (4.7.0)
     rails-assets-js-yaml (3.7.0)
     rails-assets-momentjs (2.17.0)
     rails-assets-underscore (1.8.3)
@@ -254,13 +260,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_link_to
   bourbon (~> 4.2.7)
   byebug
   carrierwave
+  ckeditor
+  codemirror-rails
   coffee-rails (~> 4.2.1)
   config
   devise
+  font-awesome-rails
   haml
   i18n-js (>= 3.0.0.rc11)
   js-routes
@@ -273,7 +281,6 @@ DEPENDENCIES
   rails-assets-animate.css!
   rails-assets-chartjs!
   rails-assets-chartkick!
-  rails-assets-font-awesome!
   rails-assets-js-yaml!
   rails-assets-momentjs!
   rails-assets-underscore!

@@ -1,6 +1,7 @@
 class @Statistic extends React.Component
   @propTypes =
     description: React.PropTypes.node
+    sources: React.PropTypes.array
     chart_type: React.PropTypes.string
     yaml_chart_options: React.PropTypes.node
     yaml_chart_data: React.PropTypes.node
@@ -19,11 +20,15 @@ class @Statistic extends React.Component
     chart_data = if @props.yaml_chart_data then jsyaml.safeLoad(@props.yaml_chart_data) else {}
     ` <div>
         {this.props.description &&
-          <div className='statistic-description'>{this.props.description}</div>
+          <div className='statistic-description' dangerouslySetInnerHTML={{__html: this.props.description}}/>
+        }
+        {this.props.description && ChartComponent != undefined &&
+          <hr/>
         }
         {ChartComponent != undefined &&
           <ChartComponent { ...chart_options } data={ chart_data }/>
         }
-      </div>
+        <Sources sources={this.props.sources}/>
+    </div>
     `
 

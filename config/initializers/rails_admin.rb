@@ -19,5 +19,5 @@ RailsAdmin.config do |config|
   end
 
   # Exclude models we don't want to see
-  config.excluded_models << "StatisticSource"
+  config.excluded_models << 'StatisticSource'
 end

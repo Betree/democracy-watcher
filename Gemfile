@@ -12,6 +12,9 @@ gem 'config'
 
 # Admin
 gem 'rails_admin'
+gem 'devise'
+gem 'codemirror-rails'
+gem 'ckeditor'
 
 # File uploads
 gem 'carrierwave'
@@ -26,12 +29,12 @@ gem 'coffee-rails', '~> 4.2.1' # Use CoffeeScript for .coffee assets and others
 gem 'haml' # Use HAML for templates
 gem 'react-rails' # Use react to generate others
 gem 'js-routes' # Make rails routes available in JS
+gem 'font-awesome-rails'
 
 gem 'bourbon', '~> 4.2.7' # A simple and lightweight mixin library for Sass
 gem 'neat', '~> 1.8.0' # A lightweight, semantic grid framework built with Bourbon
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-font-awesome'
   gem 'rails-assets-animate.css'
   gem 'rails-assets-underscore'
   gem 'rails-assets-momentjs'
@@ -39,10 +42,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-chartkick'
   gem 'rails-assets-js-yaml'
 end
-
-gem 'active_link_to'
-
-gem 'devise'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
