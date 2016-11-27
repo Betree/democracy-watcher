@@ -2,8 +2,8 @@ class @Statistic extends React.Component
   @propTypes =
     description: React.PropTypes.node
     chart_type: React.PropTypes.string
-    json_options: React.PropTypes.node
-    json_data: React.PropTypes.node
+    yaml_chart_options: React.PropTypes.node
+    yaml_chart_data: React.PropTypes.node
 
   chart_components =
     line: LineChart
@@ -14,13 +14,15 @@ class @Statistic extends React.Component
     scatter: ScatterChart
 
   render: ->
-    ChartComponent = chart_components[this.props.chart_type]
+    ChartComponent = chart_components[@props.chart_type]
+    chart_options = if @props.yaml_chart_options then jsyaml.safeLoad(@props.yaml_chart_options) else {}
+    chart_data = if @props.yaml_chart_data then jsyaml.safeLoad(@props.yaml_chart_data) else {}
     ` <div>
         {this.props.description &&
           <div className='statistic-description'>{this.props.description}</div>
         }
         {ChartComponent != undefined &&
-          <ChartComponent data={ this.props.json_data ? JSON.parse(this.props.json_data) : {} }/>
+          <ChartComponent { ...chart_options } data={ chart_data }/>
         }
       </div>
     `

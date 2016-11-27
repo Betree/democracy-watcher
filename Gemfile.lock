@@ -151,6 +151,7 @@ GEM
     rails-assets-chartjs (2.4.0)
     rails-assets-chartkick (2.1.0)
     rails-assets-font-awesome (4.7.0)
+    rails-assets-js-yaml (3.7.0)
     rails-assets-momentjs (2.17.0)
     rails-assets-underscore (1.8.3)
     rails-dom-testing (2.0.1)
@@ -273,6 +274,7 @@ DEPENDENCIES
   rails-assets-chartjs!
   rails-assets-chartkick!
   rails-assets-font-awesome!
+  rails-assets-js-yaml!
   rails-assets-momentjs!
   rails-assets-underscore!
   rails-i18n (~> 4.0.0)

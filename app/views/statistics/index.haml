@@ -1,5 +1,5 @@
 .statistics-container
   - for stat in @statistics
     .statistic_chart
-      = react_component 'Statistic', description: stat.description, json_data: stat.chart_data, chart_type: stat.chart_type,
-                                     json_options: stat.chart_options
+      = react_component 'Statistic',  description: stat.description, chart_type: stat.chart_type,
+                                      yaml_chart_data: stat.chart_data, yaml_chart_options: stat.chart_options

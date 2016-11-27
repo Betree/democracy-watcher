@@ -37,6 +37,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-momentjs'
   gem 'rails-assets-chartjs'
   gem 'rails-assets-chartkick'
+  gem 'rails-assets-js-yaml'
 end
 
 gem 'active_link_to'
