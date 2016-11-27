@@ -2,12 +2,12 @@
 
 one:
   description: MyText
-  graph_type: MyString
+  chart_type: MyString
   json_options: MyText
   json_data: MyText
 
 two:
   description: MyText
-  graph_type: MyString
+  chart_type: MyString
   json_options: MyText
   json_data: MyText

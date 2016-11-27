@@ -6,9 +6,9 @@ class CreateStatistics < ActiveRecord::Migration[5.0]
       t.text :description, null: true
 
       # Graph specific options
-      t.integer :graph_type, null: true # If null, no chart will be generated and only description will be shown
-      t.text :json_options, null: true
-      t.text :json_data, null: true
+      t.integer :chart_type, null: true # If null, no chart will be generated and only description will be shown
+      t.text :chart_options, null: true
+      t.text :chart_data, null: true
 
       t.timestamps
     end

@@ -4,7 +4,7 @@ class Statistic < ActiveRecord::Base
   has_many    :statistic_sources, dependent: :delete_all
   has_many    :sources, through: :statistic_sources
 
-  enum graph_type: [:line, :bar, :radar, :polarArea, :pie, :bubble]
+  enum chart_type: [:line, :pie, :column, :bar, :area, :scatter]
 
   validates   :ruling_entity, presence: true
 

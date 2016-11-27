@@ -105,10 +105,10 @@ ActiveRecord::Schema.define(version: 20161125025007) do
 
   create_table "statistics", force: :cascade do |t|
     t.integer  "ruling_entity_id", null: false
-    t.integer  "graph_type"
     t.text     "description"
-    t.text     "json_options"
-    t.text     "json_data"
+    t.integer  "chart_type"
+    t.text     "chart_options"
+    t.text     "chart_data"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["ruling_entity_id"], name: "index_statistics_on_ruling_entity_id"

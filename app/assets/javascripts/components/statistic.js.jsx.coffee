@@ -1,15 +1,27 @@
 class @Statistic extends React.Component
   @propTypes =
     description: React.PropTypes.node
-    graph_type: React.PropTypes.string
+    chart_type: React.PropTypes.string
     json_options: React.PropTypes.node
     json_data: React.PropTypes.node
 
+  chart_components =
+    line: LineChart
+    pie: PieChart
+    column: ColumnChart
+    bar: BarChart
+    area: AreaChart
+    scatter: ScatterChart
+
   render: ->
-    console.log @props.json_data
+    ChartComponent = chart_components[this.props.chart_type]
     ` <div>
-        <div className='statistic-description'>{this.props.description}</div>
-        {this.props.graph_type &&
-            <LineChart data={ this.props.json_data ? JSON.parse(this.props.json_data) : {} }/>
+        {this.props.description &&
+          <div className='statistic-description'>{this.props.description}</div>
         }
-      </div>`
+        {ChartComponent != undefined &&
+          <ChartComponent data={ this.props.json_data ? JSON.parse(this.props.json_data) : {} }/>
+        }
+      </div>
+    `
+
