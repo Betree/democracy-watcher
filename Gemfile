@@ -18,8 +18,9 @@ gem 'ckeditor'
 
 # File uploads
 gem 'carrierwave'
-gem 'mini_magick' # To resize image. imagemagick mus be installed
+gem 'mini_magick' # To resize image. imagemagick must be installed
 
+# Easily nest views
 gem 'nestive'
 
 # Assets
@@ -53,9 +54,6 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
   # Database
   gem 'sqlite3'
 
@@ -66,7 +64,15 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
 
+group :test do
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
+end
+
 group :development do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
   # Access an IRB console on exception pages or by using <%= console %> in others
   gem 'web-console', '~> 2.0'
 
