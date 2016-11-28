@@ -14,10 +14,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: sqlite3
+  adapter: postgresql
   pool: 5
   timeout: 5000
-  database: db/production.sqlite3
+  database: democracy-watcher
 
 heroku:
   adapter: postgresql
