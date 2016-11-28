@@ -15,7 +15,7 @@ Current implementation supports english and french but translating it
 in a new language should be really kick.
 
 I'm actively looking for collaboration on this project. If you're interested in
-implementing it, feel free to contact me at <benjamin.piouffle@gmail.com> or to open a new ticket.
+implementing it, feel free to contact me or to open a new ticket.
 Especially if you want to create and maintain an instance to track a French entity
 (your local city, DOM/TOM) I would be happy to host it for you under the France
 Democracy Watcher domain.
