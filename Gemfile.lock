@@ -191,9 +191,6 @@ GEM
     rails-i18n (4.0.2)
       i18n (~> 0.6)
       rails (>= 4.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
     rails_admin (1.1.0)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
@@ -207,8 +204,6 @@ GEM
       rails (>= 4.0, < 6)
       remotipart (~> 1.3)
       sass-rails (>= 4.0, < 6)
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -332,7 +327,6 @@ DEPENDENCIES
   rails-assets-momentjs!
   rails-assets-underscore!
   rails-i18n (~> 4.0.0)
-  rails_12factor
   rails_admin
   react-rails
   rspec-rails (~> 3.5)
@@ -344,6 +338,9 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.12.5
