@@ -2,25 +2,52 @@
 ![Code Climate](https://codeclimate.com/github/Betree/democracy-watcher/badges/gpa.svg)
 ![Test Coverage](https://codeclimate.com/github/Betree/democracy-watcher/badges/coverage.svg)
 
-This project aims to provide an easy way to setup a platform to track and follow organisations promesses. Any contributions and ideas are welcome !
 
-You can get a basic preview of what it looks like here : https://democracy-watcher.herokuapp.com/
+# Democracy Watcher
 
-**This project is not ready for production use yet and will probably see a lot of changes in the next versions.**
+This project aims to provide a set of tools to monitor a democratic entity.
+This entity can be a country, a city council or your organization.
 
-Trello available here : https://trello.com/b/9HB0o6mT/democracywatcher
+You can get a preview of the front-end with fake data on
+[this link](https://democracy-watcher.herokuapp.com/)
+
+Current implementation supports english and french but translating it
+in a new language should be really kick.
+
+I'm actively looking for collaboration on this project. If you're interested in
+implementing it, feel free to contact me or to open a new ticket.
+Especially if you want to create and maintain an instance to track a French entity
+(your local city, DOM/TOM) I would be happy to host it for you under the France
+Democracy Watcher domain.
+
+## Modules
+
+Two modules are currently available :
+
+### Promise tracker
+
+List promises with their description, their sources and their status. A
+promise may be done, in progress, not yet started or broken.
+
+You can also split the promises in categories (Culture, economy...etc)
+which will be displayed as tabs and in subjects which will appears 
+between promises
+
+### Statistics
+
+This section allows you to easily show data. You can use text, charts
+and add sources for this data.
+
 
 # Installation
 
-1. Fork the repository
+TODO
 
-2. Clone it
+# Contribute
 
-3. Go to config/settings.yml and enter you own settings
+TODO
 
-4. Run the following commands
 
-        rake db:migrate
 
-5. Start the server !
+
 

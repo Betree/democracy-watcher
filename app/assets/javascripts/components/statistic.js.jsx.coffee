@@ -20,7 +20,7 @@ class @Statistic extends React.Component
     chart_data = {}
     chart_options = jsyaml.safeLoad(@props.yaml_chart_options) if @props.yaml_chart_options
     chart_data = jsyaml.safeLoad(@props.yaml_chart_data) if @props.yaml_chart_data
-    ` <div>
+    ` <div className="statistic_chart">
         {this.props.description &&
           <div className='statistic-description'
             dangerouslySetInnerHTML={{__html: this.props.description}}/>

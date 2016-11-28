@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20161125025007) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["ruling_entity_id"], name: "index_promises_on_ruling_entity_id"
+    t.index ["subject_id"], name: "index_promises_on_subject_id"
   end
 
   create_table "ruling_entities", force: :cascade do |t|
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 20161125025007) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["group_id"], name: "index_ruling_entities_on_group_id"
+    t.index ["leader_id"], name: "index_ruling_entities_on_leader_id"
   end
 
   create_table "sources", force: :cascade do |t|

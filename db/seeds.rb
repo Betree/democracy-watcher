@@ -7,6 +7,8 @@ You should customize this message in the <a href='/admin/sign_in'>the admin sect
 # Add fake data for development database (useful to work on the views)
 if Rails.env == 'development'
   number_of_promises = (5..50)
+  number_of_sources = (0..3)
+  number_of_statistics = (0..10)
   date_start = Date.current - 3.months
   mandate_duration = 3.years
 
@@ -50,19 +52,55 @@ if Rails.env == 'development'
   # Promises status
   promise_status = [:not_yet_started, :in_progress, :done, :broken]
 
+  # Sources
+  sources = [
+    Source.create(media: 'The Best newspaper', title: "You won't believe this", url: 'qwant.com'),
+    Source.create(media: 'The Best newspaper', title: 'Another article', url: 'qwant.com'),
+    Source.create(media: 'Another Newspaper', title: 'Article title', url: 'qwant.com'),
+    Source.create(media: 'Open Data FR', title: 'List of actions 2016', url: 'qwant.com'),
+    Source.create(media: 'Youtube', title: 'She breaks her promise', url: 'qwant.com')
+  ]
+
+  # Charts
+  charts = [
+      {type: 'line', data: '{"12/10/1991": 42, "13/10/1991": 88, "14/10/1991": 66, "15/10/1991": 41}'},
+      {type: 'pie', data: '{"Some stuff": 42, "Other stuff": 88, "Peanuts": 66}'},
+      {type: 'bar', data: '{"Some stuff": 42, "Other stuff": 88, "Peanuts": 66}'},
+      {type: 'column', data: '{"Some stuff": 42, "Other stuff": 88, "Peanuts": 66}'},
+      {type: 'area', data: '{"Some stuff": 42, "Other stuff": 88, "Peanuts": 66}'},
+  ]
+
   # Create entities and their promises
   entities.each do |entity, leader|
     group = Group.create(name: entity)
     leader = Leader.create(name: leader)
     ruling_entity = RulingEntity.create(leader: leader, group: group, mandate_start: date_start,
                                         mandate_end: date_start + mandate_duration,
-                                        description: LoremIpsum.random(paragraphs: rand(1..8)))
+                                        description: Forgery(:lorem_ipsum).paragraphs(rand(1..4)))
 
+    # Create promises
     for i in (0..rand(number_of_promises))
-      Promise.create(ruling_entity: ruling_entity, subject: promise_subjects.sample, status: promise_status.sample,
-                     title: promises.sample, description: LoremIpsum.random(paragraphs: rand(1..8)))
+      promise = Promise.create(ruling_entity: ruling_entity, subject: promise_subjects.sample,
+                               status: promise_status.sample, title: promises.sample,
+                               description: Forgery(:lorem_ipsum).paragraphs(rand(1..8)))
+
+      # Create promises sources
+      for j in (0..rand(number_of_sources))
+        PromiseSource.create(promise: promise, source: sources.sample)
+      end
     end
 
+    # Create statistics
+    for i in (0..rand(number_of_statistics))
+      chart = charts.sample
+      statistic = Statistic.create( ruling_entity: ruling_entity,
+                                    description: Forgery(:lorem_ipsum).paragraphs(rand(0..1)),
+                                    chart_type: chart[:type], chart_data: chart[:data])
+      # Create statistics sources
+      for j in (0..rand(number_of_sources))
+        StatisticSource.create(statistic: statistic, source: sources.sample)
+      end
+    end
     date_start -= mandate_duration
   end
 

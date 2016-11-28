@@ -1,12 +1,21 @@
 .statistics-container
-  .statistic_chart
-    @include span-columns(12)
-    @include media ($large-screen)
-      @include span-columns(6)
-
+  .col
+    vertical-align: top
     margin-top: 35px
+    @include media($large-screen)
+      width: 48%
+      display: inline-block
+
+    &:first-child
+      margin-right: 1%
+
+    &:last-child
+      margin-left: 1%
+
+  .statistic_chart
     border: $base-border
     padding: 20px
+    margin-bottom: 35px
 
     .sources
       padding-top: 5px
