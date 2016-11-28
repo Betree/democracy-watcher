@@ -5,7 +5,7 @@ require 'rails/all'
 if ENV['RACK_ENV'] == 'heroku'
   Bundler.require(:default, :test, :heroku)
 else
-  Bundler.require(*Rails.groups)
+  Bundler.require(:default, Rails.env)
 end
 
 module DemocracyWatcher

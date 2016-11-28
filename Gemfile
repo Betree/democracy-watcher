@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0.1'
 
 # Internationalization
@@ -53,12 +52,14 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+group :development, :test, :heroku do
+  # To generate test text and images
+  gem 'forgery'
+end
+
 group :development, :test do
   # Database
   gem 'sqlite3'
-
-  # To generate test text and images
-  gem 'forgery'
 
   # Testing framework
   gem 'rspec-rails', '~> 3.5'
@@ -83,5 +84,6 @@ end
 group :heroku do
   gem 'rails_12factor'
   gem 'pg'
+  # gem 'fog-aws' # Store uploaded assets on AWS for heroku
 end
 
