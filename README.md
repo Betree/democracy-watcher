@@ -1,4 +1,6 @@
 ![Build status](https://travis-ci.org/Betree/democracy-watcher.svg?branch=master)
+![Code Climate](https://codeclimate.com/github/Betree/democracy-watcher/badges/gpa.svg)
+![Test Coverage](https://codeclimate.com/github/Betree/democracy-watcher/badges/coverage.svg)
 
 This project aims to provide an easy way to setup a platform to track and follow organisations promesses. Any contributions and ideas are welcome !
 
