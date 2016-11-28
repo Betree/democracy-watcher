@@ -13,8 +13,8 @@ class Promise < ActiveRecord::Base
   validates   :status, presence: true
   validates   :subject, presence: true
 
-  def as_json(options)
-    json = super()
+  def as_json(options = nil)
+    json = super(options)
 
     if self.association_cached?(:sources)
       json[:sources] = self.sources

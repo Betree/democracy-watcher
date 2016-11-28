@@ -38,5 +38,7 @@ class @MandateStatistics extends React.Component
     `<div id='mandate-statistics'>
         { mandate_duration_description }
         <ProgressBar progress={mandate_progress}/>
-        <ReactChart className='promises-status-count-chart' data-type='doughnut' id={chart_id} data-options={chart_options} data-chart-data={chart_data}/>
+        <ReactChart id={chart_id} className='promises-status-count-chart'
+            data-type='doughnut'  data-options={chart_options} data-chart-data={chart_data}
+        />
     </div>`

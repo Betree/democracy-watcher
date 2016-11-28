@@ -1,4 +1,4 @@
-class CreatePromises < ActiveRecord::Migration
+class CreatePromises < ActiveRecord::Migration[5.0]
   def change
     create_table :promises do |t|
       t.belongs_to  :ruling_entity, index: true, foreign_key: true, null: false

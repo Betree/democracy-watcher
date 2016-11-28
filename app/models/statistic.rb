@@ -6,10 +6,10 @@ class Statistic < ActiveRecord::Base
 
   enum chart_type: [:no_chart, :line, :pie, :column, :bar, :area, :scatter]
 
-  validates   :ruling_entity, presence: true
+  validates :ruling_entity, presence: true
 
-  def as_json(options)
-    json = super()
+  def as_json(options = nil)
+    json = super(options)
     if self.association_cached?(:sources)
       json[:sources] = self.sources
     end
