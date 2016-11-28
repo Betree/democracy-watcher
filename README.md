@@ -3,7 +3,7 @@
 ![Test Coverage](https://codeclimate.com/github/Betree/democracy-watcher/badges/coverage.svg)
 
 
-# _<img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="30px">_ Democracy Watcher 
+# _<img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">_ Democracy Watcher <img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">
 
 This project aims to provide a set of tools to monitor a democratic entity.
 This entity can be a country, a city council or your organization.
