@@ -6,8 +6,9 @@ class @Collapsable extends React.Component
   render: ->
     ` <div className={this.props.className}>
         <div onClick={this.click_toggle_expanded}>{ this.props.trigger }</div>
-        <div className={"collapsable " + (this.state.is_expanded ? 'is-expanded' : '')}>{ this.props.children }</div>
-        <div></div>
+        <div className={"collapsable " + (this.state.is_expanded ? 'is-expanded' : '')}>
+          { this.props.children }
+        </div>
       </div>`
 
   click_toggle_expanded: (e) =>

@@ -16,11 +16,14 @@ class @Statistic extends React.Component
 
   render: ->
     ChartComponent = chart_components[@props.chart_type]
-    chart_options = if @props.yaml_chart_options then jsyaml.safeLoad(@props.yaml_chart_options) else {}
-    chart_data = if @props.yaml_chart_data then jsyaml.safeLoad(@props.yaml_chart_data) else {}
+    chart_options = {}
+    chart_data = {}
+    chart_options = jsyaml.safeLoad(@props.yaml_chart_options) if @props.yaml_chart_options
+    chart_data = jsyaml.safeLoad(@props.yaml_chart_data) if @props.yaml_chart_data
     ` <div>
         {this.props.description &&
-          <div className='statistic-description' dangerouslySetInnerHTML={{__html: this.props.description}}/>
+          <div className='statistic-description'
+            dangerouslySetInnerHTML={{__html: this.props.description}}/>
         }
         {this.props.description && ChartComponent != undefined &&
           <hr/>
