@@ -10,6 +10,7 @@ end
 
 module DemocracyWatcher
   class Application < Rails::Application
+    config.i18n.available_locales = [Settings.default_language]
     config.i18n.default_locale = Settings.default_language
 
     # Middleware to use I18NJS

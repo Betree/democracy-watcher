@@ -3,7 +3,6 @@ class @ReactChart extends React.Component
     `<canvas id={this.props.id} className={this.props.className + ' chartjs'}/>`
 
   componentDidMount: ->
-    console.log @props
     @chart = new Chart @props.id, {
       type: @props['data-type'],
       options: @props['data-options'],
