@@ -21,11 +21,11 @@ Especially if you want to create and maintain an instance to track a French enti
 Democracy Watcher domain.
 
 
-## Modules
+## :rocket: Modules
 
 Two modules are currently available :
 
-### Promise tracker
+### :newspaper: Promise tracker
 
 List promises with their description, their sources and their status. A
 promise may be done, in progress, not yet started or broken.
@@ -36,7 +36,7 @@ between promises :
 
 ![Promises view](https://lut.im/gT6h2jW7TK/UY4NqBNBeoe9LTMX.png)
 
-### Statistics
+### :chart_with_upwards_trend: Statistics
 
 This section allows you to easily show data. You can use text, charts
 and add sources for this data.
@@ -44,7 +44,7 @@ and add sources for this data.
 ![Statistics view](https://lut.im/4mE0mbadXa/iR0SubRJvHxWJFqD.png)
 
 
-## Backend
+## :computer: Backend
 
 These modules are entirely administrable on an admin platform :
 
@@ -52,11 +52,11 @@ These modules are entirely administrable on an admin platform :
 
 
 
-# Installation
+# :floppy_disk: Installation
 
 TODO
 
-# Contribute
+# :wrench: Contribute
 
 TODO
 
