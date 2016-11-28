@@ -84,6 +84,6 @@ end
 group :heroku do
   gem 'rails_12factor'
   gem 'pg'
-  # gem 'fog-aws' # Store uploaded assets on AWS for heroku
+  gem 'fog-aws' # Store uploaded assets on AWS for heroku
 end
 
