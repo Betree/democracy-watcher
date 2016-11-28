@@ -1,0 +1,6 @@
+fallbacks: true
+js_extend: false
+
+translations:
+  - file: "public/javascripts/translations.js"
+    except: '*.admin.*'
