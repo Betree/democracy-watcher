@@ -55,4 +55,14 @@ class RulingEntity < ActiveRecord::Base
     json[:is_current] = self.is_current
     json
   end
+
+  # Rails admin
+  rails_admin do
+    field :group
+    field :leader
+    field :mandate_start
+    field :mandate_end
+    field :banner
+    field :description, :ck_editor
+  end
 end

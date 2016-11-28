@@ -58,7 +58,7 @@ group :development, :test do
   gem 'sqlite3'
 
   # To generate test text and images
-  gem 'lorem_ipsum_amet'
+  gem 'forgery'
 
   # Testing framework
   gem 'rspec-rails', '~> 3.5'

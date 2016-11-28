@@ -96,6 +96,7 @@ GEM
     ffi (1.9.14)
     font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
+    forgery (0.6.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -118,7 +119,6 @@ GEM
       activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    lorem_ipsum_amet (0.6.2)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
@@ -296,10 +296,10 @@ DEPENDENCIES
   config
   devise
   font-awesome-rails
+  forgery
   haml
   i18n-js (>= 3.0.0.rc11)
   js-routes
-  lorem_ipsum_amet
   mini_magick
   neat (~> 1.8.0)
   nestive
