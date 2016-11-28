@@ -3,11 +3,7 @@
 class RulingEntityBannerUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  if ENV['RACK_ENV'] == 'heroku'
-    storage :fog
-  else
-    storage :file
-  end
+  storage :fog
 
   version :thumb do
     process resize_to_fit: [400, 180]

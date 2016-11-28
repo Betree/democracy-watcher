@@ -4,6 +4,9 @@
 GeneralSettings.create(welcome_message:  "<h2>Welcome to DemocracyWatcher !</h2><br>
 You should customize this message in the <a href='/admin/sign_in'>the admin section</a>.")
 
+# Create default admin
+Admin.create!(email: 'admin@democracywatcher.com', password: 'password', password_confirmation: 'password')
+
 # Add fake data for development database (useful to work on the views)
 if Rails.env == 'development'
   number_of_promises = (5..50)
@@ -11,8 +14,6 @@ if Rails.env == 'development'
   number_of_statistics = (0..10)
   date_start = Date.current - 3.months
   mandate_duration = 3.years
-
-  Admin.create!(email: 'admin@democracywatcher.com', password: 'password', password_confirmation: 'password')
 
   # Defines entities / leaders
   entities = {
