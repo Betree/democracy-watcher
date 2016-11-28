@@ -8,9 +8,8 @@ services:
 bundler_args: --jobs=2
 
 script:
-  - rails db:setup
-  - rails db:migrate
-  - rails spec
+  - bundle exec rake db:migrate
+  - bundle exec rake spec
 
 cache: bundler
 
