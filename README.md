@@ -25,7 +25,7 @@ Democracy Watcher domain.
 
 Two modules are currently available :
 
-### :newspaper: Promise tracker / Fact checker
+### :newspaper: Promise tracker
 
 List goals / promises with their description, their sources and their status. A
 promise may be done, in progress, not yet started or broken.
