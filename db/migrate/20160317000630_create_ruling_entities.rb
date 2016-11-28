@@ -1,4 +1,4 @@
-class CreateRulingEntities < ActiveRecord::Migration
+class CreateRulingEntities < ActiveRecord::Migration[5.0]
   def change
     create_table :ruling_entities do |t|
       t.belongs_to  :group, index: true, null: true # Leading group (usually leader's group)

@@ -1,4 +1,4 @@
-class CreatePromiseSubjects < ActiveRecord::Migration
+class CreatePromiseSubjects < ActiveRecord::Migration[5.0]
   def change
     create_table :promise_subjects do |t|
       t.integer     :category, null: false # Economy, education...etc
