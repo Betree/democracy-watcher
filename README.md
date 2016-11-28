@@ -1,3 +1,5 @@
+![Build status](https://travis-ci.org/Betree/democracy-watcher.svg?branch=master)
+
 This project aims to provide an easy way to setup a platform to track and follow organisations promesses. Any contributions and ideas are welcome !
 
 You can get a basic preview of what it looks like here : https://democracy-watcher.herokuapp.com/
