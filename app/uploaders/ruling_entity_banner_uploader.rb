@@ -18,13 +18,9 @@ class RulingEntityBannerUploader < CarrierWave::Uploader::Base
 
   def blur(radius=10)
     manipulate! do |img|
-      original_path = img.path
-      temp_image_path = File.join(Rails.root, 'public', cache_dir, "/blurred_#{File.basename(original_path)}")
-      # command = "convert #{original_path} -blur 0x#{radius} #{temp_image_path}"
-      # command = "convert #{original_path} -filter Gaussian -resize 50% -define filter:sigma=#{radius} -resize 200%! #{temp_image_path}"
-      command = "convert #{original_path} -gaussian-blur 0x#{radius} -resize 960x125 #{temp_image_path}"
+      command = "convert #{img.path} -gaussian-blur 0x#{radius} -resize 960x125 #{img.path}"
       system(command)
-      MiniMagick::Image.open(temp_image_path)
+      MiniMagick::Image.open(img.path)
     end
   end
 
