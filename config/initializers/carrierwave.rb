@@ -1,8 +1,7 @@
 CarrierWave.configure do |config|
-  if ENV['RACK_ENV'] == 'heroku'
+  if ENV.has_key? 'USE_S3_STORAGE' and ENV['USE_S3_STORAGE'] == 'enabled'
     config.root = Rails.root.join('tmp')
     config.cache_dir = 'carrierwave'
-
 
     config.fog_credentials = {
         provider:              'AWS',
