@@ -1,0 +1,4 @@
+.leaders
+  - for leader in @leaders
+    .leader-container
+      = react_component 'Leader', leader: leader, statements_count: leader.statements_count

@@ -1,0 +1,2 @@
+class LeaderStatementsController < ApplicationController
+end

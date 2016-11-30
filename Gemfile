@@ -61,14 +61,15 @@ end
 group :development, :test do
   # Database
   gem 'sqlite3'
-
-  # Testing framework
-  gem 'rspec-rails', '~> 3.5'
 end
 
 group :test do
   gem 'simplecov'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
+
+  # Testing framework
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
 end
 
 group :development do

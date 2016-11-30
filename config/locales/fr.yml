@@ -45,6 +45,9 @@ fr:
         one: Statistique
         other: Statistiques
       general_settings: Configuration générale
+      leader_statement:
+        one: Déclaration
+        other: Déclarations
 
   # Shortcuts for models
   models: *models
