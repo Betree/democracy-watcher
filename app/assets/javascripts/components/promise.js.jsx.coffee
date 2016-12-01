@@ -13,7 +13,8 @@ class @Promise extends React.PureComponent
         children={
             <div className="more-infos">
               { this.props.promise.description &&
-                  <div className="description">{this.props.promise.description}</div>
+                  <div  className="description"
+                        dangerouslySetInnerHTML={{__html: this.props.promise.description}}/>
               }
               <Sources sources={this.props.promise.sources}/>
             </div>

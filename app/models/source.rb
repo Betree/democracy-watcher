@@ -3,6 +3,10 @@
 
 class Source < ActiveRecord::Base
   def name
-    "#{media} - #{title}"
+    if media and title
+      return "#{media} - #{title}"
+    end
+
+    title or media or url
   end
 end

@@ -89,8 +89,8 @@ ActiveRecord::Schema.define(version: 20161125025007) do
   end
 
   create_table "sources", force: :cascade do |t|
-    t.string   "media",      null: false
-    t.string   "title",      null: false
+    t.string   "media"
+    t.string   "title"
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
