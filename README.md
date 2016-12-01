@@ -11,14 +11,11 @@ This entity can be a country, a city council or your organization.
 You can get a preview of the front-end with fake data on
 [this link](https://democracy-watcher.herokuapp.com/)
 
-Current implementation supports english and french but translating it
-in a new language should be really kick.
+Current implementation supports English and French but translating it
+in a new language should be really quick.
 
-I'm actively looking for collaboration on this project. If you're interested in
-implementing it, feel free to contact me or to open a new ticket.
-Especially if you want to create and maintain an instance to track a French entity
-(your local city, DOM/TOM) I would be happy to host it for you under the France
-Democracy Watcher domain.
+I'm actively looking for collaboration on this project, feel free to contact me if you need  assistance in implementing it !
+In particular, if you want to create and maintain an instance to track a French entity (your local city, DOM/TOM) I would be happy to host it for you under the France Democracy Watcher domain.
 
 
 ## :rocket: Modules
@@ -44,15 +41,17 @@ and add sources for this data.
 ![Statistics view](https://lut.im/4mE0mbadXa/iR0SubRJvHxWJFqD.png)
 
 
-## :computer: Backend
+## :computer: Admin section
 
 These modules are entirely administrable on an admin platform :
 
-![Backend view](https://lut.im/T2XcO0E79g/9kVLWKHWV0Q9K2eg.png)
+![Admin view](https://lut.im/T2XcO0E79g/9kVLWKHWV0Q9K2eg.png)
 
 
 
 # :floppy_disk: Installation
+
+DemocracyWatcher uses Ruby on Rails 5. It also requires you to install imagemagick to work properly.
 
 TODO
 
