@@ -1,4 +1,4 @@
 .leaders
   - for leader in @leaders
-    .leader-container
+    %a.leader-container{href: leader_statements_path(leader)}
       = react_component 'Leader', leader: leader, statements_count: leader.statements_count

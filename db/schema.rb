@@ -41,26 +41,6 @@ ActiveRecord::Schema.define(version: 20161130013741) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "leader_statement_sources", force: :cascade do |t|
-    t.integer  "leader_statement_id", null: false
-    t.integer  "source_id",           null: false
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.index ["leader_statement_id"], name: "index_leader_statement_sources_on_leader_statement_id"
-    t.index ["source_id"], name: "index_leader_statement_sources_on_source_id"
-  end
-
-  create_table "leader_statements", force: :cascade do |t|
-    t.integer  "leader_id",      null: false
-    t.string   "statement",      null: false
-    t.integer  "status",         null: false
-    t.date     "date_statement"
-    t.text     "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["leader_id"], name: "index_leader_statements_on_leader_id"
-  end
-
   create_table "leaders", force: :cascade do |t|
     t.string   "name",        null: false
     t.datetime "created_at",  null: false
@@ -116,6 +96,26 @@ ActiveRecord::Schema.define(version: 20161130013741) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "statement_sources", force: :cascade do |t|
+    t.integer  "statement_id", null: false
+    t.integer  "source_id",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["source_id"], name: "index_statement_sources_on_source_id"
+    t.index ["statement_id"], name: "index_statement_sources_on_statement_id"
+  end
+
+  create_table "statements", force: :cascade do |t|
+    t.integer  "leader_id",      null: false
+    t.string   "statement",      null: false
+    t.integer  "status",         null: false
+    t.date     "date_statement"
+    t.text     "description"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["leader_id"], name: "index_statements_on_leader_id"
   end
 
   create_table "statistic_sources", force: :cascade do |t|

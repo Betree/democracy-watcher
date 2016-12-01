@@ -1,0 +1,6 @@
+.leader-statements-view
+  = react_component('Leader', leader: @leader, statements_count: @leader.statements.length)
+
+  - for statement in @leader.statements
+    .statement
+      = statement.statement

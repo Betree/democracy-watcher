@@ -5,13 +5,16 @@ GeneralSettings.create(welcome_message:  "<h2>Welcome to DemocracyWatcher !</h2>
 You should customize this message in the <a href='/admin/sign_in'>the admin section</a>.")
 
 # Create default admin
-Admin.create!(email: 'admin@democracywatcher.com', password: 'password', password_confirmation: 'password')
+if Admin.count == 0
+  Admin.create!(email: 'admin@democracywatcher.com', password: 'password', password_confirmation: 'password')
+end
 
 # Add fake data for development database (useful to work on the views)
 if Rails.env == 'development'
   number_of_promises = (5..50)
   number_of_sources = (0..3)
   number_of_statistics = (0..10)
+  number_of_statements = (0..40)
   date_start = Date.current - 3.months
   mandate_duration = 3.years
 
@@ -75,30 +78,43 @@ if Rails.env == 'development'
   entities.each do |entity, leader|
     group = Group.create(name: entity)
     leader = Leader.create(name: leader)
+    # Create statements for that leader
+    (0..rand(number_of_statements)).each {
+      statement = Statement.create( leader: leader,
+                                    statement: Forgery::LoremIpsum.sentence,
+                                    status: 1,
+                                    date_statement: Forgery::Date.date,
+                                    description: Forgery::LoremIpsum.paragraphs(rand(1..8)))
+      # Create statement sources
+      (number_of_sources.first..rand(number_of_sources)).each {
+        StatementSource.create(statement: statement, source: sources.sample)
+      }
+    }
+
     ruling_entity = RulingEntity.create(leader: leader, group: group, mandate_start: date_start,
                                         mandate_end: date_start + mandate_duration,
                                         description: Forgery(:lorem_ipsum).paragraphs(rand(1..4)))
 
     # Create promises
-    for i in (0..rand(number_of_promises))
+    for i in (number_of_promises.first..rand(number_of_promises))
       promise = Promise.create(ruling_entity: ruling_entity, subject: promise_subjects.sample,
                                status: promise_status.sample, title: promises.sample,
                                description: Forgery(:lorem_ipsum).paragraphs(rand(1..8)))
 
       # Create promises sources
-      for j in (0..rand(number_of_sources))
+      for j in (number_of_sources.first..rand(number_of_sources))
         PromiseSource.create(promise: promise, source: sources.sample)
       end
     end
 
     # Create statistics
-    for i in (0..rand(number_of_statistics))
+    for i in (number_of_statistics.first..rand(number_of_statistics))
       chart = charts.sample
       statistic = Statistic.create( ruling_entity: ruling_entity,
                                     description: Forgery(:lorem_ipsum).paragraphs(rand(0..1)),
                                     chart_type: chart[:type], chart_data: chart[:data])
       # Create statistics sources
-      for j in (0..rand(number_of_sources))
+      for j in (number_of_sources.first..rand(number_of_sources))
         StatisticSource.create(statistic: statistic, source: sources.sample)
       end
     end

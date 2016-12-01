@@ -2,7 +2,7 @@
 # License::   MIT
 
 class Leader < ActiveRecord::Base
-  has_many :statements, class_name: LeaderStatement
+  has_many :statements, class_name: Statement
 
   validates :name, presence: true
 

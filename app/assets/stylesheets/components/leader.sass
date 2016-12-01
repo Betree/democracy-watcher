@@ -1,7 +1,11 @@
 .leader
   padding: 20px
-  box-shadow: 0px 0px 5px 5px $light-gray
+  border: $base-border
   min-height: 130px
+  color: $base-font-color
+
+  &:hover
+    background-color: darken($base-background-color, 3)
 
   .leader-name
     border-bottom: $base-border

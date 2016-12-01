@@ -1,6 +1,6 @@
-class CreateLeaderStatements < ActiveRecord::Migration[5.0]
+class CreateStatements < ActiveRecord::Migration[5.0]
   def change
-    create_table :leader_statements do |t|
+    create_table :statements do |t|
       t.belongs_to  :leader, null: false
 
       t.string      :statement, null: false

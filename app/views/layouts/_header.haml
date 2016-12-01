@@ -4,4 +4,4 @@
       %h1
         = Settings.site_title ? Settings.site_title : 'DemocracyWatcher'
 
-    = react_component 'ResponsiveNavigationMenu', selected_entity: @ruling_entity, all_entities: get_last_ruling_entities(5)
+    = react_component 'ResponsiveNavigationMenu', selected_entity: @ruling_entity

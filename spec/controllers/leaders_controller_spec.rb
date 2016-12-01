@@ -6,9 +6,9 @@ RSpec.describe LeadersController, type: :controller do
       leader = Leader.create name: Forgery::Name.full_name
 
       # Creating three statements
-      LeaderStatement.create leader: leader, statement: Forgery::LoremIpsum.sentence, status: 1
-      LeaderStatement.create leader: leader, statement: Forgery::LoremIpsum.sentence, status: 1
-      LeaderStatement.create leader: leader, statement: Forgery::LoremIpsum.sentence, status: 1
+      Statement.create leader: leader, statement: Forgery::LoremIpsum.sentence, status: 1
+      Statement.create leader: leader, statement: Forgery::LoremIpsum.sentence, status: 1
+      Statement.create leader: leader, statement: Forgery::LoremIpsum.sentence, status: 1
 
       get :index
 

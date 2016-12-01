@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :leaders, only: [:index] do
-    resources :leader_statements, only: [:index]
+    resources :statements, only: [:index]
   end
 
 end

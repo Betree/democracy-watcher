@@ -5,10 +5,19 @@ class @ResponsiveNavigationMenu extends React.PureComponent
   @propTypes =
     title: React.PropTypes.string
 
+  constructor: (props) ->
+    super(props)
+    @state = {all_entities: []}
+    console.log 'constructor'
+
+  componentDidMount: ->
+    console.log 'mount'
+
+
   render: ->
     active_module = @get_active_module(this.props.selected_entity)
     collapse_trigger = `<span className="navigation-menu-button">MENU</span>`
-    links_entity = @ruling_entities_links @props.selected_entity, @props.all_entities, active_module
+    links_entity = @ruling_entities_links @props.selected_entity, @state.all_entities, active_module
     modules_links = this.modules_links(this.props.selected_entity, active_module)
 
     ` <div>
