@@ -13,4 +13,11 @@ class Leader < ActiveRecord::Base
         .group('leaders.id')
         .select('leaders.*, COUNT(statement) AS statements_count')
   end
+
+  def self.ordered_by_statements_count_desc
+    left_joins(:statements)
+        .group('leaders.id')
+        .select('leaders.*')
+        .order('COUNT(statement) DESC')
+  end
 end

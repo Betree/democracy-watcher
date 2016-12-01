@@ -4,6 +4,9 @@
 
   .leader-container
     @include span-columns(4)
+    @extend .animated
+    @extend .fadeIn
+    @include ProgressiveAnimationDelay(0s, 0.5s, 10)
     margin-bottom: 30px
     margin-right: 0
     padding: 0 15px

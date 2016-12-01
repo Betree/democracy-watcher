@@ -4,9 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :get_last_ruling_entities
+  helper_method :get_leaders_with_most_statements
 
   def get_last_ruling_entities(nb_entities)
     # TODO: Cache data, move it to before in controller ?
     RulingEntity.order(:mandate_start => :desc).limit(nb_entities).eager_load(:leader, :group)
+  end
+
+  def get_leaders_with_most_statements(nb_leaders)
+    # TODO: Cache data, move it to before in controller ?
+    Leader.ordered_by_statements_count_desc.limit nb_leaders
   end
 end
