@@ -1,3 +1,4 @@
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 ![Build status](https://travis-ci.org/Betree/democracy-watcher.svg?branch=master)
 ![Code Climate](https://codeclimate.com/github/Betree/democracy-watcher/badges/gpa.svg)
 ![Test Coverage](https://codeclimate.com/github/Betree/democracy-watcher/badges/coverage.svg)
