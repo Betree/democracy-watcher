@@ -56,8 +56,9 @@ if Rails.env == 'development'
   sources = [
     Source.create(media: 'The Best newspaper', title: "You won't believe this", url: 'qwant.com'),
     Source.create(media: 'The Best newspaper', title: 'Another article', url: 'qwant.com'),
-    Source.create(media: 'Another Newspaper', title: 'Article title', url: 'qwant.com'),
-    Source.create(media: 'Open Data FR', title: 'List of actions 2016', url: 'qwant.com'),
+    Source.create(media: 'Another Newspaper', title: 'Article title', url: 'http://www.qwant.com'),
+    Source.create(url: 'http://www.qwant.com'),
+    Source.create(media: 'Open Data FR', url: 'qwant.com'),
     Source.create(media: 'Youtube', title: 'She breaks her promise', url: 'qwant.com')
   ]
 
