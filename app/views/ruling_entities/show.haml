@@ -1,9 +1,0 @@
-.ruling-entity-description-container
-  = raw @ruling_entity.description
-  .quick-actions-buttons
-    = link_to ruling_entity_promises_path(@ruling_entity.id) do
-      %button
-        = t('see_promises')
-    = link_to ruling_entity_statistics_path(@ruling_entity.id) do
-      %button
-        = t('see_statistics')

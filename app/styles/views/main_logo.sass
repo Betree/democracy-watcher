@@ -1,0 +1,23 @@
+$font-family-logo: 'Righteous-Regular'
+
+/* Main logo font */
+@font-face
+  font-family: $font-family-logo
+  src: font-url('Righteous-Regular.ttf')
+  font-weight: normal
+  font-style: normal
+
+// Main logo
+.main-logo
+  &:hover
+    @extend .animated
+    @extend .pulse
+    @include animation-duration(0.5s)
+
+  h1
+    font-family: $font-family-logo, $heading-font-family
+    text-shadow: 1px 1px 1px #6D6D6D
+    color: $logo-color
+    font-size: 26px
+    &:hover
+      text-shadow: 1px 1px 1px green

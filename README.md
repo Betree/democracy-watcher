@@ -1,66 +1,43 @@
-[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-![Build status](https://travis-ci.org/Betree/democracy-watcher.svg?branch=master)
-![Code Climate](https://codeclimate.com/github/Betree/democracy-watcher/badges/gpa.svg)
-![Test Coverage](https://codeclimate.com/github/Betree/democracy-watcher/badges/coverage.svg)
+# React Webpack Babel Starter
+Minimal starter kit with hot module replacement for fast development.
 
+**Main features**
+* [React](https://facebook.github.io/react/) (15.x)
+* [Webpack](https://webpack.js.org/) (3.x)
+* [Babel](http://babeljs.io/) (6.x)
+* [Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/) using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (3.x)
+* [SASS](http://sass-lang.com/)
+* [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
 
-# _<img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">_ Democracy Watcher <img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">
+**Additional features**
+* Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
+* Code quality (linting)
+  * JavaScript - [JSHint](http://jshint.com/docs/)
+  * SASS/CSS - [stylelint](http://stylelint.io/) (rules: [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard))
 
-This project aims to provide a set of tools to monitor a democratic entity.
-This entity can be a country, a city council or your organization.
+## Installation
+1. Clone/download repo
+2. `npm install`
 
-You can get a preview of the front-end with fake data on
-[this link](https://democracy-watcher.herokuapp.com/)
+## Usage
+**General**
 
-Current implementation supports English and French but translating it
-in a new language should be really quick.
+`npm start`
 
-I'm actively looking for collaboration on this project, feel free to contact me if you need  assistance in implementing it !
-In particular, if you want to create and maintain an instance to track a French entity (your local city, DOM/TOM) I would be happy to host it for you under the France Democracy Watcher domain.
+* Compiles the app
+* Starts a web server hosting the app @ `http://localhost:8080`
+* Watches for changes and injects them using hot module replacement (without reloading the browser)
 
+**Other commands**
+* `npm run lint` - Run JavaScript and SASS linter
+* `npm run lint:js` - Run JavaScript linter
+* `npm run lint:sass` - Run SASS linter
+* `npm run test` - Run tests (Jest)
 
-## :rocket: Modules
+## TODO
+* [ ] Build script
+  * [ ] Asset revisioning / cache bursting
+* [ ] React router
 
-Two modules are currently available :
-
-### :newspaper: Promise tracker
-
-List goals / promises with their description, their sources and their status. A
-promise may be done, in progress, not yet started or broken.
-
-You can also split the promises in categories (Culture, economy...etc)
-which will be displayed as tabs and in subjects which will appears 
-between promises :
-
-![Promises view](https://lut.im/gT6h2jW7TK/UY4NqBNBeoe9LTMX.png)
-
-### :chart_with_upwards_trend: Statistics
-
-This section allows you to easily show data. You can use text, charts
-and add sources for this data.
-
-![Statistics view](https://lut.im/4mE0mbadXa/iR0SubRJvHxWJFqD.png)
-
-
-## :computer: Admin section
-
-These modules are entirely administrable on an admin platform :
-
-![Admin view](https://lut.im/T2XcO0E79g/9kVLWKHWV0Q9K2eg.png)
-
-
-
-# :floppy_disk: Installation
-
-DemocracyWatcher uses Ruby on Rails 5. It also requires you to install imagemagick to work properly.
-
-TODO
-
-# :wrench: Contribute
-
-TODO
-
-
-
-
-
+## Resources
+* [Create React App (by FaceBook)](https://github.com/facebookincubator/create-react-app) - Good starting point when learning React
