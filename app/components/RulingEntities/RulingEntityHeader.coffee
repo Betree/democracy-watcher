@@ -1,4 +1,7 @@
-class @RulingEntityHeader extends React.Component
+import React from 'react'
+
+
+class RulingEntityHeader extends React.Component
   constructor: (props) ->
     super(props)
     @state = {logo_average_color: '#F9F9F9'}
@@ -8,8 +11,8 @@ class @RulingEntityHeader extends React.Component
     mandate_end = new Date(@props.ruling_entity.mandate_end).getFullYear()
     mandate_period_str = "#{mandate_start} - #{mandate_end}"
     style = {}
-    if @props.ruling_entity.banner.blur_seed.url
-      style['backgroundImage'] = "url(#{@props.ruling_entity.banner.blur_seed.url})"
+    if @props.ruling_entity.banner
+      style['backgroundImage'] = "url(#{@props.ruling_entity.banner})"
 
     `<div className="ruling-entity-header" style={style}>
         <div className='side-image-content'>
@@ -19,8 +22,11 @@ class @RulingEntityHeader extends React.Component
           </div>
         </div>
         <div className="images-wrapper">
-          {this.props.ruling_entity.banner.thumb.url &&
-            <img src={ this.props.ruling_entity.banner.thumb.url }/>
+          {this.props.ruling_entity.thumb &&
+            <img src={ this.props.ruling_entity.thumb }/>
           }
         </div>
     </div>`
+
+
+export default RulingEntityHeader

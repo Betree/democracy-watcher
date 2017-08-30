@@ -76,17 +76,16 @@
 
 
 /* ------ Data ------ */
-html
-  #ruling-entity-data
-    @extend .animated
-    @extend .fadeIn
+.ruling-entity-data
+  @extend .animated
+  @extend .fadeIn
 
-#ruling-entity-data-container
+.ruling-entity-data-container
   background: $base-background-color
   border-top: 1px solid $base-border-color
   margin-top: -1px
 
-  #ruling-entity-data
+  .ruling-entity-data
     @include outer-container
     @include row()
     border-top: 1px solid $base-border-color

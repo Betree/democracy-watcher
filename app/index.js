@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import {AppContainer} from "react-hot-loader";
+import { Provider } from "react-redux"
+import { AppContainer } from "react-hot-loader";
 
+import store from './state'
 import I18n from "i18n-js"
 import "./translations"
 
@@ -16,7 +18,9 @@ I18n.locale = "en";
 const renderComponent = (Component) => {
   ReactDOM.render(
     <AppContainer>
+      <Provider store={store}>
         <Component/>
+      </Provider>
     </AppContainer>,
     rootEl
   );
