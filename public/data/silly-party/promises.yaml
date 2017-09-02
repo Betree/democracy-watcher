@@ -1,0 +1,26 @@
+promises:
+  Education:
+    - title: Educate the chickens
+      status: IN_PROGRESS
+      subject: What to do with the chickens
+      description:
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lacus ipsum.
+        In porttitor tristique diam ut sodales. Proin porta molestie blandit. Vestibulum a felis eget mauris bibendum
+        malesuada. Quisque porttitor lorem in euismod mollis. Fusce varius ut massa aliquet hendrerit. Ut scelerisque
+        risus consectetur quam dapibus sollicitudin. Suspendisse pellentesque eget arcu ut varius.
+        Morbi mollis sed nibh nec eleifend. Donec nec ultricies risus, sit amet hendrerit quam. Etiam non tortor
+        dapibus, semper nulla quis, placerat orci.
+      sources:
+        - media: Le Monde
+          url: https://lemonde.fr/blablabla
+          title: We saved the chickens !
+    - title: Free books for the politicians
+      status: TODO
+      description:
+        Maecenas et laoreet sapien. Maecenas ornare maximus mauris, sed blandit mi tristique vel. Maecenas rhoncus vel
+        erat in venenatis. Praesent tincidunt dignissim facilisis. Quisque vestibulum viverra massa at commodo.
+        Quisque vehicula felis vitae finibus aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Economy:
+    - title: Make potatoes the new official currency
+      status: DONE
+      description: Finally a currency you can eat !

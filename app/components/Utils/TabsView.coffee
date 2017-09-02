@@ -1,4 +1,7 @@
-class @TabsView extends React.Component
+import React from 'react'
+
+
+export class TabsView extends React.Component
   constructor: (props) ->
     super(props)
     @current_active_tab = null

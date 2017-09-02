@@ -8,10 +8,11 @@
     @extend .flipInX
     @include animation-delay(0s)
     margin-bottom: 5px
-    opacity: 0.9
 
-    &:hover
-      opacity: 1
+    &>*
+      opacity: 0.8
+      &:hover
+        opacity: 1
 
   > a
     @include ProgressiveAnimationDuration($min_animation_delay, $max_animation_delay, $number_of_entries_before_full_delay, "> .ruling-entity-header")

@@ -6,7 +6,6 @@ import API from '../../api'
 
 
 // Actions
-// TODO Fetch API
 export const fetchRulingEntities = createAction('RULING_ENTITIES/FETCH', () => API.get("ruling_entities"))
 
 // Initial state

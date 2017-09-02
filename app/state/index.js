@@ -5,16 +5,19 @@ import { routerReducer, routerMiddleware } from 'react-router-redux'
 import history from '../history'
 
 import RulingEntitiesReducer from './ruling_entities/reducer'
+import PromisesReducer from './promises/reducer'
 
 
-# Declare reducers
-reducers = combineReducers
+// Declare reducers
+const reducers = combineReducers({
   RulingEntities: RulingEntitiesReducer,
+  Promises: PromisesReducer,
   router: routerReducer
+})
 
-# Build store
-composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-store = createStore(reducers, composeEnhancers(applyMiddleware(
+// Build store
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducers, composeEnhancers(applyMiddleware(
   thunk,
   promiseMiddleware,
   routerMiddleware(history)

@@ -7,6 +7,7 @@ entities:
     description: The best government the world have ever seen
     thumb: https://api.adorable.io/avatars/200/xxxxx.png
     banner: https://api.adorable.io/avatars/300/xxxxx.png
+    modules: [PROMISE]
   - id: the-north
     name: The North
     leader: Jon Snow

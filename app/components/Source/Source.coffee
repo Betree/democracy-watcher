@@ -1,4 +1,6 @@
-class @Source extends React.PureComponent
+import React from 'react'
+
+export class Source extends React.PureComponent
   render: ->
     if @props.source.url and @props.source.title and @props.source.media
       `<div>
