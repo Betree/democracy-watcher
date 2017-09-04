@@ -1,4 +1,10 @@
-class @MandateStatistics extends React.Component
+import React from 'react'
+import I18n from 'i18n-js'
+
+import ProgressBar from '../Utils/ProgressBar'
+import ReactChart from '../Statistic/ReactChart'
+
+class PromisesStatistics extends React.PureComponent
   chart_options =
     tooltips:
       displayColors: false
@@ -24,13 +30,13 @@ class @MandateStatistics extends React.Component
       mandate_duration_description = I18n.t('days_in_office', {nb_days: days_in_office})
 
     # Promises statistics
-    promises_status_count = _.countBy(@props.promises, (promise) -> promise.status)
-    promises_status_keys = _.keys(chart_promises_status_colors)
+    promises_status_count = @props.promises.countBy((promise) -> promise.status)
+    promises_status_keys = Object.keys(chart_promises_status_colors)
     chart_data =
       labels: (String(I18n.t("models.promise.status.#{key}")) for key in promises_status_keys)
       datasets: [
         data: (promises_status_count[key] for key in promises_status_keys),
-        backgroundColor: _.values(chart_promises_status_colors)
+        backgroundColor: Object.values(chart_promises_status_colors)
       ]
 
     # Main block
@@ -42,3 +48,5 @@ class @MandateStatistics extends React.Component
             data-type='doughnut'  data-options={chart_options} data-chart-data={chart_data}
         />
     </div>`
+
+export default PromisesStatistics

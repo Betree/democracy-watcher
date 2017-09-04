@@ -1,4 +1,6 @@
-class @ProgressBar extends React.Component
+import React from 'react'
+
+class ProgressBar extends React.Component
   @propTypes =
     progress: React.PropTypes.number
 
@@ -12,3 +14,5 @@ class @ProgressBar extends React.Component
     `<div className="progress-bar-indication">
         <span className="meter" style={progress_style}><p></p></span>
     </div>`
+
+export default ProgressBar

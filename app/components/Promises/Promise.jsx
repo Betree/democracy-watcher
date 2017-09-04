@@ -11,18 +11,18 @@ const Promise = ({promise}) => (
     trigger={
       <div className="promise-header">
         <div className='status'>
-          <i className={'fa status-' + promise.status.toLowerCase()}
-             title={I18n.t('models.promise.status.' + promise.status.toLowerCase())}/>
+          <i className={'fa status-' + promise.status}
+             title={I18n.t('models.promise.status.' + promise.status)}/>
         </div>
         <div className="title">{promise.title}</div>
       </div>
     }
     children={
       <div className="more-infos">
-        <div className={classNames('description', {'has-sources': !!promise.sources})}>
+        <div className={classNames('description', {'has-sources': promise.sources.size > 0})}>
           { promise.description }
         </div>
-        { promise.sources && <Sources sources={promise.sources}/>}
+        { promise.sources.size > 0 && <Sources sources={promise.sources}/>}
       </div>
     }
   />

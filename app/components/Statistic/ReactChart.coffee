@@ -1,4 +1,7 @@
-class @ReactChart extends React.Component
+import React from 'react'
+import Chart from 'chart.js'
+
+class ReactChart extends React.Component
   render: ->
     `<canvas id={this.props.id} className={this.props.className + ' chartjs'}/>`
 
@@ -9,3 +12,4 @@ class @ReactChart extends React.Component
       data: @props['data-chart-data']
     }
 
+export default ReactChart

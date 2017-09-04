@@ -6,8 +6,8 @@ const RulingEntity = new Record({
   name: "",
   description: "",
   leader: "",
-  mandate_start: "1991-10-12", // TODO Use datetimes
-  mandate_end: "1995-10-12", // TODO Use datetimes
+  mandate_start: "1991-10-12",
+  mandate_end: "1995-10-12",
   thumb: null,
   banner: null
 })

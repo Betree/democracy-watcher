@@ -6,7 +6,7 @@ import { getCurrentEntity } from '../../state/ruling_entities/selectors'
 import Home from '../App/Home'
 import Presentation from './Presentation'
 import RulingEntityHeader from './RulingEntityHeader'
-import PromisesCategoriesTabs from '../Promises/PromisesCategoriesTabs'
+import PromisesModule from '../Promises/PromisesModule'
 
 const RulingEntity = ({entity}) => (
   !entity ? null :
@@ -15,7 +15,7 @@ const RulingEntity = ({entity}) => (
     <div className="ruling-entity-data-container">
       <div className="ruling-entity-data">
         <Route path="/entities/:entity_id" exact={true} component={Presentation}/>
-        <Route path="/entities/:entity_id/promises" component={PromisesCategoriesTabs}/>
+        <Route path="/entities/:entity_id/promises" component={PromisesModule}/>
         <Route path="/entities/:entity_id/statistics" component={Home}/>
       </div>
     </div>
