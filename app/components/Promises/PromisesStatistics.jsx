@@ -51,7 +51,7 @@ export default class PromisesStatistics extends React.PureComponent {
     const promisesStatusesCount = this.props.promises.countBy((promise) => promise.status)
     const promisesStatusesKeys = Array.from(promisesStatusesCount.keys())
     const chartData = {
-      labels: promisesStatusesKeys.map(k => String(I18n.t(`models.promise.status.${k}`))),
+      labels: promisesStatusesKeys.map(k => String(I18n.t(`promise.status.${k}`))),
       datasets: [{
         data: promisesStatusesKeys.map(k => promisesStatusesCount.get(k)),
         backgroundColor: Object.values(CHART_PROMISE_STATUSES_COLORS)

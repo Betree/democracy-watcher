@@ -1,5 +1,7 @@
 import React from 'react'
 
+import RulingEntityTitle from './RulingEntityTitle'
+
 
 class RulingEntityHeader extends React.Component
   constructor: (props) ->
@@ -17,7 +19,7 @@ class RulingEntityHeader extends React.Component
     `<div className="ruling-entity-header" style={style}>
         <div className='side-image-content'>
           <div className="entity-description">
-            <h1>{ this.props.ruling_entity.name }</h1>
+            <h1><RulingEntityTitle entity={this.props.ruling_entity}/></h1>
             <h4 className='date-interval'>{ mandate_period_str }</h4>
           </div>
         </div>

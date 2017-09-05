@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import I18n from 'i18n-js'
+
 import {getCurrentEntity} from '../../state/ruling_entities/selectors'
 
 
@@ -14,12 +16,7 @@ const RulingEntity = ({entity}) => {
         <div className="quick-actions-buttons">
           {promiseModule &&
           <Link to={`/entities/${entity.id}/promises`}>
-            <button>See Promises</button>
-          </Link>
-          }
-          {statisticModule &&
-          <Link to={`/entities/${entity.id}/statistics`}>
-            <button>See Statistics</button>
+            <button>{I18n.t('see_promises')}</button>
           </Link>
           }
         </div>

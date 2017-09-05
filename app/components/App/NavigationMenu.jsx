@@ -7,6 +7,7 @@ import classNames from 'classnames'
 import { getCurrentLocation } from '../../state/misc_selectors'
 import { getRulingEntities, getCurrentEntity } from '../../state/ruling_entities/selectors'
 import Collapsable from '../Utils/Collapsable'
+import RulingEntityShortTitle from '../RulingEntities/RulingEntityShortTitle'
 
 
 @connect(state => ({
@@ -58,7 +59,7 @@ export default class NavigationMenu extends React.PureComponent {
             <span className='date-interval'>
               {entity.mandate_start.split('-')[0]} - {entity.mandate_end.split('-')[0]}
             </span>
-            {entity.name}
+            <RulingEntityShortTitle entity={entity}/>
             <img src={entity.thumb}/>
         </NavLink>
       </li>
@@ -71,9 +72,7 @@ export default class NavigationMenu extends React.PureComponent {
 
     const entries = [this.MenuEntry(`/entities/${entity.id}`, I18n.t('presentation'), true)]
     if (entity.modules.includes('PROMISE'))
-      entries.push(this.MenuEntry(`/entities/${entity.id}/promises`, I18n.t('models.promise.other')))
-    if (entity.modules.includes('STATISTIC'))
-      entries.push(this.MenuEntry(`/entities/${entity.id}/statistics`, I18n.t('models.statistic.other')))
+      entries.push(this.MenuEntry(`/entities/${entity.id}/promises`, I18n.t('promise.other')))
     return entries
   }
 

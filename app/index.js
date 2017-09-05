@@ -5,13 +5,12 @@ import { AppContainer } from "react-hot-loader";
 
 import store from './state'
 import I18n from "i18n-js"
-import "./translations"
+import "./translations/en"
 
 import App from "./components/App/App";
 
 const rootEl = document.getElementById("root");
 
-// TODO Real config for i18n
 I18n.defaultLocale = "en";
 I18n.locale = "en";
 

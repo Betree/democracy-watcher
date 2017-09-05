@@ -14,7 +14,7 @@ const Promise = ({promise}) => {
         <div className={classNames('promise-header', {'has-children': hasChildren})}>
           <div className='status'>
             <i className={'fa status-' + promise.status}
-               title={I18n.t('models.promise.status.' + promise.status)}/>
+               title={I18n.t('promise.status.' + promise.status)}/>
           </div>
           <div className="title">{promise.title}</div>
         </div>
