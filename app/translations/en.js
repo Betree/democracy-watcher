@@ -17,6 +17,7 @@ I18n.translations["en"] = {
   },
   "sources": "Sources",
   "no_source": "No source have been given",
+  "others": "Others",
   "presentation": "Presentation",
   "see_all": "See all",
   "see_promises": "See promises",
