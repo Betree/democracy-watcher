@@ -1,16 +1,25 @@
-import { Record, List } from 'immutable'
+import { Record, List, Map } from 'immutable'
 import uuidv4 from 'uuid/v4'
+
+const STATUS_ALIASES = new Map({
+  todo: 'not_yet_started'
+})
 
 export default class Promise extends Record({
   id: "",
   title: "",
   subject: null,
-  status: "TODO", // Can be TODO, IN_PROGRESS, DONE or BROKEN
+  status: "not_yet_started", // Can be TODO, IN_PROGRESS, DONE or BROKEN
   description: "",
   sources: new List()
 }) {
   constructor(values) {
-    const status = values.status ? values.status.toLowerCase() : null
+    const status = values.status ? Promise.statusFormat(values.status) : null
     super(Object.assign(values, {id: uuidv4(), status}))
+  }
+
+  static statusFormat(status) {
+    status = status.toLowerCase()
+    return STATUS_ALIASES.has(status) ? STATUS_ALIASES.get(status) : status
   }
 }

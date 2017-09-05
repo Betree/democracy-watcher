@@ -21,10 +21,7 @@ const PromisesReducer = handleActions({
     next: (state, {payload}) => {
       let promises = new Map()
       for (let [category, categoryPromises] of Object.entries(payload))
-        promises = promises.set(category, new List(categoryPromises)
-          .map(p => new Promise(p))
-          .groupBy(v => v.subject || null)
-        )
+        promises = promises.set(category, new List(categoryPromises).map(p => new Promise(p)))
 
       return state.mergeDeep({promises, error: null, isLoading: false})
     },

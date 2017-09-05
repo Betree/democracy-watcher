@@ -6,27 +6,30 @@ import Collapsable from '../Utils/Collapsable'
 import {Sources} from '../Source/Sources'
 
 
-const Promise = ({promise}) => (
-  <Collapsable
-    trigger={
-      <div className="promise-header">
-        <div className='status'>
-          <i className={'fa status-' + promise.status}
-             title={I18n.t('models.promise.status.' + promise.status)}/>
+const Promise = ({promise}) => {
+  const hasChildren = promise.description || promise.sources.size > 0
+  return (
+    <Collapsable
+      trigger={
+        <div className={classNames('promise-header', {'has-children': hasChildren})}>
+          <div className='status'>
+            <i className={'fa status-' + promise.status}
+               title={I18n.t('models.promise.status.' + promise.status)}/>
+          </div>
+          <div className="title">{promise.title}</div>
         </div>
-        <div className="title">{promise.title}</div>
-      </div>
-    }
-    children={
-      <div className="more-infos">
-        <div className={classNames('description', {'has-sources': promise.sources.size > 0})}>
-          { promise.description }
+      }
+      children={!hasChildren ? null :
+        <div className="more-infos">
+          <div className={classNames('description', {'has-sources': promise.sources.size > 0})}>
+            { promise.description }
+          </div>
+          { promise.sources.size > 0 && <Sources sources={promise.sources}/>}
         </div>
-        { promise.sources.size > 0 && <Sources sources={promise.sources}/>}
-      </div>
-    }
-  />
-)
+      }
+    />
+  )
+}
 
 export default Promise
 

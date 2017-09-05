@@ -22,7 +22,7 @@ export default class PromisesModule extends React.PureComponent {
     return (
       <div>
         <PromisesCategoriesTabs categories={this.props.categories} promises={this.props.promises}/>
-        <PromisesStatistics ruling_entity={this.props.entity} promises={this.props.promises}/>
+        <PromisesStatistics ruling_entity={this.props.entity}/>
       </div>
     )
   }
