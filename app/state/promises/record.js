@@ -1,6 +1,8 @@
 import { Record, List, Map } from 'immutable'
 import uuidv4 from 'uuid/v4'
 
+import Source from './source_record'
+
 const STATUS_ALIASES = new Map({
   todo: 'not_yet_started'
 })
@@ -15,7 +17,8 @@ export default class Promise extends Record({
 }) {
   constructor(values) {
     const status = values.status ? Promise.statusFormat(values.status) : null
-    super(Object.assign(values, {id: uuidv4(), status}))
+    const sources = values.sources ? new List(values.sources).map(s => new Source(s)) : new List()
+    super(Object.assign(values, {id: uuidv4(), status, sources}))
   }
 
   static statusFormat(status) {

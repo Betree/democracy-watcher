@@ -1,4 +1,4 @@
-import { Record } from 'immutable'
+import { Record, List } from 'immutable'
 
 
 const RulingEntity = new Record({
@@ -9,7 +9,8 @@ const RulingEntity = new Record({
   mandate_start: "1991-10-12",
   mandate_end: "1995-10-12",
   thumb: null,
-  banner: null
+  banner: null,
+  modules: new List()
 })
 
 export default RulingEntity

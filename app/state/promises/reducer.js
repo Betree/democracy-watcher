@@ -2,6 +2,7 @@ import { Record, Map, List } from "immutable"
 import { createAction, handleActions } from 'redux-actions'
 
 import Promise from './record'
+import Source from './source_record'
 import API from '../../api'
 
 

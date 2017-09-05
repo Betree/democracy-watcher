@@ -69,11 +69,12 @@ export default class NavigationMenu extends React.PureComponent {
     if (!entity)
       return []
 
-    return [
-      this.MenuEntry(`/entities/${entity.id}`, I18n.t('presentation'), true),
-      this.MenuEntry(`/entities/${entity.id}/promises`, I18n.t('models.promise.other')),
-      this.MenuEntry(`/entities/${entity.id}/statistics`, I18n.t('models.statistic.other'))
-    ]
+    const entries = [this.MenuEntry(`/entities/${entity.id}`, I18n.t('presentation'), true)]
+    if (entity.modules.includes('PROMISE'))
+      entries.push(this.MenuEntry(`/entities/${entity.id}/promises`, I18n.t('models.promise.other')))
+    if (entity.modules.includes('STATISTIC'))
+      entries.push(this.MenuEntry(`/entities/${entity.id}/statistics`, I18n.t('models.statistic.other')))
+    return entries
   }
 
   MenuEntry(url, title, exact=false) {
