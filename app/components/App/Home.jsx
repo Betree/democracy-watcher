@@ -17,11 +17,19 @@ const Home = () =>
         <a href="https://github.com/Betree/democracy-watcher">Github</a>
       </p>
       <br/>
-      {/* Please keep the footer as-is to help people find the root project */}
+      {/* Please keep the footer as-is to respect the GPL license (feel free to translate it if you need to) */}
       <div className="welcome-message-footer">
-        This project uses DemocracyWatcher, distributed under MIT license. You can use it, clone it
-        and modify it freely.
-        See <a href="https://github.com/Betree/democracy-watcher">Github</a> for more infos.
+        <br/>
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
+        <br/>
+        {/*This program is distributed in the hope that it will be useful,*/}
+        {/*but WITHOUT ANY WARRANTY; without even the implied warranty of*/}
+        {/*MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the*/}
+        {/*GNU General Public License for more details.*/}
+        See <a href="https://github.com/Betree/democracy-watcher">this link</a> for more infos.
       </div>
     </div>
   </div>
