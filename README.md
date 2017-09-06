@@ -28,9 +28,28 @@ between promises :
 
 ![Promises view](https://lut.im/gT6h2jW7TK/UY4NqBNBeoe9LTMX.png)
 
-# :floppy_disk: Installation
+# :floppy_disk: Installation + deployment
 
-TODO
+Fork this repository then clone it:
+```bash
+git clone git@github.com:__YOUR_GITHUB_USERNAME/democracy-watcher.git
+```
+
+You can then use the following commands to manage your project:
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server on http://localhost:8080
+npm start
+
+# Build production files to /docs
+npm build
+```
+
+To deploy your project on Github pages, just go to the project Settings, scroll to
+GitHub Pages and select `master branch /docs folder` from the Source dropdown menu.
 
 # :wrench: Configuration
 
@@ -39,7 +58,7 @@ be afraid if you don't know it yet.
 
 ## Ruling entities
 
-The list of ruling entities is configured in `public/data/ruling_entities.yaml`. It has the following syntax:
+The list of ruling entities is configured in `data/ruling_entities.yaml`. It has the following syntax:
 
 ```
 entities:
@@ -60,7 +79,7 @@ entities:
 
 To configure promises, you must create a directory which has the id of the ruling entity as
 name and create a file called `promises.yaml` in it. With our previous example:
-> `public/data/silly-party/promises.yaml`
+> `data/silly-party/promises.yaml`
 
 ```
 # All promises must rest under a category (here Education and Economy)
