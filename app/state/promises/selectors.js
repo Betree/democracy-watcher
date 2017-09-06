@@ -1,5 +1,5 @@
-import { createSelector } from 'reselect'
-import { List } from 'immutable'
+import {createSelector} from 'reselect'
+import {List} from 'immutable'
 
 export const getPromises = state => state.Promises.promises
 export const getPromisesCategories = createSelector(getPromises, p => p.keys())

@@ -1,4 +1,4 @@
-import { Record, List, Map } from 'immutable'
+import {List, Map, Record} from 'immutable'
 import uuidv4 from 'uuid/v4'
 
 import Source from './source_record'

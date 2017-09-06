@@ -1,5 +1,5 @@
-import { Record, List } from "immutable"
-import { createAction, handleActions } from 'redux-actions'
+import {List, Record} from "immutable"
+import {createAction, handleActions} from 'redux-actions'
 
 import RulingEntity from './record'
 import API from '../../api'

@@ -1,11 +1,9 @@
-import yaml from 'js-yaml'
-
 export default class API {
   static get(path) {
     return new Promise((fulfill, reject) => {
-      fetch(`/data/${path}.yaml`)
+      fetch(`/data/${path}.json`)
         .then(response => response.text().then(body => {
-          const data = yaml.safeLoad(body)
+          const data = JSON.parse(body)
           return fulfill(data)
         }))
     })

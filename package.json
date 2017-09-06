@@ -1,24 +1,20 @@
 {
-  "name": "react-webpack-babel-starter",
+  "name": "democracy-watcher",
   "version": "0.1.0",
-  "description": "Starter kit for React, Webpack (with Hot Module Replacement) and Babel.",
-  "author": "Viktor Persson",
+  "description": "Monitor your country, your city council or your organization promises and objectives",
+  "author": "Benjamin Piouffle",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vikpe/react-webpack-babel-starter.git"
+    "url": "git+https://github.com/Betree/democracy-watcher.git"
   },
   "bugs": {
-    "url": "https://github.com/vikpe/react-webpack-babel-starter/issues"
+    "url": "https://github.com/Betree/democracy-watcher/issues"
   },
-  "homepage": "https://github.com/vikpe/react-webpack-babel-starter",
+  "homepage": "https://github.com/Betree/democracy-watcher",
   "scripts": {
-    "lint": "npm run lint:js && npm run lint:sass",
-    "lint:js": "jshint",
-    "lint:sass": "stylelint ./src/**/*.sass",
-    "start": "webpack-dev-server",
-    "test": "jest --watch --coverage",
-    "build": "webpack build"
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js --display-error-details"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -32,18 +28,20 @@
     "babel-preset-stage-2": "^6.24.1",
     "coffee-loader": "^0.8.0",
     "coffeescript": "^1.12.7",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^3.3.1",
     "jest": "^20.0.4",
+    "js-yaml": "^3.9.1",
     "jshint": "^2.9.5",
     "node-sass": "^4.5.3",
     "react-addons-test-utils": "^15.6.0",
-    "react-hot-loader": "^3.0.0-beta.7",
     "sass-loader": "^6.0.6",
     "webpack": "^3.5.5",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
@@ -56,7 +54,6 @@
     "history": "^4.7.2",
     "i18n-js": "^3.0.1",
     "immutable": "^3.8.1",
-    "js-yaml": "^3.9.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
@@ -69,29 +66,5 @@
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "uuid": "^3.1.0"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/config/jest/jest.preprocessor.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "testRegex": "/__tests__/.*\\.(js|jsx)$",
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "moduleNameMapper": {
-      "^.+\\.(css|scss|sass)$": "identity-obj-proxy",
-      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileMock.js"
-    },
-    "globals": {
-      "DEVELOPMENT": false,
-      "FAKE_SERVER": false
-    }
   }
 }

@@ -1,32 +1,28 @@
-const webpack           = require("webpack");
+const webpack           = require('webpack');
 const {resolve}         = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const yaml              = require('js-yaml');
 
 
 module.exports = {
-  context: resolve(__dirname, "app"),
   resolve: {
     extensions: [".webpack.js", ".web.js", ".js", ".jsx", ".sass", ".scss", ".coffee"],
   },
   entry:   [
-    "react-hot-loader/patch", // activate HMR for React
-    "webpack-dev-server/client?http://localhost:8080",// bundle the client for webpack-dev-server and connect to the provided endpoint
-    "webpack/hot/only-dev-server", // bundle the client for hot reloading, only- means to only hot reload for successful updates
-    "./index.js", // the entry point of our app
-    "./styles/application.sass"
+    "./app/index.js", // the entry point of our app
+    "./app/styles/application.sass"
   ],
   output:  {
-    filename:   "app.js", // the output bundle
-    path:       resolve(__dirname, "public"),
-    publicPath: "/" // necessary for HMR to know where to load the hot update chunks
+    path: resolve(__dirname, 'docs'),
+    filename: 'app.js'
   },
 
-  devtool: "inline-source-map",
+  devtool: "cheap-module-eval-source-map",
 
   devServer: {
-    hot:         true, // enable HMR on the server
-    contentBase: resolve(__dirname, "public"), // match the output path
-    publicPath:  "/", // match the output `publicPath`
+    contentBase: resolve(__dirname, "dev"), // match the output path
+    publicPath:  "/",
     historyApiFallback: true
   },
 
@@ -75,9 +71,14 @@ module.exports = {
       filename: 'app.css',
       allChunks: true,
     }),
-    new webpack.HotModuleReplacementPlugin(), // enable HMR globally
-    new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
-
+    new CopyWebpackPlugin([
+      {from: '**', context: 'app/assets'},
+      {from: 'data', to: 'data/[path][name].json', transform: (content, path) => {
+        if (/\.ya?ml$/.test(path))
+          return JSON.stringify(yaml.safeLoad(content.toString()))
+        return content.toString()
+      }}
+    ])
   ],
   performance: {
     hints: false

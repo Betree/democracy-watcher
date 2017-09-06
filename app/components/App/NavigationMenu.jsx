@@ -1,11 +1,11 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {NavLink} from 'react-router-dom'
 import I18n from "i18n-js"
 import classNames from 'classnames'
 
-import { getCurrentLocation } from '../../state/misc_selectors'
-import { getRulingEntities, getCurrentEntity } from '../../state/ruling_entities/selectors'
+import {getCurrentLocation} from '../../state/misc_selectors'
+import {getCurrentEntity, getRulingEntities} from '../../state/ruling_entities/selectors'
 import Collapsable from '../Utils/Collapsable'
 import RulingEntityShortTitle from '../RulingEntities/RulingEntityShortTitle'
 

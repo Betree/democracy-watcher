@@ -1,4 +1,4 @@
-import { Record } from 'immutable'
+import {Record} from 'immutable'
 import uuidv4 from 'uuid/v4'
 
 

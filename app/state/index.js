@@ -1,7 +1,7 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux"
+import {applyMiddleware, combineReducers, compose, createStore} from "redux"
 import promiseMiddleware from 'redux-promise'
 import thunk from 'redux-thunk'
-import { routerReducer, routerMiddleware } from 'react-router-redux'
+import {routerMiddleware, routerReducer} from 'react-router-redux'
 import history from '../history'
 
 import RulingEntitiesReducer from './ruling_entities/reducer'

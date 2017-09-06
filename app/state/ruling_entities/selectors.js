@@ -1,6 +1,5 @@
-import { createSelector } from 'reselect'
-import { getCurrentLocation } from '../misc_selectors'
-import RulingEntity from './record'
+import {createSelector} from 'reselect'
+import {getCurrentLocation} from '../misc_selectors'
 
 
 const ENTITY_URL_REGEX = /\/entities\/([^\/]+)(\/.+)?/

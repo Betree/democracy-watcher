@@ -2,3 +2,7 @@
 coverage/
 dist/
 node_modules/
+public/app.css
+public/app.js
+npm-debug.log
+dev

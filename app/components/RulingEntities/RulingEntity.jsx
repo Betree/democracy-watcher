@@ -1,8 +1,8 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { Route } from 'react-router'
+import {connect} from 'react-redux'
+import {Route} from 'react-router'
 
-import { getCurrentEntity } from '../../state/ruling_entities/selectors'
+import {getCurrentEntity} from '../../state/ruling_entities/selectors'
 import Home from '../App/Home'
 import Presentation from './Presentation'
 import RulingEntityHeader from './RulingEntityHeader'
