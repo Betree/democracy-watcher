@@ -1,0 +1,71 @@
+.accordion-tabs-minimal
+  $base-border-color: #dcdcdc !default
+  $base-background-color: #fff !default
+  $base-spacing: 1.5em !default
+  $dark-gray: #333 !default
+  $medium-screen: em(640) !default
+  $tab-link-color: $dark-gray
+  $tab-border: 1px solid $base-border-color
+  $tab-active-background: $base-background-color
+  $tab-inactive-color: $base-background-color
+  $tab-inactive-hover-color: #c0c0c0
+  $tab-mode: $medium-screen
+
+  @include clearfix
+  line-height: 1.5
+  padding: 0
+  min-height: 100px
+
+  .tab-header-and-content
+    list-style: none
+    margin-right: 5px
+    @include media($tab-mode)
+      display: inline
+    > a:hover
+      cursor: pointer
+
+  .tab-link
+    background-color: $tab-inactive-color
+    border-top: $tab-border
+    color: $tab-link-color
+    display: block
+    padding: ($base-spacing / 2) $gutter
+    text-decoration: none
+    box-shadow: -4px -2px 4px -4px rgba(93, 93, 93, 0.4)
+    border-radius: 5px 5px 0px 0px
+
+    @include media($tab-mode)
+      border-top: 0
+      display: inline-block
+
+    &:hover
+      color: $action-color
+
+    &:focus
+      outline: none
+
+    @include media($tab-mode)
+      border: $tab-border
+
+    &.is-active
+      border-bottom: 0
+      color: $logo-color
+      font-weight: bold
+      @include media($tab-mode)
+        border: $tab-border
+        border-bottom-color: $tab-active-background
+        margin-bottom: -1px
+
+  .tab-content:not(.is-open)
+    display: none
+
+  .tab-content
+    padding: $base-spacing $gutter
+    padding-top: 2em
+    width: 100%
+
+    @include media($tab-mode)
+      border-top: $tab-border
+      float: left
+
+

@@ -1,0 +1,65 @@
+.accordion
+  $base-border-color: gainsboro !default
+  $base-line-height: 1.5em !default
+  $base-spacing: 1.5em !default
+  $dark-gray: #333 !default
+  $base-font-color: $dark-gray !default
+  $accordion-menu-border-color: $base-border-color
+  $accordion-menu-color: $base-font-color
+  $accordion-menu-border: 1px solid $accordion-menu-border-color
+  $accordion-menu-background: lighten($accordion-menu-border-color, 10%)
+  $accordion-menu-hover: lighten($accordion-menu-background, 2%)
+  $accordion-menu-sub-background: darken($accordion-menu-background, 5%)
+  $accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6%)
+  $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2%)
+  $accordion-menu-list-padding: ($base-spacing / 2) $gutter
+
+  background-color: white
+  padding: 0
+
+  .promises-subject
+    margin-bottom: 20px
+
+  .promise
+    @extend .animated
+    @extend .fadeIn
+    @include animation-duration(0.4s)
+    border: 1px solid darken($accordion-menu-border-color, 10)
+    border-radius: 5px
+    margin-bottom: 15px
+    list-style: none
+
+    &:last-child
+      margin-bottom: 30px
+
+    &:focus,
+    &:hover
+      background-color: $accordion-menu-hover
+
+    .promise-header
+      color: $accordion-menu-color
+      display: block
+      padding: $accordion-menu-list-padding
+      text-decoration: none
+      &.has-children
+        cursor: pointer
+
+      .status, .title
+        display: inline-block
+
+      .status
+        margin-right: 25px
+
+    .more-infos
+      padding: 10px
+      background-color: rgba(249, 249, 249, 0.9)
+      border: $accordion-menu-border
+      box-shadow: inset 0 1px 1px $accordion-menu-sub-inset
+      .description.has-sources
+        margin-bottom: 7px
+        padding-bottom: 10px
+        border-bottom: 1px solid #BBBBBB
+
+    .collapsable.is-expanded
+      display: block
+      padding-bottom: 0

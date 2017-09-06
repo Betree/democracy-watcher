@@ -1,0 +1,86 @@
+/* ------ Vendor ------ */
+// Provides us with useful mixins
+@import "bourbon"
+
+// Grid system
+@import "neat"
+
+// Icons
+$fa-font-path: "~font-awesome/fonts/"
+@import "font-awesome"
+
+// Animations
+@import "animate"
+@import "animate/pulse"
+@import "animate/fadeIn"
+@import "animate/flipInX"
+
+/* ------ Bitters - Scaffold styles, variable and structure for bourbon projects ------ */
+// See https://github.com/thoughtbot/bitters
+@import "./base/base"
+
+/* ------ Custom ------ */
+// Custom mixins
+@import "./mixins/progressive_animation"
+
+// Contains all theme variables, overriding base variables.
+// Replace this line with your own theme if you want to.
+@import "./themes/light"
+
+// Legacy others styles
+@import "./views/about"
+@import "./views/flash-messages"
+@import "./views/header"
+@import "./views/main_logo"
+@import "./views/quick_actions_buttons"
+@import "./views/ruling_entities_show"
+@import "./views/statistics"
+
+// Contains stylesheets for each component
+@import "./components/collapsable"
+@import "./components/full_page_message"
+@import "./components/mandate_statistics"
+@import "./components/progress_bar"
+@import "./components/promises_list"
+@import "./components/responsive_navigation_menu"
+@import "./components/ruling_entities_list"
+@import "./components/show_ruling_entity"
+@import "./components/sources"
+@import "./components/tabs_view"
+
+/* ------ Globals ------ */
+
+body
+  overflow-y: scroll
+
+// Date interval
+.date-interval
+  background: #b7b7b7
+  color: white
+  font-size: 0.8em
+  margin-bottom: 0
+  padding: 3px 8px
+  font-weight: bold
+
+// Buttons links
+button a
+  color: white
+  text-decoration: none
+  transition: none
+  &:hover
+    color: white
+
+// Icons
+i.fa
+  &.status-not_yet_started
+    @extend .fa-clock-o
+    color: $orange
+  &.status-in_progress
+    @extend .fa-cogs
+    color: $yellow
+  &.status-done
+    @extend .fa-check-square-o
+    color: $green
+  &.status-broken
+    @extend .fa-times
+    color: $red
