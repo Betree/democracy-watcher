@@ -11,8 +11,7 @@ It's **entirely static** and the best place to host it is Github Pages:
   - Anyone can have access to the data and history of modifications
   - It's easy to participate
 
-You can get a preview of the front-end with fake data on
-[this link](https://democracy-watcher.herokuapp.com/)
+You can get a preview of what it looks like on [this link](http://democracy-watcher.benjamin.piouffle.me).
 
 Current implementation supports English and French but translating it
 in a new language should be really quick.
@@ -51,6 +50,8 @@ npm build
 To deploy your project on Github pages, just go to the project Settings, scroll to
 GitHub Pages and select `master branch /docs folder` from the Source dropdown menu.
 
+To setup a custom domain, check out [this link](https://help.github.com/articles/using-a-custom-domain-with-github-pages/)
+
 # :wrench: Configuration
 
 All configuration and data modifications (except for home page) are done in YAML files. YAML has a very simple syntax, don't
@@ -60,7 +61,7 @@ be afraid if you don't know it yet.
 
 The list of ruling entities is configured in `data/ruling_entities.yaml`. It has the following syntax:
 
-```
+```yaml
 entities:
   - id: silly-party # A unique string used to identify the entity (used in url)
     name: Silly Party # The name of the ruling entity
@@ -81,7 +82,7 @@ To configure promises, you must create a directory which has the id of the rulin
 name and create a file called `promises.yaml` in it. With our previous example:
 > `data/silly-party/promises.yaml`
 
-```
+```yaml
 # All promises must rest under a category (here Education and Economy)
 Education: 
   - title: Create math classes for the chickens # Title of the promise
