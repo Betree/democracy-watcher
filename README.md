@@ -1,6 +1,8 @@
-# _<img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">_ Democracy Watcher <img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">
-
-[![License](https://img.shields.io/aur/license/yaourt.svg)](LICENSE)
+<h1 align="center">
+<img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px"> Democracy Watcher <img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">
+</h1>
+<p align="center"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="License: GPL"/></p>
+<br/>
 
 This project aims to provide a set of tools to monitor a democratic entity.
 This entity can be a country, a city council or your organization.
