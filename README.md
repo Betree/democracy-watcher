@@ -1,7 +1,7 @@
 <h1 align="center">
 <img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px"> Democracy Watcher <img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">
 </h1>
-<p align="center"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="License: GPL"/></p>
+<p align="center"><a href="https://github.com/Betree/democracy-watcher/blob/master/LICENSE"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="License: GPL"/></a></p>
 <br/>
 
 This project aims to provide a set of tools to monitor a democratic entity.
