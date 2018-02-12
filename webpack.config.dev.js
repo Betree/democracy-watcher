@@ -14,7 +14,7 @@ module.exports = {
     "./app/styles/application.sass"
   ],
   output:  {
-    path: resolve(__dirname, 'docs'),
+    path: resolve(__dirname, 'public'),
     filename: 'app.js'
   },
 

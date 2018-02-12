@@ -13,7 +13,7 @@ It's **entirely static** and the best place to host it is Github Pages:
   - Anyone can have access to the data and history of modifications
   - It's easy to participate
 
-You can get a preview of what it looks like on [this link](http://democracy-watcher.benjamin.piouffle.me).
+You can get a preview of what it looks like on [this link](https://democracywatcher.netlify.com).
 
 Current implementation supports English and French but translating it
 in a new language should be really quick.
