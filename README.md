@@ -1,15 +1,27 @@
 <h1 align="center">
 <img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px"> Democracy Watcher <img src="https://lut.im/2ymhrfgHyc/mgumn3k1gpn4dg5X.svg" height="20px">
-</h1>
 <p align="center"><a href="https://github.com/Betree/democracy-watcher/blob/master/LICENSE"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="License: GPL"/></a></p>
 <br/>
+</h1>
 
-This project aims to provide a set of tools to monitor a democratic entity.
-This entity can be a country, a city council or your organization.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Betree/democracy-watcher)
 
-It's **entirely static** and the best place to host it is Github Pages:
+This project aims to provide a set of simple tools to monitor a democratic entity. This entity can be a country, a city council or your organization.
+
+It is a good fit for journalists wanting something easy to setup to track the promises of their local governments,
+and for citizen wanting to collaborate to track their locality actions.
+
+To unsleash its full power, this tool should be combined with [GatsbyJS](http://gatsbyjs.org/) which could provide a lot
+of amazing features out of the box : RSS/ATOM feed, markdown text formatting, easy pictures integration, pre-rendered pages
+with opengraph tags (to get nice miniatures when sharing on Facebook and Twitter).
+It's not complicated, but has to be done. 
+
+[Contact me](mailto:benjamin.piouffle@gmail.com) if you need these features,
+I'll be happy to implement them if they can be useful to some people.
+
+It's **entirely static** and the best place to host it is [Netlify](http://netlify.com/):
   - It's free
-  - Takes less than 3 minutes to have a running instance ready to be served
+  - Takes less than 1 minutes to have a running instance ready to be served
   - Anyone can have access to the data and history of modifications
   - It's easy to participate
 
