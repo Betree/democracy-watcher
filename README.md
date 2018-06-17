@@ -26,7 +26,7 @@ in a new language should be really quick.
 
 ## ☑️ TODO
 
-- [-] Translations
+- [ ] Translations
     * [x] English
     * [x] French
 - [ ] RSS / ATOM Feed
