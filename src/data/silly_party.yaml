@@ -1,0 +1,50 @@
+name: Silly Party
+leader: Jethro Q. Walrustitty
+mandate_start: "2015-10-12"
+mandate_end: "2020-10-12"
+description: The best government the world have ever seen
+thumb: https://api.adorable.io/avatars/200/xxxxx.png
+banner: https://api.adorable.io/avatars/300/xxxxx.png
+promises:
+  - title: Create math classes for the chickens
+    category: Education
+    subject: What to do with the chickens
+    status: DONE
+    description:
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lacus ipsum.
+      In porttitor tristique diam ut sodales. Proin porta molestie blandit. Vestibulum a felis eget mauris bibendum
+      malesuada. Quisque porttitor lorem in euismod mollis. Fusce varius ut massa aliquet hendrerit. Ut scelerisque
+      risus consectetur quam dapibus sollicitudin. Suspendisse pellentesque eget arcu ut varius.
+      Morbi mollis sed nibh nec eleifend. Donec nec ultricies risus, sit amet hendrerit quam. Etiam non tortor
+      dapibus, semper nulla quis, placerat orci.
+    sources:
+      - media: Le Monde
+        url: https://lemonde.fr/blablabla
+        title: We saved the chickens !
+  - title: Encourage internship for the chickens
+    category: Education
+    subject: What to do with the chickens
+    status: IN_PROGRESS
+  - title: Free books for the politicians
+    category: Education
+    status: NOT_YET_STARTED
+    description:
+      Maecenas et laoreet sapien. Maecenas ornare maximus mauris, sed blandit mi tristique vel. Maecenas rhoncus vel
+      erat in venenatis. Praesent tincidunt dignissim facilisis. Quisque vestibulum viverra massa at commodo.
+      Quisque vehicula felis vitae finibus aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - title: Make potatoes the new official currency
+    category: Politics
+    status: BROKEN
+    description: This project has been cancelled after experts said it could be dangerous.
+    sources:
+      - media: The Onion
+        url: https://lemonde.fr/blablabla
+        title: An awesome article
+  - title: Rename the country
+    category: Politics
+    status: BROKEN
+    description: Still need to find a name
+    sources:
+      - media: The Onion
+        url: https://lemonde.fr/blablabla
+        title: An awesome article
