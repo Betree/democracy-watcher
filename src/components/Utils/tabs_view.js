@@ -55,13 +55,14 @@ class ReactTab extends React.Component {
 
   render() {
     return  <li className="tab-header-and-content">
-        <a className={`tab-link ${this.state.is_active ? 'is-active' : ''}`}
-           onClick={this.on_click}
+        <button 
+          className={`tab-link ${this.state.is_active ? 'is-active' : ''}`}
+          onClick={this.on_click}
         >
-            { this.props.title }
-        </a>
+          { this.props.title }
+        </button>
         <div className={`tab-content ${this.state.is_active ? 'is-open' : ''}`}>
-            { this.props.content }
+          { this.props.content }
         </div>
     </li>;
   }

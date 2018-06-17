@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import Collapsable from '../Utils/collapsable'
 import RulingEntityShortTitle from '../RulingEntities/RulingEntityShortTitle'
 import slugify from 'slugify';
+import { entityUrl, promisesUrl } from '../../lib/url_utils'
 
 
 export default class NavigationMenu extends React.PureComponent {
@@ -49,10 +50,9 @@ export default class NavigationMenu extends React.PureComponent {
   }
 
   ruling_entity_MenuEntry(entity) {
-    const slug = slugify(entity.name)
     return (
-      <li key={slug}>
-        <Link to={`/entities/${slug}`}>
+      <li key={entity.id}>
+        <Link to={entityUrl(entity)}>
             <span className='date-interval'>
               {entity.mandate_start.split('-')[0]} - {entity.mandate_end.split('-')[0]}
             </span>
@@ -67,17 +67,18 @@ export default class NavigationMenu extends React.PureComponent {
     if (!entity)
       return []
 
-    const slug = slugify(entity.name)
-    return [
-      this.MenuEntry(`/entities/${slug}`, I18n.t('presentation')),
-      this.MenuEntry(`/entities/${slug}/promises`, I18n.t('promise.other'))
-    ]
+    return (
+      <React.Fragment>
+        {this.MenuEntry(entityUrl(entity), I18n.t('presentation'), true)}
+        {this.MenuEntry(promisesUrl(entity), I18n.t('promise.other'))}
+      </React.Fragment>
+    )
   }
 
-  MenuEntry(url, title) {
+  MenuEntry(url, title, exact=false) {
     return (
       <li className="nav-link" key={url}>
-        <Link to={url}>{title}</Link>
+        <Link exact={exact} activeClassName="active" to={url}>{title}</Link>
       </li>
     )
   }

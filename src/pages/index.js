@@ -10,10 +10,12 @@ const IndexPage = () => (
         <h1>Welcome to DemocracyWatcher !</h1>
         <br/>
         <p>
-          This is the default home page. You want to edit this text in "app/components/Home.jsx" to present the entity
+          This is the default home page. You want to edit this text in 
+          "src/pages/index.js" to present the entity
           you'll be tracking and to tell your visitors how they can contribute.
           <br/><br/>
-          You can also add fancy <Link to='/entities'>links</Link> toward your content for quick access.
+          You can also add fancy <Link to='/entities'>links</Link> toward your 
+          content for quick access.
           <br/><br/>
           Feedback, bug report and feature requests are welcome:&nbsp;
           <a href="https://github.com/Betree/democracy-watcher">Github</a>

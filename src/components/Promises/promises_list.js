@@ -7,14 +7,15 @@ import Promise from './promise'
 export default class PromisesList extends React.PureComponent {
   render() {
     const groupedPromises = groupBy(this.props.promises, 'subject')
-    const hasSubjects = groupedPromises.length > 1 || (groupedPromises.length === 1 && !groupedPromises.has(null))
+    const nbSubjects = Object.keys(groupedPromises).length
+    const hasSubjects = nbSubjects > 1 || (nbSubjects === 1 && groupedPromises[null])
 
     return (
       <div className="accordion">
         {Object.entries(groupedPromises).map(([subject, promises]) =>
           <div key={subject}>
             { /* Only display subject if we have something else than "Others" subject */ }
-            { hasSubjects && <h4 className='promises-subject'>{subject || I18n.t('others')}</h4>}
+            { hasSubjects && this.renderSubject(subject)}
             { promises.map(promise =>
               <div className={"promise " + promise.status} key={promise.id}>
                 <Promise promise={promise}/>
@@ -24,5 +25,10 @@ export default class PromisesList extends React.PureComponent {
         )}
       </div>
     )
+  }
+
+  renderSubject(subject) {
+    const label = subject === 'null' ? I18n.t('others') : subject
+    return <h4 className='promises-subject'>{label}</h4>
   }
 }

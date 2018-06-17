@@ -2,23 +2,26 @@ import React from 'react'
 import { Link } from 'gatsby'
 import RulingEntityHeader from '../components/RulingEntities/RulingEntityHeader'
 import slugify from 'slugify';
+import MainLayout from '../components/Layout/main_layout';
+import { entityUrl } from '../lib/url_utils';
 
 
 export default class RulingEntitiesList extends React.PureComponent {
   render() {
     return (
-      <div className="ruling-entities-list">
-        {this.props.data.allDataYaml.edges.map(e => 
-          this.renderEntityLink(e.node)
-        )}
-      </div>
+      <MainLayout>
+        <div className="ruling-entities-list">
+          {this.props.data.allDataYaml.edges.map(e => 
+            this.renderEntityLink(e.node)
+          )}
+        </div>
+      </MainLayout>
     )
   }
 
   renderEntityLink(entity) {
-    const slug = slugify(entity.name)
     return (
-      <Link key={slug} to={`/entities/${slug}`}>
+      <Link key={entity.id} to={entityUrl(entity)}>
         <RulingEntityHeader ruling_entity={entity}/>
       </Link>
     )
