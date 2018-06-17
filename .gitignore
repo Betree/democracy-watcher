@@ -1,8 +1,8 @@
-.idea/
-coverage/
-dist/
-node_modules/
-public/app.css
-public/app.js
-npm-debug.log
-dev
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+
+# Build directory
+/public
+.DS_Store

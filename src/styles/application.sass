@@ -1,0 +1,86 @@
+/* ------ Vendor ------ */
+// Provides us with useful mixins
+@import "~bourbon/app/assets/stylesheets/_bourbon"
+
+// Grid system
+@import "~bourbon-neat/app/assets/stylesheets/_neat"
+
+// Icons
+$fa-font-path: "~font-awesome/fonts/"
+@import "~font-awesome/scss/font-awesome"
+
+// Animations
+@import "~animate.scss/vendor/assets/stylesheets/animate.scss"
+@import "~animate.scss/vendor/assets/stylesheets/animate/pulse"
+@import "~animate.scss/vendor/assets/stylesheets/animate/fadeIn"
+@import "~animate.scss/vendor/assets/stylesheets/animate/flipInX"
+
+/* ------ Bitters - Scaffold styles, variable and structure for bourbon projects ------ */
+// See https://github.com/thoughtbot/bitters
+@import "./_base/base"
+
+/* ------ Custom ------ */
+// Custom mixins
+@import "./_mixins/progressive_animation"
+
+// Contains all theme variables, overriding base variables.
+// Replace this line with your own theme if you want to.
+@import "./_themes/light"
+
+// Legacy others styles
+@import "./_views/about"
+@import "./_views/flash-messages"
+@import "./_views/header"
+@import "./_views/main_logo"
+@import "./_views/quick_actions_buttons"
+@import "./_views/ruling_entities_show"
+@import "./_views/statistics"
+
+// Contains stylesheets for each component
+@import "./_components/collapsable"
+@import "./_components/full_page_message"
+@import "./_components/mandate_statistics"
+@import "./_components/progress_bar"
+@import "./_components/promises_list"
+@import "./_components/responsive_navigation_menu"
+@import "./_components/ruling_entities_list"
+@import "./_components/show_ruling_entity"
+@import "./_components/sources"
+@import "./_components/tabs_view"
+
+/* ------ Globals ------ */
+
+body
+  overflow-y: scroll
+
+// Date interval
+.date-interval
+  background: #b7b7b7
+  color: white
+  font-size: 0.8em
+  margin-bottom: 0
+  padding: 3px 8px
+  font-weight: bold
+
+// Buttons links
+button a
+  color: white
+  text-decoration: none
+  transition: none
+  &:hover
+    color: white
+
+// Icons
+i.fa
+  &.status-not_yet_started
+    @extend .fa-clock-o
+    color: $orange
+  &.status-in_progress
+    @extend .fa-cogs
+    color: $yellow
+  &.status-done
+    @extend .fa-check-square-o
+    color: $green
+  &.status-broken
+    @extend .fa-times
+    color: $red
