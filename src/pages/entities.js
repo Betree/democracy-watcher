@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import RulingEntityHeader from '../components/RulingEntities/RulingEntityHeader'
-import slugify from 'slugify';
-import MainLayout from '../components/Layout/main_layout';
-import { entityUrl } from '../lib/url_utils';
+import MainLayout from '../components/Layout/main_layout'
+import { entityUrl } from '../lib/url_utils'
 
 
 export default class RulingEntitiesList extends React.PureComponent {

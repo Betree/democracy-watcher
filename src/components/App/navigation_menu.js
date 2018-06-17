@@ -5,7 +5,6 @@ import classNames from 'classnames'
 
 import Collapsable from '../Utils/collapsable'
 import RulingEntityShortTitle from '../RulingEntities/RulingEntityShortTitle'
-import slugify from 'slugify';
 import { entityUrl, promisesUrl } from '../../lib/url_utils'
 
 

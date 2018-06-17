@@ -6,7 +6,7 @@ import RulingEntityLayout from '../components/Layout/ruling_entity'
 import { promisesUrl } from '../lib/url_utils'
 
 
-const RulingEntityPresentation = ({pathContext: {entity}}) => {
+const RulingEntityPresentation = ({pageContext: {entity}}) => {
   return (
     <RulingEntityLayout entity={entity}>
       <div className="ruling-entity-description-container">

@@ -8,7 +8,7 @@ import PromisesStatistics from '../components/Promises/promises_statistics'
 
 export default class RulingEntityPromises extends React.PureComponent {
   render() {
-    const {pathContext: {entity}} = this.props
+    const {pageContext: {entity}} = this.props
     const groupedPromises = groupBy(entity.promises, 'category')
 
     return (

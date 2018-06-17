@@ -12,8 +12,7 @@ var slugify = require('slugify')
 const uuidv4 = require('uuid/v4')
 
 
-exports.createPages = ({graphql, boundActionCreators}) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({graphql, actions: {createPage}}) => {
   return new Promise((resolve, reject) => {
     resolve(
       graphql(
