@@ -5,8 +5,8 @@ mandate_end: "2015-10-12"
 description: 
   Founded by Homer Dalors, this government lacks of transparency and
   has major flaws in its organization.
-thumb: http://via.placeholder.com/180x180
-banner: http://via.placeholder.com/1920x250
+thumb: https://via.placeholder.com/180x180
+banner: https://via.placeholder.com/1920x250
 promises:
   - title: Create math classes for the chickens
     category: Education
