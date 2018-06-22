@@ -26,7 +26,9 @@ in a new language should be really quick.
 
 ## ☑️ TODO
 
-- [ ] Translations
+- [x] Support for multiple ruling entities
+- [x] Promise tracker
+- [x] Translations
     * [x] English
     * [x] French
 - [ ] RSS / ATOM Feed
