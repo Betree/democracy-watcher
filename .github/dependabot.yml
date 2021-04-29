@@ -1,0 +1,48 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: mem
+    versions:
+    - 8.0.0
+    - 8.1.0
+  - dependency-name: react-dev-utils
+    versions:
+    - 11.0.3
+    - 4.2.3
+  - dependency-name: "@babel/plugin-proposal-object-rest-spread"
+    versions:
+    - 7.12.1
+    - 7.12.13
+    - 7.13.0
+  - dependency-name: bl
+    versions:
+    - 4.0.3
+    - 4.0.4
+  - dependency-name: open
+    versions:
+    - 7.3.1
+    - 7.4.0
+  - dependency-name: ws
+    versions:
+    - 6.1.4
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: serialize-javascript
+    versions:
+    - 4.0.0
+  - dependency-name: url-parse
+    versions:
+    - 1.4.7
+  - dependency-name: acorn
+    versions:
+    - 6.4.2
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
